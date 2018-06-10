@@ -1,15 +1,20 @@
-# writing-app
-This is an applications that allows users to create notes.
+#Welcome to EasyNotes.
+This is an aplication that allows users to create and edit personal notes. 
+
+Creator: Weslley Victor (wvict)
+
+
+
 
 #Updates: 
 
 01/06 11:44
-	Features done:
-	1)Created login system.
-	2)Created area to add a new note.
-	3) Displayed the notes created in the home page.
-	4) Created a way for the user to edit the notes.	
-	5) Created delete feature.
+Features done:
+1)Created login system.
+2)Created area to add a new note.
+3) Displayed the notes created in the home page.
+4) Created a way for the user to edit the notes.	
+5) Created delete feature.
 
 
 	

@@ -1,5 +1,11 @@
+body {
+	background: url("wallpaper.jpg");
+}
 .write {
 	text-align: center;
+}
+.index_write_note {
+	font-family: arial;
 }
 
 .edit {
@@ -25,7 +31,7 @@
 	position: relative;
 	padding: 0 5px 30px 5px;
 	border-radius: 5px;
-	background-color: gray;
+	background-color: rgba(1, 1, 1, 0.2);
 	margin: 0 auto;
 	width: 70%;
 	text-align: justify;
@@ -53,6 +59,7 @@
 	position: absolute;
 	right: 2%;
 	bottom: 0;
+	font-weight: bold;
 }
 
 .logout {
@@ -69,9 +76,12 @@
 	resize: none;
 	font-size: 20px;
 	font-family: arial;
-	background-color: green;
+	background-color: beige;
 	border-radius: 5px;
 	padding: 10px;
 	margin: 0 auto;
 	width: 80%;
+}
+.input_edit {
+	font-weight: bold;
 }

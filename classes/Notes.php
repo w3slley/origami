@@ -37,7 +37,7 @@
 				<div class='note'>
 					<h1 class='note_title'><?php echo $data['note_title']; ?></h1>
 					<p class='note_content'><?php echo $data['note_content']; ?></p>
-					<p class='date'><?php echo $data['date_added']; ?></p>
+					<p class='date'>Last edited: <?php echo $data['date_added']; ?></p>
 					<?php echo '<a href="index.php?edit='.$data['id'].'" class="edit">Edit</a>' ?>
 					<form method="POST" action="action/deleteNote.php">
 						<?php echo '<input style="display:none" name="note_id" value="'.$data['id'].'">' ?>
@@ -70,8 +70,8 @@
 			$data = $stmt->fetchAll(PDO::FETCH_OBJ);
 			foreach($data as $data){?>
 			<div class="edit_note">
-				<form method="POST" action="action/edit.php">
-					<?php echo '<input type="text" name="edit_note_title" value="'.$data->note_title.'">' ?><br><br>
+				<form method="POST" action="action/editNote.php">
+					<?php echo '<input class="input_edit" type="text" name="edit_note_title" value="'.$data->note_title.'">' ?><br><br>
 					<?php echo '<textarea spellcheck = "false" cols="100" rows="20" class="edit_note_content" name = "edit_note_content" >'.str_replace('<br />', '&#13;', $data->note_content).'</textarea>' //This '&#13' turns the break line tag into a enter in the text! ?><br>
 					<?php echo '<input style="display: none" name="note_id" value="'.$this->id.'">'  ?>
 					<button>Save changes</button>

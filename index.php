@@ -55,7 +55,7 @@
 			<div class="write">
 				<form method="POST" action="action/addNote.php">
 					<input name="note_title"placeholder="Note title"><br><br>
-					<textarea spellcheck = "false" style="resize:none" rows="15" cols="60" name="note_content" placeholder="Write a new note..."></textarea><br> 
+					<textarea spellcheck = "false" style="resize:none" rows="15" cols="60" name="note_content" class="index_write_note" placeholder="Write a new note..."></textarea><br> 
 					<button type="submit" name="submit">Add post</button>
 				</form>
 			</div>

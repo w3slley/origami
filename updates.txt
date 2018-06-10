@@ -1,5 +1,5 @@
 01/06 11:44
-	Features done:
+Features done:
 	1)Created login system.
 	2)Created area to add a new note.
 	3) Displayed the notes created in the home page.

@@ -1,11 +1,86 @@
 body {
 	background: url("wallpaper.jpg");
 }
-.write {
+#signin-form{
 	text-align: center;
+	margin: 0 auto;
+	width: 20%;
+	padding: 30px 50px 10px 50px;
+	background-color: rgba(1,1,1,0.2);
+	border-radius: 10px;
+	margin-bottom: 100px;
+}
+#signin-form h1 {
+	margin: 0 0 20px 0;
+}
+#signin-form input{
+	margin-bottom: 10px;
+	font-size: 20px;
+	border:none;
+	border-radius: 5px;
+	padding: 10px;
+
+}
+#signin-form button {
+	border:none;
+	background-color: white;
+	color: black;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 10px;
+
+}
+
+
+#signup-form{
+	text-align: center;
+	margin: 0 auto;
+	width: 20%;
+	padding: 30px 50px 10px 50px;
+	background-color: rgba(1,1,1,0.2);
+	border-radius: 10px;
+}
+#signup-form h1 {
+	margin: 0 0 20px 0;
+}
+#signup-form input{
+	margin-bottom: 10px;
+	font-size: 20px;
+	border:none;
+	border-radius: 5px;
+	padding: 10px;
+
+}
+#signup-form button {
+	border:none;
+	background-color: white;
+	color: black;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 10px;
+
+}
+.write {
+	margin: 0 auto;
+	width: 58%;
+	margin-bottom: 65px;
+
+}
+.write button {
+	margin: 0 auto;
+	display: block;
+}
+.write input, textarea {
+	border: none;
+	border-radius: 10px;
+	font-size: 20px;
+	padding: 20px;
 }
 .index_write_note {
 	font-family: arial;
+}
+#addNote-content{
+	margin-bottom: 15px;
 }
 
 .edit {
@@ -82,6 +157,10 @@ body {
 	margin: 0 auto;
 	width: 80%;
 }
-.input_edit {
+.title_edit {
 	font-weight: bold;
+	padding: 20px;
+	border-radius: 5px;
+	border: none;
+	width: 500px;
 }

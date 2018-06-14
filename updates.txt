@@ -6,7 +6,11 @@ Features done:
 	4) Created a way for the user to edit the notes.	
 	5) Created delete feature.
 
-
+14/06 12:55
+Features done:
+	1)Improved the styling of the login page.
+	2)Implemented feature of adding notes without reloading the page!
+	3)Implemented feature of deleting note without reloading the page. The only problem is that the browser doesn't exclude the note since it is already loaded. I have to do this somehow with javascript. Working on it.
 	
 Things I still have to implement:
 1)add label system to the notes.

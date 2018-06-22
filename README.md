@@ -1,4 +1,4 @@
-#Welcome to EasyNotes.
+# Welcome to Notes.
 This is an aplication that allows users to create and edit personal notes. Hope you enjoy it!
 
 Creator: Weslley Victor (wvict)
@@ -6,7 +6,7 @@ Creator: Weslley Victor (wvict)
 
 
 
-#Updates: 
+# Updates: 
 
 01/06 11:44
 Features done:

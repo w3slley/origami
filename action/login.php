@@ -17,7 +17,7 @@
 		$_SESSION['email'] = $data['email'];
 
 
-		header("Location: ../index.php");
+		header("Location: ../validation.php");
 
 
 	}

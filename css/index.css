@@ -1,17 +1,15 @@
 body {
-	background: url("wallpaper.jpg");
+	background-color: #D6EADF;
+	font-family: Source Sans Pro;
 }
 #signin-form{
 	text-align: center;
-	margin: 0 auto;
-	width: 20%;
-	padding: 30px 50px 10px 50px;
 	background-color: rgba(1,1,1,0.2);
 	border-radius: 10px;
+	margin: 0 auto;
+	width: 50%;
 	margin-bottom: 100px;
-}
-#signin-form h1 {
-	margin: 0 0 20px 0;
+	padding: 10px 0 30px 0;
 }
 #signin-form input{
 	margin-bottom: 10px;
@@ -34,15 +32,13 @@ body {
 
 #signup-form{
 	text-align: center;
-	margin: 0 auto;
-	width: 20%;
-	padding: 30px 50px 10px 50px;
+	padding: 10px 0 30px 0;
 	background-color: rgba(1,1,1,0.2);
 	border-radius: 10px;
+	margin: 0 auto;
+	width: 50%;
 }
-#signup-form h1 {
-	margin: 0 0 20px 0;
-}
+
 #signup-form input{
 	margin-bottom: 10px;
 	font-size: 20px;
@@ -61,9 +57,7 @@ body {
 
 }
 .write {
-	margin: 0 auto;
-	width: 58%;
-	margin-bottom: 65px;
+	text-align: center;
 
 }
 .write button {
@@ -71,10 +65,13 @@ body {
 	display: block;
 }
 .write input, textarea {
+	margin: 0 auto;
+	width: 58%;	
 	border: none;
 	border-radius: 10px;
 	font-size: 20px;
-	padding: 20px;
+	padding: 10px;
+	
 }
 .index_write_note {
 	font-family: arial;
@@ -82,6 +79,12 @@ body {
 #addNote-content{
 	margin-bottom: 15px;
 }
+#addNote-submit {
+	background: none;
+	border: none;
+	border-radius: 100%;
+}
+
 
 .edit {
 	display: none;
@@ -93,6 +96,7 @@ body {
 	text-decoration: none;
 	color: black;
 	background-color: white;
+	font-size: 15px;
 }
 
 .delete {
@@ -100,9 +104,14 @@ body {
 	position: absolute;
 	bottom: 5px;
 	left: 5%;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	background-color:white;
+	font-size:15px;
 }
 
-.note {
+.div-note {
 	position: relative;
 	padding: 0 5px 30px 5px;
 	border-radius: 5px;
@@ -113,17 +122,17 @@ body {
 
 }
 
-.note:hover .edit  {
+.div-note:hover .edit  {
 	display: block;
 
 }
-.note:hover .delete  {
+.div-note:hover .delete  {
 	display: block;
 
 }
 
 .note_title{
-
+	padding-top: 5px;
 }
 
 .note_content {
@@ -150,17 +159,150 @@ body {
 .edit_note_content {
 	resize: none;
 	font-size: 20px;
-	font-family: arial;
-	background-color: beige;
+	font-family: Source Sans Pro;
+	background-color: white;
 	border-radius: 5px;
 	padding: 10px;
 	margin: 0 auto;
-	width: 80%;
+	width: 60%;
 }
 .title_edit {
 	font-weight: bold;
 	padding: 20px;
 	border-radius: 5px;
 	border: none;
-	width: 500px;
+	width: 58%;
 }
+.edit_note button {
+	font-size: 20px;
+	border: none;
+	background-color: #3C3C3B;
+	color: white;
+	border-radius: 10px;
+	margin-top: 10px;
+	padding: 10px;
+	font-family: Quicksand;
+}
+
+/*Styling mobile*/
+@media only screen and (max-width: 600px) {
+	body {
+		margin: 0;
+
+
+	}
+	#signin-form{
+		width: 100%;
+		background-color: rgba(1,1,1,0.2);
+		border-radius: 10px;
+		margin-bottom: 100px;
+		
+	}
+	#signin-form h1 {
+		margin: 0 0 20px 0;
+	}
+	#signin-form input{
+		font-size: 20px;
+		border:none;
+		border-radius: 5px;
+		padding: 10px;
+		
+
+	}
+	#signin-form button {
+		border:none;
+		background-color: white;
+		color: black;
+		padding: 10px;
+		border-radius: 10px;
+		margin-top: 10px;
+
+	}
+
+
+	#signup-form{
+		width: 100%;
+		background-color: rgba(1,1,1,0.2);
+		border-radius: 10px;
+	}
+	#signup-form h1 {
+		margin: 0 0 20px 0;
+	}
+	#signup-form input{
+		font-size: 20px;
+		border:none;
+		border-radius: 5px;
+		padding: 10px;
+
+	}
+	#signup-form button {
+		border:none;
+		background-color: white;
+		color: black;
+		padding: 10px;
+		border-radius: 10px;
+		margin-top: 10px;
+
+	}
+
+	/*User area*/
+	.write input, textarea {
+		width: 90%;
+		padding: 10px 0 10px 2px;
+	}
+	.div-note {
+		position: relative;
+		padding: 0 5px 30px 5px;
+		border-radius: 5px;
+		background-color: rgba(1, 1, 1, 0.2);
+		margin: 0 auto;
+		width: 90%;
+		text-align: justify;
+
+	}
+	.edit {
+		display: none;
+		position: absolute;
+		bottom: 30px;
+		left: 5%;
+		padding: 5px;
+		border-radius: 2px;
+		text-decoration: none;
+		color: black;
+		background-color: white;
+	}
+
+	.delete {
+		display: none;
+		position: absolute;
+		bottom: 1px;
+		left: 5%;
+		border: none;
+		border-radius: 5px;
+		padding: 5px;
+		background-color:white;
+	}
+
+	.edit_note {
+		text-align: center;
+	}
+
+	.edit_note_content {
+		resize: none;
+		font-size: 20px;
+		font-family: Source Sans Pro;
+		border-radius: 5px;
+		padding: 10px;
+		width: 90%;
+		
+	}
+	.title_edit {
+		font-weight: bold;
+		border-radius: 5px;
+		padding: 15px;
+		border: none;
+		width: 85%;
+		margin-top: 20px;
+	}
+}
+

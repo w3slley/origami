@@ -7,5 +7,5 @@
 		header("Location: ../index.php?logout=success");
 	}
 	else {
-		header("Location: ../index.php");
+		header("Location: ../initial_page.php");
 	}

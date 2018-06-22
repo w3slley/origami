@@ -1,4 +1,4 @@
-<?php
+<?php 
 	session_start();
 	include "../classes/Notes.php";
 

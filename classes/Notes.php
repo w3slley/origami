@@ -34,14 +34,14 @@
 
 
 			foreach($result as $data){ ?>
-				<div  class='div-note'>
+				<div class='div-note' id="note" onclick="editNote(<?php echo $data['id']; ?>)">
 					<h1 class='note_title'><?php echo $data['note_title']; ?></h1>
 					<p class='note_content'><?php echo $data['note_content']; ?></p>
 					<p class='date'>Last edited: <?php echo $data['date_added']; ?></p>
-					<?php echo '<a href="initial_page.php?edit='.$data['id'].'" class="edit">Edit</a>' ?>
-					<input id="note_id" style="display:none" name="note_id" value="<?php echo $data['id']; ?>">
-					<button id="<?php echo $data['id']; ?>" type="submit" class="delete" name="submit" onclick="deleteNote(<?php echo $data['id']; ?>)">Delete</button>
+					<p id="<?php echo $data['id']; ?>" style="display: none"></p>
 					
+					
+										
 
 				</div>
 			<?php	}
@@ -72,9 +72,13 @@
 				<form method="POST" action="action/editNote.php">
 					<?php echo '<input class="title_edit" type="text" name="edit_note_title" value="'.$data->note_title.'">' ?><br><br>
 					<?php echo '<textarea spellcheck = "false" cols="60" rows="10" class="edit_note_content" name = "edit_note_content" >'.str_replace('<br />', '&#13;', $data->note_content).'</textarea>' //This '&#13' turns the break line tag into a enter in the text! ?><br>
-					<?php echo '<input style="display: none" name="note_id" value="'.$this->id.'">'  ?>
+					<?php echo '<input style="display: none" name="note_id" value="'.$this->id.'">' //The note's id, hidden in this input that is not displayed, will be sended via POST to the file editNote.php?> 
 					<button>Save changes</button>
+
 				</form>
+
+				
+
 			</div>
 		<?php }
 		}

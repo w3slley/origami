@@ -21,6 +21,7 @@
 	
 
 	<?php 
+
 		
 		//Logout button
 		if(isset($_GET['edit'])){ ?>
@@ -37,9 +38,9 @@
 		else { //The page itself
 			echo "<h1>Welcome, ".$_SESSION['first_name']."!</h1>";?><br>
 
-			<form id="edit-logout-button" method="POST" action="action/logout.php">
+			<form method="POST" action="action/logout.php">
 				<button class="logout" type="submit" name="submit">Logout</button>
-			</form><br>
+			</form>
 
 			<div class="write">
 				<form id="addNote-form" method="POST" action="action/addNote.php">
@@ -50,20 +51,45 @@
 			</div>
 			<small id="small"></small>
 
+			<!-- Modal -->
+		<div id="myModal" class="modal"> <!-- The modal -->
+			<div class="modal-content"> <!-- Modal's content-->
+				<span class="close">&times;</span> <!-- close button -->
+				<p id="data">You shouldn't see me. Some error have occured.</p> 
 
+			</div>
+		</div>
 
-	<div id="notes">
-		<?php 
-		$notes = new Notes;
-		$notes->showNotes($_SESSION['id']);
+		<div id="notes">
+			<?php 
+			$notes = new Notes;
+			$notes->showNotes($_SESSION['id']);
+		 }
+		 	?>
+		</div>
+	
+	<script>
+		
+		$(document).ready(function(){/*This will make the data from the form go to the addNote.php 
+			file without loading the page.*/
+			$("#addNote-form").submit(function(event){//When the form is submited (button is clicked):
+				event.preventDefault();/*this makes the form not to go to the action site. It, instead, 
+				sets everything to default (do nothing).*/
+				var note_title = $("#addNote-title").val();//data from the title
+				var note_content = $("#addNote-content").val();//data from the content
+				$.post("action/addNote.php", {/*the js sends the data behind the scenes to the
+				 addNote.php file with the note_title and note_content!*/
+					note_title: note_title,
+					note_content: note_content
+				}, function (){ /*This will remove the data from the title and textarea when the
+				 note is added!*/
+					$("#addNote-title").val("");
+					$("#addNote-content").val("");
+				});
+			});
+		});
 
-
-	 }
-	 	?>
-	</div>
-
-
-	<script>//When the add note button is clicked, the page loads the showNotes.php file without realoading itself and adds the title and content to the database behind the scenes.
+		//When the add note button is clicked, the page loads the showNotes.php file without realoading itself and adds the title and content to the database behind the scenes.
 		$(document).ready(function(){
 			$("#notes").load("action/showNotes.php");
 			$("#addNote-form").submit(function(){
@@ -73,24 +99,45 @@
 		});
 
 
+		var modal = document.getElementById('myModal');//getting the element of the modal
+		var close = document.getElementsByClassName("close")[0];//getting the close button element
+
 		function deleteNote(note_id){//delete notes using AJAX
 			var confirmValue = confirm('Do you really want to delete this note?');
 			if(confirmValue == true){
 				$.post('action/deleteNote.php', { id: note_id }, function(){ //run the deleteNote.php file using AJAX.
-					document.getElementById(note_id).parentNode.outerHTML = '';//Selects the parent node (the element the button is in) from the button that has the note's id and deletes it!	I created a button with an id that is equal to the note's id in the database. So, when I delete the note in the database using AJAX, I can also delete its content from the client webpage using the same id.
+					modal.style.display = 'none';
+					var x = document.getElementById(note_id).parentNode.outerHTML = '';//Selects the parent node (the element the button is in) from the button that has the note's id and deletes it!	I created a button with an id that is equal to the note's id in the database. So, when I delete the note in the database using AJAX, I can also delete its content from the client webpage using the same id.
+
+
 				});
 			}
-			
+		}	
 
-			
+		//EDIT NOTE 
+		var a = document.getElementsByClassName('div-note');
 
+		console.log(a);
+		function editNote(note_id){ //When the note is clicked, the modal is shown.
+			modal.style.display = "block";
+
+			$.post('action/editNote-modal.php', {id: note_id}, function (data){
+			document.getElementById('data').innerHTML = data;
+			});
+			
+		}	
+
+		close.onclick = function(){//if the close button is clicked, the modal is closed
+			modal.style.display = 'none';
 		}
-
+		window.onclick = function(event){ //When clicked outside the modal, it automatically closes.
+			if(event.target == modal) {
+				modal.style.display = 'none';
+			}
+		}	
 		
+	
 	</script>
-	
-	
-
 	
 
 

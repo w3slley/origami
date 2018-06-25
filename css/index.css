@@ -2,6 +2,7 @@ body {
 	background-color: #D6EADF;
 	font-family: Source Sans Pro;
 }
+
 #signin-form{
 	text-align: center;
 	background-color: rgba(1,1,1,0.2);
@@ -86,24 +87,11 @@ body {
 }
 
 
-.edit {
-	display: none;
-	position: absolute;
-	bottom: 5px;
-	left: 5px;
-	padding: 5px;
-	border-radius: 2px;
-	text-decoration: none;
-	color: black;
-	background-color: white;
-	font-size: 15px;
-}
-
 .delete {
-	display: none;
 	position: absolute;
+	font-size: 40px;
 	bottom: 5px;
-	left: 5%;
+	right: 2%;
 	border: none;
 	border-radius: 5px;
 	padding: 5px;
@@ -119,17 +107,10 @@ body {
 	margin: 0 auto;
 	width: 70%;
 	text-align: justify;
+	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/
 
 }
 
-.div-note:hover .edit  {
-	display: block;
-
-}
-.div-note:hover .delete  {
-	display: block;
-
-}
 
 .note_title{
 	padding-top: 5px;
@@ -183,6 +164,46 @@ body {
 	padding: 10px;
 	font-family: Quicksand;
 }
+
+/*Modal Styling*/
+.modal {
+	display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /* overflow: auto; Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+.modal-content {
+	position: relative;
+    background-color: gray;
+    margin: 6% auto; /* 15% from the top and centered */
+    padding: 20px 20px 100px 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    animation-name: animation;
+    animation-duration: 0.8s
+}
+	@keyframes animation { /*This is the code that creates the animation*/
+   from {opacity: 0}
+   to {opacity: 1}
+}
+/* The Close Button */
+		.close {
+		    color: #aaa;
+		    float: right;
+		    font-size: 28px;
+		    font-weight: bold;
+		}
+		.close:hover{
+		    color: black;
+		    cursor: pointer;
+		}
 
 /*Styling mobile*/
 @media only screen and (max-width: 600px) {

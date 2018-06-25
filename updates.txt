@@ -11,6 +11,11 @@ Features done:
 	1)Improved the styling of the login page.
 	2)Implemented feature of adding notes without reloading the page!
 	3)Implemented feature of deleting note without reloading the page. The only problem is that the browser doesn't exclude the note since it is already loaded. I have to do this somehow with javascript. Working on it.
+
+25/06 18:49
+Features done:
+	1) Implemented the edit feature inside a modal without reloading the page. Now, everytime the user clicks the note, it will go to the edit section. Have to figure out a way to display images as well.
+	2) Implemented delete feature. Now, when the user deletes a note it will be removed from the browser without reloading the page. 
 	
 Things I still have to implement:
 1)add label system to the notes.
@@ -19,4 +24,5 @@ Things I still have to implement:
 4)Display the date of the creation of the note.
 5) add error handlers in the sign up and login.
 6) add error handlers in the add note section.
+7) Add images to the notes.
 

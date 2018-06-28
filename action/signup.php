@@ -10,8 +10,15 @@
 
 	$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-	$user = new User; //Create a new object to sign up the user.
-	$user->addUser($first_name, $last_name, $user_name, $email, $hashedPassword);
+	if($password != $password2){
+		header("Location: ../index.php?password=notEqual");
+	}
+	elseif(empty($first_name) or empty($last_name) or empty($user_name) or empty($email) or empty($password)){
+		header("Location: ../index.php?error=empty");
+	}
+	else{
+		$user = new User; //Create a new object to sign up the user.
+		$user->addUser($first_name, $last_name, $user_name, $email, $hashedPassword);
 
-	header("Location: ../index.php?signup=success");
-
+		header("Location: ../index.php?signup=success");
+	}

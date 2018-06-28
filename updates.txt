@@ -15,14 +15,36 @@ Features done:
 25/06 18:49
 Features done:
 	1) Implemented the edit feature inside a modal without reloading the page. Now, everytime the user clicks the note, it will go to the edit section. Have to figure out a way to display images as well.
-	2) Implemented delete feature. Now, when the user deletes a note it will be removed from the browser without reloading the page. 
+	2) Implemented delete feature. Now, when the user deletes a note it will be removed from the browser without reloading the page.
+
+26/06 10:56
+Features done: 
+	1) Added animation in the notes' div. Now, when the user passes the mouse over the note, it will interect with it.
+	2) Added animation in the 'add note' area (input and textarea). Now, when the user clicks in the textarea, it will slide down and the title input will pop up.
+	3) Redesign the login page. It now displays a video, an introduction to the project and the login input.
+	4) Redesign the note's modal. Now it looks similar to the Google Keep's design. I'm not trying to copy it. I just use as a reference.
+	5) Was able to implement a feature so that when the user clicks out of the textarea, it comes back to normal (displays only the textarea with the placeholder "Write a new note..."). However, it isn't fully implemented (for now it only does something if the div 'notes' is clicked). Have to figure out a way to do what it is suposed to do while clicking anywhere outside the textarea!
+
+28/06 18:15
+Features done:
+	1)Added fixed navbar.
+	2)Added colors (green and platinum)
+	3)Added search input (need to implement the backend feature first using PHP and later using AJAX)
+	4)Added sidebar (right now it's blank)
+
+
 	
 Things I still have to implement:
-1)add label system to the notes.
+
+1)add label system to the notes.(DONE)
 2) Edit notes (DONE)
 3)Delete notes (DONE)
-4)Display the date of the creation of the note.
-5) add error handlers in the sign up and login.
-6) add error handlers in the add note section.
+4)Display the date of the creation of the note.(DONE)
+5) add error handlers in the sign up and login.(working on it)
+6) add error handlers in the add note section. (working on it)
 7) Add images to the notes.
-
+8) Make sure that when the user clicks out of the note, the note is automatically saved.
+9) ADD a navbar with the search feature using AJAX.
+10) When the first note is added, it is not displayed in the browser without reloading. Have to fix this...
+11) Display a fix amount of notes in the home page and, when scroll down to the last position, display more notes.
+12) Fix the problem-> when deleting notes using the trash can, it opens the note because you need to click the div - and I set the command to open the note as soon the user clicks it.

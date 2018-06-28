@@ -1,0 +1,208 @@
+body {
+	margin: 0;
+	
+}
+#signin-form{
+	text-align: center;
+	background-color: rgba(1,1,1,0.2);
+	border-radius: 10px;
+	margin: 12% 8% auto;
+	width: 30%;
+	margin-bottom: 300px;
+	padding: 10px 0 30px 0;
+	color: white;
+}
+#signin-form input{
+	margin-bottom: 10px;
+	font-size: 20px;
+	border:none;
+	border-radius: 5px;
+	padding: 10px;
+
+}
+#signin-form button {
+	border:none;
+	background-color: white;
+	color: black;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 10px;
+
+}
+#text-signup{
+	text-align: center;
+	margin-bottom: 0;
+}
+#text-signup a {
+	color: black;
+}
+.welcome {
+	position: absolute;
+	top: 10%;
+	margin: 0% 50% auto;
+	width: 40%;
+	color: white;
+	text-align: center;
+	animation-name: animation;
+	animation-duration: 1.5s;
+
+}
+
+@keyframes animation{
+	from{
+		position: absolute;
+		top: -200px;
+		}
+	to{
+		position: absolute;
+		top: 10%;
+	}
+	
+}
+#logo {
+	width: 90px;
+
+}
+#welcome-header {
+	font-family: Kaushan Script;
+	font-size: 60px;
+	margin-top: 0;
+	
+}
+#welcome-text{
+	font-family: Cardo;
+	font-size: 30px;
+	text-align: center;
+}
+
+/*SIGN UP*/
+#signup-form{
+	text-align: center;
+	padding: 10px 0 30px 0;
+	background-color: rgba(1,1,1,0.2);
+	border-radius: 10px;
+	margin: 0 auto;
+	width: 50%;
+}
+
+#signup-form input{
+	margin-bottom: 10px;
+	font-size: 20px;
+	border:none;
+	border-radius: 5px;
+	padding: 10px;
+
+}
+#signup-form button {
+	border:none;
+	background-color: white;
+	color: black;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 10px;
+
+}
+
+#background-video { /*This is how you set the video to take all the screen! Use this in the future*/
+	position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+
+
+
+}
+
+@media only screen and (min-width: 601px){
+	#signin-form input {
+		width: 70%;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		margin: 0;
+		background-color: #393E41;
+
+
+	}
+	#background-video {
+		display: none;
+	}
+	#signin-form{
+		position: absolute;
+		top: 450px;
+		width: 100%;
+		background-color: rgba(1,1,1,0.2);
+		margin-bottom: 100px;
+		margin: 0;
+		border-radius: 0;
+
+		
+	}
+	#signin-form h1 {
+		margin: 0 0 20px 0;
+	}
+	#signin-form input{
+		font-size: 20px;
+		border:none;
+		border-radius: 5px;
+		padding: 10px;
+		
+
+	}
+	#signin-form button {
+		border:none;
+		background-color: white;
+		color: black;
+		padding: 10px;
+		border-radius: 10px;
+		margin-top: 10px;
+
+	}
+
+	.welcome {
+	position: absolute;
+	top: 0px;
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	animation-name: none;
+	color: white;
+	margin-top: 20px;
+
+}
+
+
+	#signup-form{
+		width: 100%;
+		background-color: rgba(1,1,1,0.2);
+		border-radius: 10px;
+	}
+	#signup-form h1 {
+		margin: 0 0 20px 0;
+	}
+	#signup-form input{
+		font-size: 20px;
+		border:none;
+		border-radius: 5px;
+		padding: 10px;
+
+	}
+	#signup-form button {
+		border:none;
+		background-color: white;
+		color: black;
+		padding: 10px;
+		border-radius: 10px;
+		margin-top: 10px;
+
+	}
+	#text-signup {
+		text-align: center;
+		margin-right: 0;
+	}
+}

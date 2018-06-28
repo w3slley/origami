@@ -1,10 +1,11 @@
 <nav>
-	<input type="text" name="search" placeholder="Search...">
 	<ul>
-		<li><a href="#"></a></li>
-		
-		<form method="POST" action="action/logout.php">
-				<button class="logout" type="submit" name="submit">Logout</button>
-		</form>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Contact</a></li>
+
+
+
+
 	</ul>
 </nav>

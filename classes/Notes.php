@@ -6,19 +6,21 @@
 		private $user_id;
 		private $note_title;
 		private $note_content;
+		private $date_created;
 		private $label_id;
 
 
-		public function addNote($user_id, $note_title, $note_content){
+		public function addNote($user_id, $note_title, $note_content, $date_created){
 			$this->user_id = $user_id;
 			$this->note_title = $note_title;
 			$this->note_content = $note_content;
+			$this->date_created = $date_created;
 
 			//$this->connect()->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
-			$sql="INSERT INTO notes (user_id, note_title, note_content) VALUES (?, ?, ?)";
+			$sql="INSERT INTO notes (user_id, note_title, note_content, date_created) VALUES (?, ?, ?, ?)";
 			$stmt = $this->connect()->prepare($sql);
-			$stmt->execute([$this->user_id, $this->note_title, $this->note_content]);
+			$stmt->execute([$this->user_id, $this->note_title, $this->note_content, $this->date_created]);
 
 		}
 
@@ -37,8 +39,9 @@
 				<div class='div-note' id="note" onclick="editNote(<?php echo $data['id']; ?>)">
 					<h1 class='note_title'><?php echo $data['note_title']; ?></h1>
 					<p class='note_content'><?php echo $data['note_content']; ?></p>
-					<p class='date'>Last edited: <?php echo $data['date_added']; ?></p>
+					<p class='date'> <?php echo $data['date_created']; ?></p>
 					<p id="<?php echo $data['id']; ?>" style="display: none"></p>
+					<img id='delete-icon' onclick="deleteNote(<?php echo $data['id']; ?>)" src="images/trash.png">
 					
 					
 										
@@ -72,8 +75,10 @@
 				<form method="POST" action="action/editNote.php">
 					<?php echo '<input class="title_edit" type="text" name="edit_note_title" value="'.$data->note_title.'">' ?><br><br>
 					<?php echo '<textarea spellcheck = "false" cols="60" rows="10" class="edit_note_content" name = "edit_note_content" >'.str_replace('<br />', '&#13;', $data->note_content).'</textarea>' //This '&#13' turns the break line tag into a enter in the text! ?><br>
+					<p id="last-edited">Last edited: <?php echo $data->date_added; ?></p>
 					<?php echo '<input style="display: none" name="note_id" value="'.$this->id.'">' //The note's id, hidden in this input that is not displayed, will be sended via POST to the file editNote.php?> 
 					<button>Save changes</button>
+
 
 				</form>
 
@@ -90,6 +95,10 @@
 			$stmt = $this->connect()->prepare($sql);
 			$stmt->execute([$this->id]);
 
+
+		}
+
+		public function showSearchedNotes(){
 
 		}
 

@@ -1,21 +1,23 @@
-$(document).ready(function(){/*This will make the data from the form go to the addNote.php 
-				file without loading the page.*/
-	$("#addNote-form").submit(function(event){//When the form is submited (button is clicked):
-		event.preventDefault();/*this makes the form not to go to the action site. It, instead, 
+/*This will make the data from the form go to the addNote.php 
+file without loading the page.*/
+/*I removed the ready part of the algorithm since it was adding the notes in the
+database twice...*/
+$("#addNote-form").submit(function(event){//When the form is submited (button is clicked):
+	event.preventDefault();/*this makes the form not to go to the action site. It, instead, 
 		sets everything to default (do nothing).*/
-		var note_title = $("#addNote-title").val();//data from the title
-		var note_content = $("#addNote-content").val();//data from the content
-		$.post("action/addNote.php", {/*the js sends the data behind the scenes to the
+	var note_title = $("#addNote-title").val();//data from the title
+	var note_content = $("#addNote-content").val();//data from the content
+	$.post("action/addNote.php", {/*the js sends the data behind the scenes to the
 		 addNote.php file with the note_title and note_content!*/
-			note_title: note_title,
-			note_content: note_content
-		}, function (){ /*This will remove the data from the title and textarea when the
-		 note is added!*/
-			$("#addNote-title").val("");
-			$("#addNote-content").val("");
-		});
+		note_title: note_title,
+		note_content: note_content
+	}, function (){ /*This will remove the data from the title and textarea when the
+	 note is added!*/
+		$("#addNote-title").val("");
+		$("#addNote-content").val("");
 	});
 });
+
 
 //When the add note button is clicked, the page loads the showNotes.php file without realoading itself and adds the title and content to the database behind the scenes.
 $(document).ready(function(){
@@ -63,7 +65,7 @@ var noteContent = document.getElementById('addNote-content');
 var noteTitle = document.getElementById('addNote-title');
 function addNoteFunction(){//This function makes the textarea larger and displays the note title input.
 	noteContent.style.paddingBottom = '200px';
-	noteTitle.style.opacity = 'block';
+	noteTitle.style.display = 'block';
 	noteContent.style.animationName = 'note-content';
 	noteTitle.style.animationName = 'note-title';
 }
@@ -114,3 +116,6 @@ sideBarIcon.onclick = function(){//This
 	}
 	
 }
+
+
+

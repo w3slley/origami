@@ -8,6 +8,7 @@
 		private $user_name;
 		private $email;
 		private $password;
+		private $img_format;
 
 
 		public function addUser($first_name, $last_name, $user_name, $email, $password) { //Method that adds the user into the database (sign up)!
@@ -50,6 +51,31 @@
 				return False;
 			}
 
+		}
+
+		public function updateInfo($full_name, $user_name, $email, $password_actual, $password_new){
+			$name = explode(' ', $full_name);
+			$this->first_name = $name[0];
+			$this->last_name = $name[1]; //For now this only works if the user insert only two names (ex: Weslley Victor)
+		}
+
+		public function setImgFormat($user_id, $img_format){
+			$this->user_id = $user_id;
+			$this->img_format = $img_format;
+
+			$sql = "UPDATE users SET img_format = ? WHERE id = ? ";
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->img_format, $this->user_id]);
+		}
+
+		public function getImgFormat($user_id){
+			$this->user_id = $user_id;
+
+			$sql = "SELECT img_format FROM users WHERE id = ?";
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->user_id]);
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			return $result[0]['img_format'];
 		}
 
 	}

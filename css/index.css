@@ -41,7 +41,10 @@ nav {
 	position: absolute;
 	top: -57px;
 	left: 115px;
+	
+
 }
+
 .search-form input{
 	position: relative;
 	left: 25%;
@@ -96,6 +99,44 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }/*This is how you remove the 'x' from the search input. I'll look into a 
 smaller way to do that*/
+
+.searched-notes{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.text-search {
+	font-family: Nanum Myeongjo;
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.logout {
+	position: absolute;
+	top: 17px;
+	right: 55px;
+	border: none;
+	border-radius: 5px;
+	font-size: 15px;
+	font-family: Nanum Myeongjo;
+	padding: 5px;
+	background-color: #E8EDDF;
+	cursor: pointer;
+}
+
+.profile-img-nav{
+	width: 40px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	border-radius: 100%;
+	cursor: pointer;
+	
+
+
+}
+
 
 .side-bar{
 	width: 0%;
@@ -192,8 +233,6 @@ smaller way to do that*/
 
 .div-note {
 	font-family: Nanum Myeongjo;
-	animation-name: note-animation-out;
-	animation-duration: 0.5s;
 	position: relative;
 	padding: 0px 5px 30px 5px;
 	border-radius: 5px;
@@ -202,60 +241,37 @@ smaller way to do that*/
 	width: 70%;
 	text-align: justify;
 	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/	
-
+	transition: box-shadow .4s;
+	animation-name: note-animation-in;
+	animation-duration: 1s;
 }
+
+@keyframes note-animation-in{
+	from{padding: 0px 15px 40px 15px;
+		box-shadow: 2px 2px 15px #111;}
+	to{padding: 0px 5px 30px 5px;
+		box-shadow: none;}
+}
+
 #delete-icon {
 	
 	width: 30px;
 	position: absolute;
 	bottom: 10px;
 	cursor: pointer;
-	visibility: hidden;
-	animation-name: delete-icon-out;
-	animation-duration: 1s;
-	
-	
+	opacity: 0;
+	transition: opacity .5s;
 
 }
 /*Note's animation*/
 .div-note:hover {
-	padding: 0px 15px 40px 15px;
-	box-shadow: 2px 2px 20px #111;
-	animation-name: note-animation-in;
-	animation-duration: 0.5s;
+	box-shadow: 2px 2px 15px #111;
 	
 }
 .div-note:hover #delete-icon {
-	visibility: visible;
-	animation-name: delete-icon-in;
-	animation-duration: 1s;
+	opacity: 1;
+	
 }
-@keyframes delete-icon-in {
-	from{opacity: 0;}
-	to{opacity: 1;}
-}
-@keyframes delete-icon-out {
-	from{opacity: 1;}
-	to{opacity: 0;}
-}
-
-@keyframes note-animation-in{
-	from{
-		padding: 0px 5px 30px 5px;
-	}
-	to{
-		padding: 0px 15px 40px 15px;
-	}
-}
-@keyframes note-animation-out{
-	from{
-		padding: 0px 15px 40px 15px;
-		}
-	to{
-		padding: 0px 5px 30px 5px;
-	}
-}
-
 
 
 .note_title{
@@ -272,19 +288,6 @@ smaller way to do that*/
 	bottom: 0;
 	font-family: Nanum Myeongjo;
 	font-size: 15px;
-}
-
-.logout {
-	position: absolute;
-	top: 17px;
-	right: 15px;
-	border: none;
-	border-radius: 5px;
-	font-size: 15px;
-	font-family: Nanum Myeongjo;
-	padding: 5px;
-	background-color: #E8EDDF;
-	cursor: pointer;
 }
 
 .edit_note {
@@ -329,6 +332,7 @@ smaller way to do that*/
 	outline: none;
 
 }
+
 #last-edited {
 	position: absolute;
 	bottom: 0;
@@ -351,12 +355,6 @@ smaller way to do that*/
 	outline: none;
 }
 
-.img-modal {
-	position: absolute;
-	width: 20%;
-
-	
-}
 
 
 /*Modal Styling*/
@@ -403,6 +401,140 @@ smaller way to do that*/
 		    color: black;
 		    cursor: pointer;
 		}
+
+
+
+/*PROFILE PAGE STYLING*/
+.profile{/*This is the equivalent of the class 'body' in the initial_page.php*/
+	position: absolute;
+	right: 0;
+	width: 100%;
+	transition: width .4s;
+}
+.profile-body{ /*This is the part where all the information and profile image is*/
+	border-radius: 5px;
+	margin: 8% auto;
+	width: 90%;
+	position: relative;
+	font-family: Nanum Myeongjo;
+}
+.profile-body p {
+	margin: 10px 0 15px 0;
+}
+.image-container{
+	position: absolute;
+	width: 30%;
+	
+	height: 100%;
+}
+.information-container{
+	position: absolute;
+	right: 0;
+	margin: 0 0 0 0;
+	width: 65%;
+	height: 100%;
+	font-size: 20px;
+	
+}
+.profile-img {
+	margin: 10% auto;
+	display: block;
+	width: 80%;
+	border-radius: 5px;
+}
+.upload-img-form{
+	width: 100%;
+	margin: 10px auto;
+}
+#upload-img-input{
+	margin: 20px auto;
+	display: block;
+	width: 80%;
+	font-family: Nanum Myeongjo;
+	
+}
+#upload-img-button{
+	margin: 20px auto;
+	display: block;
+	width: 80%;
+	font-size: 30px;
+	font-family: Nanum Myeongjo;
+	border-radius: 5px;
+	background-color: white;
+	color: #332C23;
+	border: 1px solid #82816D;
+	cursor: pointer;
+	transition: color .5s, background-color .5s, border .5s;
+
+}
+
+#upload-img-button:hover{
+	border: none;
+	background-color: #679436;
+	color: white;
+}
+
+#information-text{
+	font-size: 45px;
+	font-family: Nanum Myeongjo;
+	margin: 0;
+}
+#input-name{
+	width: 70%;
+	padding: 5px 0px 5px 5px;
+	font-size: 20px;
+	font-family: Nanum Myeongjo;
+	border: 1px solid black;
+	border-radius: 5px;
+
+}
+#input-username{
+	width: 70%;
+	padding: 5px 0px 5px 5px;
+	font-size: 20px;
+	font-family: Nanum Myeongjo;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#input-email{
+	width: 70%;
+	padding: 5px 0px 5px 5px;
+	font-size: 20px;
+	font-family: Nanum Myeongjo;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#input-password{
+	width: 70%;
+	padding: 5px 0px 5px 5px;
+	font-size: 20px;
+	font-family: Nanum Myeongjo;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+#info-button{
+	margin: 20px auto;
+	display: block;
+	position: absolute;
+	right: 0;
+	font-size: 30px;
+	font-family: Nanum Myeongjo;
+	border-radius: 5px;
+	background-color: white;
+	color: #332C23;
+	border: 1px solid #82816D;
+	cursor: pointer;
+	transition: color .5s, background-color .5s, border .5s;
+
+}
+
+#info-button:hover{
+	border: none;
+	background-color: #679436;
+	color: white;
+}
+
 
 /*Styling mobile*/
 @media only screen and (max-width: 600px) {

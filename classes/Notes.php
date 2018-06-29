@@ -1,13 +1,13 @@
 <?php
-	include "Database.php";
+	include "User.php";
 	
-	class Notes extends Database{
+	class Notes extends User{
 		private $id;
 		private $user_id;
 		private $note_title;
 		private $note_content;
 		private $date_created;
-		private $label_id;
+		private $search_term;
 
 
 		public function addNote($user_id, $note_title, $note_content, $date_created){
@@ -77,12 +77,12 @@
 					<?php echo '<textarea spellcheck = "false" cols="60" rows="10" class="edit_note_content" name = "edit_note_content" >'.str_replace('<br />', '&#13;', $data->note_content).'</textarea>' //This '&#13' turns the break line tag into a enter in the text! ?><br>
 					<p id="last-edited">Last edited: <?php echo $data->date_added; ?></p>
 					<?php echo '<input style="display: none" name="note_id" value="'.$this->id.'">' //The note's id, hidden in this input that is not displayed, will be sended via POST to the file editNote.php?> 
-					<button>Save changes</button>
-
+					
+						<button class="delete" onclick="deleteNote(<?php echo $_POST['id']; ?>)">Delete</button>
+						<button>Save changes</button>
+					
 
 				</form>
-
-				
 
 			</div>
 		<?php }
@@ -98,7 +98,25 @@
 
 		}
 
-		public function showSearchedNotes(){
+		public function showSearchedNotes($user_id, $search_term){
+			$this->user_id = $user_id;
+			$this->search_term = '%'.$search_term.'%';
+
+			$sql = "SELECT * FROM notes WHERE user_id = ? AND (note_content LIKE ? OR note_title LIKE ?) ORDER BY id DESC"; //You have to use the parentheses!
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->user_id, $this->search_term, $this->search_term]);
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			foreach($result as $data){ ?>
+				<div class='div-note' id="note" onclick="editNote(<?php echo $data['id']; ?>)"> 
+					<h1 class='note_title'><?php echo $data['note_title']; ?></h1>
+					<p class='note_content'><?php echo $data['note_content']; ?></p>
+					<p class='date'> <?php echo $data['date_created']; ?></p>
+					<p id="<?php echo $data['id']; ?>" style="display: none"></p>
+					<img id='delete-icon' onclick="deleteNote(<?php echo $data['id']; ?>)" src="images/trash.png">
+
+				</div>
+			<?php	}
 
 		}
 

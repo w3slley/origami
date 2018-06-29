@@ -29,11 +29,18 @@ Features done:
 Features done:
 	1)Added fixed navbar.
 	2)Added colors (green and platinum)
-	3)Added search input (need to implement the backend feature first using PHP and later using AJAX)
+	3)Added search input (using PHP)
 	4)Added sidebar (right now it's blank)
 
 
-	
+29/06 12:36
+Features done: 
+	1)Fixed the problem with the sidebar in the search area.
+	2)Added profile page
+	3)Added feature to upload profile image and edit information
+
+
+
 Things I still have to implement:
 
 1)add label system to the notes.(DONE)
@@ -48,3 +55,7 @@ Things I still have to implement:
 10) When the first note is added, it is not displayed in the browser without reloading. Have to fix this...
 11) Display a fix amount of notes in the home page and, when scroll down to the last position, display more notes.
 12) Fix the problem-> when deleting notes using the trash can, it opens the note because you need to click the div - and I set the command to open the note as soon the user clicks it.
+13) Make sure that when the user clicks outside the textarea, the title input fades away and the textarea shrinks in padding bottom. Right now it only does that if the div notes is clicked.
+14) Implement the profile page with user information and image.(DONE)
+15) Create box that shows up when the user clicks the profile image in the navbar.
+16) Insert the buttons in the side bar. (probably setting buttons and so on)

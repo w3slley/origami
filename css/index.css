@@ -3,10 +3,6 @@ body {
 	margin: 0;
 	
 }
-body::selection { /*This is how you change the color of the selection!*/
-    background: white;
-   
-}
 
 nav {
 	position: fixed;
@@ -112,18 +108,7 @@ smaller way to do that*/
 	margin-bottom: 0;
 }
 
-.logout {
-	position: absolute;
-	top: 17px;
-	right: 55px;
-	border: none;
-	border-radius: 5px;
-	font-size: 15px;
-	font-family: Nanum Myeongjo;
-	padding: 5px;
-	background-color: #E8EDDF;
-	cursor: pointer;
-}
+
 
 .profile-img-nav{
 	width: 40px;
@@ -137,7 +122,61 @@ smaller way to do that*/
 
 }
 
+.dropdown-settings{
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 60px;
+	width: 100px;
+	height: 100px;
+	z-index: 100;
+	background-color: white;
+	border-radius: 5px;
 
+}
+.dropdown-settings ul{
+	list-style-type: none;
+	font-size: 20px;
+	
+
+}
+.dropdown-settings ul li{
+	position: relative;
+	background-color: gray;
+	width: 100%;
+	left: 0;
+	
+	
+
+}
+.dropdown-settings ul li a{
+
+	text-decoration: none;
+	color: black;
+	font-family: Nanum Myeongjo;
+
+
+	
+}
+
+
+.logout {
+	border: none;
+	font-size: 20px;
+	font-family: Nanum Myeongjo;
+	background: none;
+	cursor: pointer;
+	padding: 0;
+	
+
+
+}
+
+.logout-form{
+	position: absolute;
+	right: 0;
+	top: 10%;
+}
 .side-bar{
 	width: 0%;
 	position: fixed;
@@ -153,6 +192,7 @@ smaller way to do that*/
 
 .body{
 	margin-top: 100px;
+	margin-bottom: 100px;
 	position: absolute;
 	right: 0;
 	width: 100%;
@@ -186,38 +226,24 @@ smaller way to do that*/
 }
 #addNote-title {
 	position: relative;
-	top: 20px;
-	display: none;
-	animation-duration: 0.5s;
+	top: -500px;
+	opacity: 0;
 	outline: none;
+	cursor: default;
+	z-index: -1;
+	transition: opacity .5s;
+	
 }
 #addNote-content{
 	margin-top: 5px;
 	padding-bottom: 0;
 	margin-bottom: 15px;
-	animation-duration: 0.5s;
 	outline: none;
+	transition: padding-bottom .5s;
+
 
 }
-@keyframes note-content {
-	from{padding-bottom: 0;}
-	to{padding-bottom: 200px;}
-}
 
-@keyframes note-title {
-	from{opacity: 0;}
-	to{opacity: 1;}
-}
-
-@keyframes note-title-out {
-	from{opacity: 1;}
-	to{opacity: 0;}
-}
-
-@keyframes note-content-out {
-	from{padding-bottom: 200px;}
-	to{padding-bottom: 0;}
-}
 
 
 #addNote-submit {
@@ -306,6 +332,9 @@ smaller way to do that*/
 	border: none;
 
 }
+.edit_note_content::selection{
+	background: white;
+}
 .title_edit {
 	outline: none; /*This removes the border when typing anything in the textarea/input*/
 	font-weight: bold;
@@ -316,6 +345,10 @@ smaller way to do that*/
 	border: none;
 	margin: 0 auto;
 	width: 89%;
+}
+
+.title_edit::selection{
+	background: white;
 }
 .edit_note button {
 	font-size: 20px;
@@ -356,6 +389,24 @@ smaller way to do that*/
 }
 
 
+
+.loader {
+	border: 5px solid white; /* Light grey */
+    border-top: 5px solid #70A288; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    bottom: -60px;
+    left: 48.1%;
+
+
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 /*Modal Styling*/
 .modal {

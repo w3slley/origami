@@ -41,7 +41,7 @@
 				$dbPassword = $result['password'];
 				switch (password_verify($this->password, $dbPassword)) {
 					case True:
-						$data = array('id' => $result['id'], 'first_name' => $result['first_name'], 'last_name'=>$result['last_name'], 'user_name' => $result['user_name'], 'email' => $result['email']); //Created an associative array to use in the login.php file and start session.
+						$data = array('id' => $result['id'], 'first_name' => $result['first_name'], 'last_name'=>$result['last_name'], 'user_name' => $result['user_name'], 'email' => $result['email'], 'password' => $result['password']); //Created an associative array to use in the login.php file and start session.
 						return $data;
 						break;
 				}
@@ -53,10 +53,21 @@
 
 		}
 
-		public function updateInfo($full_name, $user_name, $email, $password_actual, $password_new){
-			$name = explode(' ', $full_name);
-			$this->first_name = $name[0];
-			$this->last_name = $name[1]; //For now this only works if the user insert only two names (ex: Weslley Victor)
+		public function updateInfo($first_name, $last_name, $user_name, $email, $password, $user_id){
+			
+			$this->first_name = $first_name;
+			$this->last_name = $last_name;
+			$this->user_name = $user_name;
+			$this->email = $email;
+			$this->password = $password;
+			$this->user_id = $user_id;
+
+			$sql = "UPDATE users SET first_name = ?, last_name = ?, user_name = ?, email = ?, password = ? WHERE id = ?";
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->first_name, $this->last_name, $this->user_name, $this->email, $this->password, $this->user_id]);
+				
+
+			
 		}
 
 		public function setImgFormat($user_id, $img_format){

@@ -15,6 +15,7 @@
 		$_SESSION['last_name'] = $data['last_name'];
 		$_SESSION['user_name'] = $data['user_name'];
 		$_SESSION['email'] = $data['email'];
+		$_SESSION['password'] = $data['password'];
 
 
 		header("Location: ../validation.php");

@@ -48,11 +48,20 @@
 
 			<?php }
 			?>
-		<form class="logout-form" method="POST" action="action/logout.php">
-			<button class="logout" type="submit" name="submit">Logout</button>
-		</form>
+		
 
 	</nav>
+
+	<div class="dropdown-settings">
+		<ul>
+			<li><a href="#">Profile</a></li>
+			<li>
+				<form class="logout-form" method="POST" action="action/logout.php">
+					<button class="logout" type="submit" name="submit">Logout</button>
+				</form>
+			</li>
+		</ul>
+	</div>
 
 	<div class="side-bar">
 
@@ -86,17 +95,28 @@
 			<div class="information-container">
 				<p id="information-text">Personal Information</p>
 				<hr>
-				<form>
+				<form method="POST" action="action/update.php">
 					<p>Name: </p> <input id="input-name" type="text" name="name" value="<?php echo $_SESSION['first_name']." ".$_SESSION['last_name']; ?>">
 					<p>Username: </p> <input id="input-username" type="text" name="user_name" value="<?php echo $_SESSION['user_name']; ?>">
 					<p>E-mail: </p> <input id="input-email" type="email" name="email" value="<?php echo $_SESSION['email']; ?>"> <br>
-					<p>Password: </p> <input id="input-password" type="password" name="password_actual">
-					<p>New password: </p> <input id="input-password" type="password" name="password_new">
+					<p>Password: </p> <input id="input-password" type="password" name="password_actual" placeholder="Your current password...">
+					<p>New password: </p> <input id="input-password" type="password" name="password_new" placeholder="Your new password...">
 					<button type="submit" id="info-button">Save Changes</button>
 				</form>
 			</div>
 		</div>	
 	</div>
+
+	<?php 
+		if(isset($_GET['update'])){
+			if($_GET['update'] == 'success'){ 
+				echo '<script>alert("Your personal informations have been updated!");</script>';
+			 }
+		}
+		if(isset($_GET['search'])){
+			header("Location: initial_page.php?search=".$_GET['search']);
+		}
+	?>
 	<script src="javascript/profile.js"></script>
 </body>
 </html>

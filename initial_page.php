@@ -20,7 +20,7 @@
 </head>
 <body>
 	<?php 
-		//Logout button
+		
 		if(!isset($_SESSION['id'])){ 
 			header("Location: index.php");
 
@@ -30,6 +30,16 @@
 
 
 		<nav>
+			<div class="dropdown-settings">
+				<ul>
+					<li><a href="#">Profile</a></li>
+					<li><a>
+						<form class="logout-form" method="POST" action="action/logout.php">
+							<button class="logout" type="submit" name="submit">Logout</button>
+						</form></a>
+					</li>
+				</ul>
+			</div>
 			<img class="side-icon" src="images/side.png">
 				<a href="initial_page.php">
 					<h1 class="logo-text">Notes</h1>
@@ -42,6 +52,8 @@
 				<button id="search-button"><img id="search-img" src="images/search.png"></button>
 
 			</form>
+
+
 
 			<?php 	//DISPLAYING PROFILE IMAGE IN THE NAVBAR
 				$img = new User;
@@ -58,9 +70,7 @@
 
 			<?php }
 			?>
-			<form class="logout-form" method="POST" action="action/logout.php">
-				<button class="logout" type="submit" name="submit">Logout</button>
-			</form>
+			
 
 		</nav>
 
@@ -115,8 +125,13 @@
 
 
 
-		<?php }else{ ?>	
+		<?php }
+		else { ?>	
 
+		<form class="logout-form" method="POST" action="action/logout.php">
+				<button class="logout" type="submit" name="submit">Logout</button>
+		</form>
+		
 		<div class="side-bar">
 
 		</div>
@@ -125,7 +140,7 @@
 			<div class="write">
 				<form id="addNote-form" method="POST" action="action/addNote.php">
 					<input id="addNote-title" name="note_title"placeholder="Note title"><br><br>
-					<textarea id="addNote-content" spellcheck = "false" style="resize:none" name="note_content" class="index_write_note" placeholder="Write a new note..." onclick="addNoteFunction()"></textarea><br> 
+					<textarea id="addNote-content" spellcheck = "false" style="resize:none" name="note_content" class="index_write_note" placeholder="Write a new note..."></textarea><br> 
 					<button id="addNote-submit" type="submit" name="submit"><img src="plus.png" width="70px"></button>
 				</form>
 			</div>
@@ -144,15 +159,27 @@
 				<?php 
 				$notes = new Notes;
 				$notes->showNotes($_SESSION['id']);
-			 }
+			 
 			 	?>
 			</div>
+
+			<div id="countNotes" style="display: none;">
+				
+				<?php 
+				$count_notes = new Notes;
+				$number = $count_notes->countNotes($_SESSION['id']);
+				echo $number; //Now this is working. It gets the total number of notes in the database.
+			 
+			 	?>
+			</div>
+			<div class="loading"></div>
+		
 		</div>
-	<?php } ?>
+
+	<?php }
+	} ?>
+
 	<script src="javascript/main.js"></script>
-	
-
-
-	
+		
 </body>
 </html>

@@ -19,7 +19,7 @@ nav {
 	position: absolute;
 	width: 25px;
 	left: 10px;
-	bottom: 20px;
+	bottom: 18px;
 	cursor: pointer;
 }
 
@@ -84,8 +84,8 @@ nav {
 	
 }
 #search-img{
-	width: 40px;
-	height: 40px;
+	display: none;
+	
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -112,6 +112,7 @@ smaller way to do that*/
 
 .profile-img-nav{
 	width: 40px;
+	height: 40px;
 	position: absolute;
 	right: 10px;
 	top: 10px;
@@ -225,6 +226,7 @@ smaller way to do that*/
 	font-family: Nanum Myeongjo;
 }
 #addNote-title {
+	font-weight: bold;
 	position: relative;
 	top: -500px;
 	opacity: 0;
@@ -464,7 +466,7 @@ smaller way to do that*/
 }
 .profile-body{ /*This is the part where all the information and profile image is*/
 	border-radius: 5px;
-	margin: 8% auto;
+	margin: 6% auto;
 	width: 90%;
 	position: relative;
 	font-family: Nanum Myeongjo;
@@ -524,6 +526,9 @@ smaller way to do that*/
 	background-color: #679436;
 	color: white;
 }
+.form-profile{
+	font-size: 18px;
+}
 
 #information-text{
 	font-size: 45px;
@@ -533,7 +538,7 @@ smaller way to do that*/
 #input-name{
 	width: 70%;
 	padding: 5px 0px 5px 5px;
-	font-size: 20px;
+	font-size: 18px;
 	font-family: Nanum Myeongjo;
 	border: 1px solid black;
 	border-radius: 5px;
@@ -542,7 +547,7 @@ smaller way to do that*/
 #input-username{
 	width: 70%;
 	padding: 5px 0px 5px 5px;
-	font-size: 20px;
+	font-size: 18px;
 	font-family: Nanum Myeongjo;
 	border: 1px solid black;
 	border-radius: 5px;
@@ -550,7 +555,7 @@ smaller way to do that*/
 #input-email{
 	width: 70%;
 	padding: 5px 0px 5px 5px;
-	font-size: 20px;
+	font-size: 18px;
 	font-family: Nanum Myeongjo;
 	border: 1px solid black;
 	border-radius: 5px;
@@ -558,14 +563,14 @@ smaller way to do that*/
 #input-password{
 	width: 70%;
 	padding: 5px 0px 5px 5px;
-	font-size: 20px;
+	font-size: 18px;
 	font-family: Nanum Myeongjo;
 	border: 1px solid black;
 	border-radius: 5px;
 }
 
 #info-button{
-	margin: 20px auto;
+	margin: 8px auto;
 	display: block;
 	position: absolute;
 	right: 0;
@@ -648,6 +653,42 @@ smaller way to do that*/
 
 	}
 
+	.logo {
+		position: absolute;
+		left: 50px;
+		width: 40px;
+		top: 12px;
+	}
+
+	.logo-text{
+		font-family: Kaushan Script;
+		font-size: 50px;
+		color: white;
+		position: absolute;
+		top: -49px;
+		left: 90px;
+		
+
+	}
+	.body{
+		margin-top: 80px;
+	}
+	.search-form input{
+		visibility: hidden;
+		position: relative;
+		left: 0;
+		width: 100%;
+	}
+
+	#search-img{
+		position: absolute;
+		display: block;
+		top: 10px;
+		right: 60px;
+		width: 40px;
+		height: 40px;
+	}
+
 	/*User area*/
 	.write input, textarea {
 		width: 90%;
@@ -657,7 +698,7 @@ smaller way to do that*/
 		position: relative;
 		padding: 0 5px 30px 5px;
 		border-radius: 5px;
-		background-color: rgba(1, 1, 1, 0.2);
+		background-color: rgba(67, 114, 36, 0.7);
 		margin: 0 auto;
 		width: 90%;
 		text-align: justify;
@@ -718,5 +759,131 @@ smaller way to do that*/
 		margin-top: 20px;
 		font-family: Nanum Myeongjo;
 	}
+
+	/*PROFILE SECTION - RESPONSIVE*/
+
+	.profile{/*This is the equivalent of the class 'body' in the initial_page.php*/
+		position: absolute;
+		right: 0;
+		width: 100%;
+		transition: width .4s;
+	}
+	.profile-body{ /*This is the part where all the information and profile image is*/
+		border-radius: 5px;
+		margin: 25% auto;
+		width: 90%;
+		position: relative;
+		font-family: Nanum Myeongjo;
+	}
+	.profile-body p {
+		margin: 10px 0 15px 0;
+	}
+	.image-container{
+		position: relative;
+		width: 100%;
+		margin-bottom: 50px;
+		
+	}
+	.information-container{
+		position: absolute;
+		right: 0;
+		margin: 0 0 0 0;
+		width: 100%;
+		height: 100%;
+		font-size: 20px;
+		
+	}
+	.profile-img {
+		margin: 10% auto;
+		display: block;
+		width: 70%;
+		border-radius: 5px;
+	}
+	.upload-img-form{
+		width: 100%;
+		margin: 10px auto;
+	}
+	#upload-img-input{
+		margin: 20px auto;
+		display: block;
+		width: 80%;
+		font-family: Nanum Myeongjo;
+		
+	}
+	#upload-img-button{
+		margin: 20px auto;
+		display: block;
+		width: 80%;
+		font-size: 30px;
+		font-family: Nanum Myeongjo;
+		border-radius: 5px;
+		background-color: white;
+		color: #332C23;
+		border: 1px solid #82816D;
+		cursor: pointer;
+		transition: color .5s, background-color .5s, border .5s;
+
+	}
+
+	.form-profile{
+		font-size: 18px;
+	}
+
+	#information-text{
+		font-size: 30px;
+		text-align: center;
+		font-family: Nanum Myeongjo;
+		margin: 0;
+	}
+	#input-name{
+		width: 100%;
+		padding: 5px 0px 5px 5px;
+		font-size: 18px;
+		font-family: Nanum Myeongjo;
+		border: 1px solid black;
+		border-radius: 5px;
+
+	}
+	#input-username{
+		width: 100%;
+		padding: 5px 0px 5px 5px;
+		font-size: 18px;
+		font-family: Nanum Myeongjo;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+	#input-email{
+		width: 100%;
+		padding: 5px 0px 5px 5px;
+		font-size: 18px;
+		font-family: Nanum Myeongjo;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+	#input-password{
+		width: 100%;
+		padding: 5px 0px 5px 5px;
+		font-size: 18px;
+		font-family: Nanum Myeongjo;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+
+	#info-button{
+		position: relative;
+		margin: 20px 0 10px 2px;
+		width: 100%;
+		right: 0;
+		font-size: 30px;
+		font-family: Nanum Myeongjo;
+		border-radius: 5px;
+		background-color: white;
+		color: #332C23;
+		border: 1px solid #82816D;
+		
+
+	}
+
+
 }
 

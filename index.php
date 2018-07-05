@@ -32,7 +32,7 @@
 			<button id="signin-submit" type="submit" name="submit">Login</button><br>
 		</form>
 
-		<p id="text-signup">Don't have an account yet? <a href="index-signup.php">Click here</a> to sign up!</p>
+		<p id="text-signup">Don't have an account yet? <a href="signup.php">Click here</a> to sign up!</p>
 	</div>
 
 	<div class="welcome">

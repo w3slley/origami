@@ -2,6 +2,7 @@
 	include "classes/User.php";
 	session_start();
 	$id = $_SESSION['id'];
+	if(isset($_SESSION['id'])){
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,9 +31,9 @@
 
 		<form class="search-form" method="GET">
 			<input id="search-input" type="search" name="search" placeholder="Search notes...">
-			<button id="search-button"><img id="search-img" src="images/search.png"></button>
 
 		</form>
+		<img id="search-img" src="images/search.png">
 		<?php 	//DISPLAYING PROFILE IMAGE IN THE NAVBAR
 				$img = new User;
 				$imgFormat = $img->getImgFormat($id);
@@ -95,12 +96,13 @@
 			<div class="information-container">
 				<p id="information-text">Personal Information</p>
 				<hr>
-				<form method="POST" action="action/update.php">
+				<form class="form-profile" method="POST" action="action/update.php">
 					<p>Name: </p> <input id="input-name" type="text" name="name" value="<?php echo $_SESSION['first_name']." ".$_SESSION['last_name']; ?>">
 					<p>Username: </p> <input id="input-username" type="text" name="user_name" value="<?php echo $_SESSION['user_name']; ?>">
 					<p>E-mail: </p> <input id="input-email" type="email" name="email" value="<?php echo $_SESSION['email']; ?>"> <br>
 					<p>Password: </p> <input id="input-password" type="password" name="password_actual" placeholder="Your current password...">
 					<p>New password: </p> <input id="input-password" type="password" name="password_new" placeholder="Your new password...">
+					<p>Repeat password: </p> <input id="input-password" type="password" name="password_new2" placeholder="Your new password...">
 					<button type="submit" id="info-button">Save Changes</button>
 				</form>
 			</div>
@@ -120,3 +122,8 @@
 	<script src="javascript/profile.js"></script>
 </body>
 </html>
+<?php }
+
+else{
+	header("Location: index.php");
+}

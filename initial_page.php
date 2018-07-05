@@ -49,7 +49,7 @@
 
 			<form class="search-form" method="GET">
 				<input id="search-input" type="search" name="search" placeholder="Search notes...">
-				<button id="search-button"><img id="search-img" src="images/search.png"></button>
+				<img id="search-img" src="images/search.png">
 
 			</form>
 
@@ -76,7 +76,6 @@
 
 		<?php if(isset($_GET['search'])){?>
 
-
 			<div class="side-bar">
 				
 			</div>
@@ -102,26 +101,7 @@
 				</div>
 					 
 			</div>
-			<script>//I don't know why I have to insert this here. It's like it doesn't reconize the javascript file and it does not do anything. Only if I put it here that it starts to work ...¯\_(ツ)_/¯
-				var sideBarIcon = document.querySelector('.side-icon');
-				var sideBar = document.querySelector('.side-bar');
-				var body = document.querySelector('.body');
-				var count = 0;
-				sideBarIcon.onclick = function(){//This 
-					if(count%2 == 0){
-						sideBar.style.width = '20%';
-						body.style.width = '80%';
-						count++;
-					}
-					else {
-						sideBar.style.width = '0%';
-						body.style.width = '100%';
-						count++;
-					}
-					
-				}
-
-			</script>
+			
 
 
 
@@ -136,6 +116,7 @@
 
 		</div>
 
+
 		<div class="body">
 			<div class="write">
 				<form id="addNote-form" method="POST" action="action/addNote.php">
@@ -143,6 +124,7 @@
 					<textarea id="addNote-content" spellcheck = "false" style="resize:none" name="note_content" class="index_write_note" placeholder="Write a new note..."></textarea><br> 
 					<button id="addNote-submit" type="submit" name="submit"><img src="plus.png" width="70px"></button>
 				</form>
+			
 			</div>
 			<small id="small"></small>
 
@@ -163,14 +145,7 @@
 			 	?>
 			</div>
 
-			<div id="countNotes" style="display: none;">
-				
-				<?php 
-				$count_notes = new Notes;
-				$number = $count_notes->countNotes($_SESSION['id']);
-				echo $number; //Now this is working. It gets the total number of notes in the database.
-			 
-			 	?>
+			<div id="countNotes" style="display: none;">			
 			</div>
 			<div class="loading"></div>
 		
@@ -178,7 +153,6 @@
 
 	<?php }
 	} ?>
-
 	<script src="javascript/main.js"></script>
 		
 </body>

@@ -89,4 +89,37 @@
 			return $result[0]['img_format'];
 		}
 
+
+		public function checkUsername($user_name){
+			$this->user_name = $user_name;
+
+			$sql = "SELECT user_name FROM users WHERE user_name = ?";
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->user_name]);
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			if(!empty($result['user_name'])){
+				return true;
+			
+			}
+			else{
+				return false;
+			}
+		}
+
+		public function checkUserEmail($email){
+
+			$this->email = $email;
+
+			$sql = "SELECT email FROM users WHERE email = ?";
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->email]);
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			if(!empty($result['email'])){
+				return true;
+			
+			}
+			else{
+				return false;
+			}
+		}
 	}

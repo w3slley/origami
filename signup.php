@@ -26,6 +26,10 @@
 
 		</form>
 	</div>
+
+	<div class="message">
+		
+	</div>
 	
 </body>
 </html>

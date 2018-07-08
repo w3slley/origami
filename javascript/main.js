@@ -58,11 +58,17 @@ function deleteNote(note_id){//delete notes using AJAX
 function editNote(note_id){ //When the note is clicked, the modal is shown.
 	modal.style.display = "block";
 		$.post('action/editNote-modal.php', {id: note_id}, function (data){
-	document.getElementById('data').innerHTML = data;
+			document.getElementById('data').innerHTML = data;
+			document.body.style.overflow = 'hidden';
+			$(document).on('touchmove', function(e) {
+		  	  e.preventDefault();
+			});
 	});
+
 }	
 close.onclick = function(){//if the close button is clicked, the modal is closed
 	modal.style.display = 'none';
+	document.body.style.overflow = 'auto';
 }
 
 window.onclick = function(event){ //When clicked outside the modal, it automatically closes.
@@ -80,6 +86,7 @@ window.onclick = function(event){ //When clicked outside the modal, it automatic
 		//I will try to implement this later!
 		
 		modal.style.display = 'none';
+		document.body.style.overflow = 'auto';
 	}
 }
 
@@ -292,3 +299,13 @@ searchIcon.onclick = function(){
 };
 
 	
+
+
+$('.edit_note_content').keyup(function(){
+	var content = $('.edit_note_content').val();
+	var title = $('.title_edit').val();
+	var id = $('.id').val();
+	$.post('action/editNote.php', {note_id: id, note_title: title, note_content: content}, function(){
+		alert('success');
+	});
+});

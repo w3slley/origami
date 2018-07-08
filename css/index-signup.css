@@ -50,6 +50,9 @@ h1{
 	font-size: 20px;
 
 }
+.input{ /*This is the class that the inputs will have when all the fields are empty*/
+	border: 1px solid red; 
+}
 small{
 	position: absolute;
 	width: 100%;
@@ -77,6 +80,13 @@ small{
 	color: red;
 }
 #message-email{
+	color: red;
+}
+.message {
+	font-size: 25px;
+	position: absolute;
+	bottom: 15%;
+	right: 22%;
 	color: red;
 }
 

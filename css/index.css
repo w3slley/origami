@@ -318,6 +318,8 @@ smaller way to do that*/
 	font-size: 15px;
 }
 
+
+/*Note's MODAL CONTENT*/
 .edit_note {
 	text-align: center;
 }
@@ -327,9 +329,9 @@ smaller way to do that*/
 	font-size: 20px;
 	font-family: Nanum Myeongjo;
 	background-color: #A5C882;
-	padding: 10px 10px 120px 10px;
+	padding: 10px 10px 220px 10px;
 	margin: 0 auto;
-	width: 90%;
+	width: 95%;
 	outline: none;
 	border: none;
 
@@ -346,7 +348,7 @@ smaller way to do that*/
 	background-color: #A5C882;
 	border: none;
 	margin: 0 auto;
-	width: 89%;
+	width: 93.5%;
 }
 
 .title_edit::selection{
@@ -428,10 +430,10 @@ smaller way to do that*/
 	position: relative;
     background-color: #A5C882;
     margin: 5% auto; /* 15% from the top and centered */
-    padding: 20px 20px 100px 20px;
+    padding: 5px 5px 40px 5px;
     border: 1px solid #888;
     border-radius: 5px;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 85%; /* Could be more or less, depending on screen size */
     animation-name: animation;
     animation-duration: 0.8s;
     overflow: auto;
@@ -445,7 +447,7 @@ smaller way to do that*/
 }
 /* The Close Button */
 		.close {
-		    color: #aaa;
+		    color: #484538;
 		    float: right;
 		    font-size: 28px;
 		    font-weight: bold;
@@ -727,17 +729,7 @@ smaller way to do that*/
 		margin: 0 auto;
 		left: 22%;
 		bottom: 12%;
-		
 
-	}
-	.modal{
-	
-	}
-	
-
-	.edit_note {
-		margin-right: 10px;
-		
 	}
 
 	.edit_note_content {
@@ -745,7 +737,7 @@ smaller way to do that*/
 		font-size: 15px;
 		font-family: Nanum Myeongjo;
 		border-radius: 5px;
-		padding: 10px 10px 20px 10px;
+		padding: 10px 0px 100px 0px;
 		width: 100%;
 
 		
@@ -753,12 +745,32 @@ smaller way to do that*/
 	.title_edit {
 		font-weight: bold;
 		border-radius: 5px;
-		padding: 15px;
 		border: none;
 		width: 89%;
-		margin-top: 20px;
 		font-family: Nanum Myeongjo;
 	}
+	.modal-content {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
+    background-color: #A5C882;
+    margin: 0% auto; /* 15% from the top and centered */
+    padding: 5px 5px 10px 5px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 97%; /* Could be more or less, depending on screen size */
+    overflow: auto;
+
+	}
+	.close {
+		color: black;
+		position: absolute;
+		top: 0;
+		right: 10px;
+		font-size: 28px;
+		font-weight: bold;
+	}	
 
 	/*PROFILE SECTION - RESPONSIVE*/
 
@@ -882,6 +894,12 @@ smaller way to do that*/
 		border: 1px solid #82816D;
 		
 
+	}
+
+	.loader {
+		position: relative;
+		bottom: -30px;
+		left: 45%;
 	}
 
 

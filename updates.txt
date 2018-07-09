@@ -65,6 +65,10 @@ Features done:
 	1)Made the modal containing the notes more responsive. It's a little better on mobile as well, but I still have to fix some issues there. 
 	2)Added feature of only displaying 950 characters in the note and thus making it more compact. When the user clicks the note all the content is displayed as you would assume.
 
+09/07 11:07
+Feature done: 
+	1)
+
 
 Things I still have to implement:
 

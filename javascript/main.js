@@ -60,9 +60,9 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 		$.post('action/editNote-modal.php', {id: note_id}, function (data){
 			document.getElementById('data').innerHTML = data;
 			document.body.style.overflow = 'hidden';
-			$(document).on('touchmove', function(e) {
+			/*$(document).on('touchmove', function(e) {
 		  	  e.preventDefault();
-			});
+			});*/ //Removed this both here and in the server. Will push to github as a new commit.
 	});
 
 }	

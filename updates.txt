@@ -67,7 +67,7 @@ Features done:
 
 09/07 11:07
 Feature done: 
-	1)
+
 
 
 Things I still have to implement:

@@ -20,7 +20,7 @@
 			<input class="last_name" type="text" name="last_name" placeholder="Last name"><br>
 			<input class="user_name" type="text" name="user_name" placeholder="Your username"><small id="small-username"></small><br>
 			<input class="email" type="email" name="email" placeholder="Your e-mail"><small id="small-email"></small><br>
-			<input class="password" type="password" name="password"  placeholder="Your password"><br>
+			<input class="password" type="password" name="password"  placeholder="Your password"><small id="small-password"></small><br>
 			<input class="password2" type="password" name="password2"  placeholder="Repeat your password"><br>
 			<button type="submit" name="submit">Sign up</button>
 

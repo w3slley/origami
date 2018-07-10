@@ -70,6 +70,7 @@ Feature done:
 	1) Changed the font in the website to a better one.
 	2) Fixed sidebar animation and added some items on it.
 	3) Added new feature: when the user scrolls down the page, the nav automatically displays a shadow.
+	4) Fixed the signup page logic. Now the user will see some interactions and borders when something wrong is done. I still have to fix some error handlers though (check if the email is a valid one).
 
 
 Things I still have to implement:

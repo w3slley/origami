@@ -11,7 +11,8 @@ nav {
 	background-color: #679436;
 	padding: 10px 0 10px 0;
 	z-index: 10;
-	box-shadow: 5px 0px 15px #111;
+	box-shadow: none;
+	transition: box-shadow .5s;
 
 	
 }
@@ -52,7 +53,7 @@ nav {
 	padding: 5px 0 5px 10px;
 	height: 40px;
 	font-size: 20px;
-	font-family:  Nanum Myeongjo;
+	font-family:  Rajdhani;
 	background-color: rgba(67, 94, 36, 0.2);
 	transition: background-color .5s, border .5s;
 	color: white;
@@ -102,7 +103,7 @@ smaller way to do that*/
 }
 
 .text-search {
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	font-size: 40px;
 	text-align: center;
 	margin-bottom: 0;
@@ -154,7 +155,7 @@ smaller way to do that*/
 
 	text-decoration: none;
 	color: black;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 
 
 	
@@ -164,7 +165,7 @@ smaller way to do that*/
 .logout {
 	border: none;
 	font-size: 20px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	background: none;
 	cursor: pointer;
 	padding: 0;
@@ -181,16 +182,66 @@ smaller way to do that*/
 .side-bar{
 	width: 0%;
 	position: fixed;
-	margin-top: 100px;
+	margin-top: 70px;
 	left: 0;
-	background-color: gray;
-	padding-bottom: 400px;
-	transition: width .4s;
+	background-color: #B6BCA4;
+	padding: 0 0 500px 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	max-height: 90%;
 	overflow: auto;
+	z-index: 9;
+	
+}
+
+@keyframes animation-sidebar{
+	from{
+		left: -300px;
+		}
+	to{
+		left: 0;
+		width: 20%;
+	}
+}
+@keyframes animation-out-sidebar{
+	from{
+		left:0;
+		width: 20%;		
+		}
+	to{
+		left: -300px;
+	}
+}
+
+.notes-icon {
+	width: 40px;
+}
+.sidebar-text{
+	display: inline-block;
+	font-size: 30px;
+	font-family: Rajdhani;
+
+}
+.side-bar ul{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	-webkit-padding-start: 0px; /*This was causing a padding-left of 40px. I don't know why.. 
+	But now it's fixed.*/
+}
+
+.side-bar ul li {
+	list-style-type: none;
+	cursor: pointer;
+	padding-left: 10px;
+}
+
+.side-bar ul li:hover{
+	background-color: white;
 }
 
 
-
+/*THE PAGE ITSELF*/
 .body{
 	margin-top: 100px;
 	margin-bottom: 100px;
@@ -219,11 +270,11 @@ smaller way to do that*/
 	font-size: 20px;
 	padding: 10px;
 	background-color: white;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	border: 1px solid #A2A3A2;
 }
 .index_write_note {
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 }
 #addNote-title {
 	font-weight: bold;
@@ -260,7 +311,7 @@ smaller way to do that*/
 }
 
 .div-note {
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	position: relative;
 	padding: 0px 5px 30px 5px;
 	border-radius: 5px;
@@ -304,6 +355,7 @@ smaller way to do that*/
 
 .note_title{
 	padding-top: 5px;
+	font-family: Josefin Slab;
 }
 
 .note_content {
@@ -314,7 +366,7 @@ smaller way to do that*/
 	position: absolute;
 	right: 2%;
 	bottom: 0;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	font-size: 15px;
 }
 
@@ -327,9 +379,9 @@ smaller way to do that*/
 .edit_note_content {
 	resize: none;
 	font-size: 20px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	background-color: #A5C882;
-	padding: 10px 10px 220px 10px;
+	padding: 10px 10px 200px 10px;
 	margin: 0 auto;
 	width: 95%;
 	outline: none;
@@ -342,8 +394,8 @@ smaller way to do that*/
 .title_edit {
 	outline: none; /*This removes the border when typing anything in the textarea/input*/
 	font-weight: bold;
-	font-size: 20px;
-	font-family: Nanum Myeongjo;
+	font-size: 30px;
+	font-family: Josefin Slab;
 	padding: 10px 0 10px 0;
 	background-color: #A5C882;
 	border: none;
@@ -364,7 +416,7 @@ smaller way to do that*/
 	color: black;
 	margin-top: 10px;
 	padding: 10px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	cursor: pointer;
 	outline: none;
 
@@ -375,14 +427,14 @@ smaller way to do that*/
 	bottom: 0;
 	left: 40%;
 	font-size: 15px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 }
 
 .delete {
 	position: absolute;
 	font-size: 20px;
 	bottom: 1%;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	left: 10px;
 	border: none;
 	padding: 5px;
@@ -429,7 +481,7 @@ smaller way to do that*/
 .modal-content {
 	position: relative;
     background-color: #A5C882;
-    margin: 5% auto; /* 15% from the top and centered */
+    margin: 5% auto; /* 5% from the top and centered */
     padding: 5px 5px 40px 5px;
     border: 1px solid #888;
     border-radius: 5px;
@@ -471,7 +523,7 @@ smaller way to do that*/
 	margin: 6% auto;
 	width: 90%;
 	position: relative;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 }
 .profile-body p {
 	margin: 10px 0 15px 0;
@@ -505,7 +557,7 @@ smaller way to do that*/
 	margin: 20px auto;
 	display: block;
 	width: 80%;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	
 }
 #upload-img-button{
@@ -513,7 +565,7 @@ smaller way to do that*/
 	display: block;
 	width: 80%;
 	font-size: 30px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	border-radius: 5px;
 	background-color: white;
 	color: #332C23;
@@ -534,14 +586,14 @@ smaller way to do that*/
 
 #information-text{
 	font-size: 45px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	margin: 0;
 }
 #input-name{
 	width: 70%;
 	padding: 5px 0px 5px 5px;
 	font-size: 18px;
-	font-family: Nanum Myeongjo;
+	font-family:Rajdhani;
 	border: 1px solid black;
 	border-radius: 5px;
 
@@ -550,7 +602,7 @@ smaller way to do that*/
 	width: 70%;
 	padding: 5px 0px 5px 5px;
 	font-size: 18px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	border: 1px solid black;
 	border-radius: 5px;
 }
@@ -558,7 +610,7 @@ smaller way to do that*/
 	width: 70%;
 	padding: 5px 0px 5px 5px;
 	font-size: 18px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	border: 1px solid black;
 	border-radius: 5px;
 }
@@ -566,7 +618,7 @@ smaller way to do that*/
 	width: 70%;
 	padding: 5px 0px 5px 5px;
 	font-size: 18px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	border: 1px solid black;
 	border-radius: 5px;
 }
@@ -577,7 +629,7 @@ smaller way to do that*/
 	position: absolute;
 	right: 0;
 	font-size: 30px;
-	font-family: Nanum Myeongjo;
+	font-family: Rajdhani;
 	border-radius: 5px;
 	background-color: white;
 	color: #332C23;
@@ -735,7 +787,7 @@ smaller way to do that*/
 	.edit_note_content {
 		resize: none;
 		font-size: 15px;
-		font-family: Nanum Myeongjo;
+		font-family: Rajdhani;
 		border-radius: 5px;
 		padding: 10px 0px 100px 0px;
 		width: 100%;
@@ -747,7 +799,7 @@ smaller way to do that*/
 		border-radius: 5px;
 		border: none;
 		width: 89%;
-		font-family: Nanum Myeongjo;
+		font-family: Josefin Slab;
 	}
 	.modal-content {
 	position: absolute;
@@ -785,7 +837,7 @@ smaller way to do that*/
 		margin: 25% auto;
 		width: 90%;
 		position: relative;
-		font-family: Nanum Myeongjo;
+		font-family: Rajdhani;
 	}
 	.profile-body p {
 		margin: 10px 0 15px 0;
@@ -819,7 +871,7 @@ smaller way to do that*/
 		margin: 20px auto;
 		display: block;
 		width: 80%;
-		font-family: Nanum Myeongjo;
+		font-family: Rajdhani;
 		
 	}
 	#upload-img-button{
@@ -827,7 +879,7 @@ smaller way to do that*/
 		display: block;
 		width: 80%;
 		font-size: 30px;
-		font-family: Nanum Myeongjo;
+		font-family: Rajdhani;
 		border-radius: 5px;
 		background-color: white;
 		color: #332C23;
@@ -844,14 +896,14 @@ smaller way to do that*/
 	#information-text{
 		font-size: 30px;
 		text-align: center;
-		font-family: Nanum Myeongjo;
+		font-family:Rajdhani;
 		margin: 0;
 	}
 	#input-name{
 		width: 100%;
 		padding: 5px 0px 5px 5px;
 		font-size: 18px;
-		font-family: Nanum Myeongjo;
+		font-family: Rajdhani;
 		border: 1px solid black;
 		border-radius: 5px;
 
@@ -860,7 +912,7 @@ smaller way to do that*/
 		width: 100%;
 		padding: 5px 0px 5px 5px;
 		font-size: 18px;
-		font-family: Nanum Myeongjo;
+		font-family: Rajdhani;
 		border: 1px solid black;
 		border-radius: 5px;
 	}
@@ -868,7 +920,7 @@ smaller way to do that*/
 		width: 100%;
 		padding: 5px 0px 5px 5px;
 		font-size: 18px;
-		font-family: Nanum Myeongjo;
+		font-family: Rajdhani;
 		border: 1px solid black;
 		border-radius: 5px;
 	}
@@ -876,7 +928,7 @@ smaller way to do that*/
 		width: 100%;
 		padding: 5px 0px 5px 5px;
 		font-size: 18px;
-		font-family: Nanum Myeongjo;
+		font-family: Rajdhani;
 		border: 1px solid black;
 		border-radius: 5px;
 	}
@@ -887,7 +939,7 @@ smaller way to do that*/
 		width: 100%;
 		right: 0;
 		font-size: 30px;
-		font-family: Nanum Myeongjo;
+		font-family: Rajdhani;
 		border-radius: 5px;
 		background-color: white;
 		color: #332C23;

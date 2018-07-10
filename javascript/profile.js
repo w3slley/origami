@@ -5,14 +5,19 @@ var body = document.querySelector('.profile');
 var count = 0;
 sideBarIcon.onclick = function(){//This 
 	if(count%2 == 0){
+		sideBar.style.animationName = 'animation-sidebar';
+		sideBar.style.animationDuration = '.3s';
+		sideBar.style.left = '0';
 		sideBar.style.width = '20%';
 		body.style.width = '80%';
 		count++;
 	}
 	else {
-		sideBar.style.width = '0%';
+		sideBar.style.animationName = 'animation-out-sidebar';
+		sideBar.style.animationDuration = '.4s';
+		sideBar.style.left = '-300px';
 		body.style.width = '100%';
-		count++;
+		count++
 		}
 }
 

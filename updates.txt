@@ -65,9 +65,11 @@ Features done:
 	1)Made the modal containing the notes more responsive. It's a little better on mobile as well, but I still have to fix some issues there. 
 	2)Added feature of only displaying 950 characters in the note and thus making it more compact. When the user clicks the note all the content is displayed as you would assume.
 
-09/07 11:07
+10/07 14:33
 Feature done: 
-
+	1) Changed the font in the website to a better one.
+	2) Fixed sidebar animation and added some items on it.
+	3) Added feature of when the user scrolls down the page, the nav automatically displays a box shadow.
 
 
 Things I still have to implement:

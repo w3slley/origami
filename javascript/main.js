@@ -1,3 +1,4 @@
+
 /*This will make the data from the form go to the addNote.php 
 file without loading the page.*/
 /*I removed the ready part of the algorithm since it was adding the notes in the
@@ -155,14 +156,20 @@ will display the fade in animation. The count will be increase by one. The secon
 time, the count variable will be equal to 1 and the module of 1 and 2 is not 0, 
 so, it will display the fade out animation. Well done. */
 var count = 0; //this is variable control that I used for this function I created.
-sideBarIcon.onclick = function(){//This 
-	if(count%2 == 0){
+sideBarIcon.onclick = function(){//This is what happens when the side icon is clicked:
+	if(count%2 == 0){/*when clicked for the first time, the modulo of 0/2 is zero, therefore, 
+		the side bar will appear with the animation.*/
+		sideBar.style.animationName = 'animation-sidebar';
+		sideBar.style.animationDuration = '.3s';
+		sideBar.style.left = '0';
 		sideBar.style.width = '20%';
-		body.style.width = '80%';
+		body.style.width = '90%';
 		count++;
 	}
-	else {
-		sideBar.style.width = '0%';
+	else { /*When the modulo is not equal to zero, the side bar will slide back with animation.*/
+		sideBar.style.animationName = 'animation-out-sidebar';
+		sideBar.style.animationDuration = '.4s';
+		sideBar.style.left = '-300px';
 		body.style.width = '100%';
 		count++;
 	}
@@ -309,3 +316,16 @@ $('.edit_note_content').keyup(function(){
 		alert('success');
 	});
 });
+
+
+
+var nav = document.querySelector('.nav');
+window.onscroll = function(){
+	if ($(window).scrollTop() == 0){
+		nav.style.boxShadow = 'none';
+	}
+	else if ($(window).scrollTop() > 0){
+		
+		nav.style.boxShadow = '5px 0px 15px #111';
+	}
+}

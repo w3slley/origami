@@ -10,7 +10,7 @@
 	<title>Notes | Your personal note application</title>
 	<script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 	</script>
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Nanum+Myeongjo|Kaushan+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Nanum+Myeongjo|Kaushan+Script|Gaegu|Open+Sans+Condensed|Righteous|Rajdhani|Josefin+Slab" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	<script src="javascript/main.js"></script>
@@ -29,7 +29,7 @@
 		?>
 
 
-		<nav>
+		<nav class="nav">
 			<div class="dropdown-settings">
 				<ul>
 					<li><a href="#">Profile</a></li>
@@ -113,7 +113,17 @@
 		</form>
 		
 		<div class="side-bar">
-
+			<ul>
+				<li>
+					<img class="notes-icon" src="images/notes.png">
+					<p class="sidebar-text" style="position: relative">Your notes</p>
+				</li>
+				<li>
+					<img class="notes-icon" src="images/config.png">
+					<p class="sidebar-text" style="position: relative">Settings</p>
+				</li>
+			</ul>
+			
 		</div>
 
 

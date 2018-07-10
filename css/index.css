@@ -232,8 +232,10 @@ smaller way to do that*/
 
 .side-bar ul li {
 	list-style-type: none;
+	color: black;
 	cursor: pointer;
 	padding-left: 10px;
+	transition: background-color .2s;
 }
 
 .side-bar ul li:hover{
@@ -722,8 +724,15 @@ smaller way to do that*/
 		top: -49px;
 		left: 90px;
 		
-
 	}
+	.side-bar{
+		
+	
+	}
+	.sidebar-text {
+		font-size: 20px;
+	}
+
 	.body{
 		margin-top: 80px;
 	}

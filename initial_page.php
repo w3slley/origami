@@ -77,7 +77,18 @@
 		<?php if(isset($_GET['search'])){?>
 
 			<div class="side-bar">
-				
+				<ul>
+					<a href="initial_page.php">
+						<li>
+							<img class="notes-icon" src="images/notes.png">
+							<p class="sidebar-text" style="position: relative">Your notes</p>
+						</li>
+					</a>
+					<li>
+						<img class="notes-icon" src="images/config.png">
+						<p class="sidebar-text" style="position: relative">Settings</p>
+					</li>
+				</ul>		
 			</div>
 
 			</div>
@@ -114,10 +125,12 @@
 		
 		<div class="side-bar">
 			<ul>
-				<li>
-					<img class="notes-icon" src="images/notes.png">
-					<p class="sidebar-text" style="position: relative">Your notes</p>
-				</li>
+				<a href="initial_page.php">
+					<li>
+						<img class="notes-icon" src="images/notes.png">
+						<p class="sidebar-text" style="position: relative">Your notes</p>
+					</li>
+				</a>
 				<li>
 					<img class="notes-icon" src="images/config.png">
 					<p class="sidebar-text" style="position: relative">Settings</p>

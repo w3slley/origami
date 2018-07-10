@@ -163,7 +163,7 @@ sideBarIcon.onclick = function(){//This is what happens when the side icon is cl
 		sideBar.style.animationDuration = '.3s';
 		sideBar.style.left = '0';
 		sideBar.style.width = '20%';
-		body.style.width = '90%';
+		body.style.width = '80%';
 		count++;
 	}
 	else { /*When the modulo is not equal to zero, the side bar will slide back with animation.*/

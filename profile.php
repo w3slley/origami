@@ -29,6 +29,21 @@
 			</a>
 		</div>
 
+		<div class="side-bar">
+			<ul>
+				<a href="initial_page.php">
+					<li>
+						<img class="notes-icon" src="images/notes.png">
+						<p class="sidebar-text" style="position: relative">Your notes</p>
+					</li>
+				</a>
+				<li>
+					<img class="notes-icon" src="images/config.png">
+					<p class="sidebar-text" style="position: relative">Settings</p>
+				</li>
+			</ul>		
+		</div>
+
 		<form class="search-form" method="GET">
 			<input id="search-input" type="search" name="search" placeholder="Search notes...">
 
@@ -65,8 +80,20 @@
 	</div>
 
 	<div class="side-bar">
-
-		</div>
+		<ul>
+			<a href="initial_page.php">
+				<li>
+					<img class="notes-icon" src="images/notes.png">
+					<p class="sidebar-text" style="position: relative">Your notes</p>
+				</li>
+			</a>
+			<li>
+				<img class="notes-icon" src="images/config.png">
+				<p class="sidebar-text" style="position: relative">Settings</p>
+			</li>
+		</ul>		
+	</div>
+	
 	<div class="profile">
 		<div class="profile-body">
 			<div class="image-container">

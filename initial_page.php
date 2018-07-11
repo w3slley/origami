@@ -107,7 +107,7 @@
 				<div id="myModal" class="modal"> <!-- The modal -->
 					<div class="modal-content"> <!-- Modal's content-->
 						<span class="close">&times;</span> <!-- close button -->
-						<p id="data">You shouldn't see me. Some error have occured.</p>
+						<p id="data"><div class="loader-edit"></div></p>
 					</div> 
 				</div>
 					 
@@ -155,7 +155,7 @@
 			<div id="myModal" class="modal"> <!-- The modal -->
 				<div class="modal-content"> <!-- Modal's content-->
 					<span class="close">&times;</span> <!-- close button -->
-					<p id="data">You shouldn't see me. Some error have occured.</p> 
+					<p id="data"><div class="loader-edit" id='loader-edit'></div></p> 
 					 
 				</div>
 			</div>

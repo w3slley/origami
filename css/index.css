@@ -335,7 +335,6 @@ smaller way to do that*/
 }
 
 #delete-icon {
-	
 	width: 30px;
 	position: absolute;
 	bottom: 10px;
@@ -376,18 +375,22 @@ smaller way to do that*/
 /*Note's MODAL CONTENT*/
 .edit_note {
 	text-align: center;
+	margin:0;
+	padding: 0;
 }
 
 .edit_note_content {
+	height: 400px;/*This was what fixed the */
 	resize: none;
 	font-size: 20px;
 	font-family: Rajdhani;
 	background-color: #A5C882;
-	padding: 10px 10px 200px 10px;
+	padding: 10px 10px 10px 10px;
 	margin: 0 auto;
 	width: 95%;
 	outline: none;
 	border: none;
+
 
 }
 .edit_note_content::selection{
@@ -402,7 +405,7 @@ smaller way to do that*/
 	background-color: #A5C882;
 	border: none;
 	margin: 0 auto;
-	width: 93.5%;
+	width: 94%;
 }
 
 .title_edit::selection{
@@ -461,6 +464,17 @@ smaller way to do that*/
 
 
 }
+.loader-edit {
+	border: 5px solid white; /* Light grey */
+    border-top: 5px solid #70A288; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 10% auto;
+
+
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -477,20 +491,22 @@ smaller way to do that*/
     height: 100%; /* Full height */
     /* overflow: auto; Enable scroll if needed */
     background-color: rgb(1,1,1); /* Fallback color */
-    background-color: rgba(1,1,1,0.2); /* Black w/ opacity */
+    background-color: rgba(1,1,1,0.4); /* Black w/ opacity */
      z-index: 200;
 }
 .modal-content {
 	position: relative;
-    background-color: #A5C882;
-    margin: 5% auto; /* 5% from the top and centered */
-    padding: 5px 5px 40px 5px;
+	height: 85%;
+	margin: 5% auto; /* 5% from the top and centered */
+    padding: 5px 5px 0px 5px;
     border: 1px solid #888;
     border-radius: 5px;
     width: 85%; /* Could be more or less, depending on screen size */
     animation-name: animation;
     animation-duration: 0.8s;
     overflow: auto;
+    background-color: #A5C882;
+    
    
 
 }
@@ -798,8 +814,9 @@ smaller way to do that*/
 		font-size: 15px;
 		font-family: Rajdhani;
 		border-radius: 5px;
-		padding: 10px 0px 100px 0px;
+		padding: 10px 0px 0px 0px;
 		width: 100%;
+		height: 450px;
 
 		
 	}
@@ -807,22 +824,21 @@ smaller way to do that*/
 		font-weight: bold;
 		border-radius: 5px;
 		border: none;
-		width: 89%;
+		width: 85%;
 		font-family: Josefin Slab;
 	}
 	.modal-content {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	top: 0;
-    background-color: #A5C882;
-    margin: 0% auto; /* 15% from the top and centered */
-    padding: 5px 5px 10px 5px;
-    border: 1px solid #888;
-    border-radius: 5px;
-    width: 97%; /* Could be more or less, depending on screen size */
-    overflow: auto;
-
+		position: absolute;
+		top:0;
+		left: 0;
+		height:93%;
+	    background-color: #A5C882;
+	    margin: 0% auto; /* 15% from the top and centered */
+	    padding: 5px 5px 40px 5px;
+	    border: 1px solid #888;
+	    border-radius: 5px;
+	    width: 97%; /* Could be more or less, depending on screen size */
+	    overflow: auto;
 	}
 	.close {
 		color: black;
@@ -832,6 +848,11 @@ smaller way to do that*/
 		font-size: 28px;
 		font-weight: bold;
 	}	
+
+	.save{
+		position: absolute;
+		bottom: 0;
+	}
 
 	/*PROFILE SECTION - RESPONSIVE*/
 

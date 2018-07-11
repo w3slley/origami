@@ -47,7 +47,7 @@ function deleteNote(note_id){//delete notes using AJAX
 		$.post('action/deleteNote.php', { id: note_id }, function(){ //run the deleteNote.php file using AJAX.
 			modal.style.display = 'none';
 			var x = document.getElementById(note_id).parentNode.outerHTML = '';//Selects the parent node (the element the button is in) from the button that has the note's id and deletes it!	I created a button with an id that is equal to the note's id in the database. So, when I delete the note in the database using AJAX, I can also delete its content from the client webpage using the same id.
-			
+			document.body.style.overflow = 'scroll';
 		});
 	}
 }	
@@ -61,6 +61,8 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 		$.post('action/editNote-modal.php', {id: note_id}, function (data){
 			document.getElementById('data').innerHTML = data;
 			document.body.style.overflow = 'hidden';
+			document.querySelector('#loader-edit').classList.remove('loader-edit');/*This
+			makes a loader icon appear when the note is being retrieve from the database*/
 			/*$(document).on('touchmove', function(e) {
 		  	  e.preventDefault();
 			});*/ //Removed this both here and in the server. Will push to github as a new commit.

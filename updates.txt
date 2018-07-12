@@ -72,7 +72,9 @@ Feature done:
 	3) Added new feature: when the user scrolls down the page, the nav automatically displays a shadow.
 	4) Fixed the signup page logic. Now the user will see some interactions and borders when something wrong is done. I still have to fix some error handlers though (check if the email is a valid one).
 
-
+12/07 14:33
+Feature done:
+	1)Fixed some display erros for mobile devices. The notes were being porly displayed. Now the notes can be seen with a greater font size and more clear. I need to fix the problem with the bottoms though.
 Things I still have to implement:
 
 1)add label system to the notes.(DONE)

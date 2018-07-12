@@ -811,12 +811,12 @@ smaller way to do that*/
 
 	.edit_note_content {
 		resize: none;
-		font-size: 15px;
+		font-size: 20px;
 		font-family: Rajdhani;
 		border-radius: 5px;
-		padding: 10px 0px 0px 0px;
-		width: 100%;
-		height: 450px;
+		padding: 0px 15px 0px 15px;
+		width: 90%;
+		height: 310px;
 
 		
 	}
@@ -834,10 +834,10 @@ smaller way to do that*/
 		height:93%;
 	    background-color: #A5C882;
 	    margin: 0% auto; /* 15% from the top and centered */
-	    padding: 5px 5px 40px 5px;
+	    padding: 0px 0px 40px 0px;
 	    border: 1px solid #888;
 	    border-radius: 5px;
-	    width: 97%; /* Could be more or less, depending on screen size */
+	    width: 100%; /* Could be more or less, depending on screen size */
 	    overflow: auto;
 	}
 	.close {

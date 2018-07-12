@@ -75,8 +75,9 @@ Feature done:
 12/07 14:33
 Feature done:
 	1)Fixed some display erros for mobile devices. The notes were being porly displayed. Now the notes can be seen with a greater font size and more clear. I need to fix the problem with the bottoms though.
-Things I still have to implement:
 
+
+Things I still have to implement:
 
 1)add label system to the notes.(DONE)
 2) Edit notes (DONE)

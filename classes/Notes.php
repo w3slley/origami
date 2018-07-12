@@ -134,7 +134,7 @@
 			$stmt->execute([$this->id]);
 			$data = $stmt->fetchAll(PDO::FETCH_OBJ);
 			foreach($data as $data){?>
-			<div class="edit_note">
+			<div class="edit_note" id="edit_note">
 				<form id="edit-form-modal" method="POST" action="action/editNote.php">
 					<?php echo '<input id="edit-title-modal" class="title_edit" type="text" name="edit_note_title" value="'.$data->note_title.'">' ?><br>
 					<?php echo '<textarea id="edit-content-modal" spellcheck = "false" cols="60" rows="10" class="edit_note_content" name = "edit_note_content" >'.str_replace('<br />', '&#13;', $data->note_content).'</textarea>' //This '&#13' turns the break line tag into a enter in the text! ?><br>

@@ -25,7 +25,7 @@
 
 		}
 
-		public function showNotes($user_id){
+		public function showNotes($user_id, $limit){
 			$this->user_id = $user_id;
 			
 
@@ -35,7 +35,7 @@
 			$str_lenght = 950;
 
 			//that substring part limits the amout of characters displayed in the notes. Only 950 (which is the variable up there) characters, in that case, will be displayed, making the notes appear smaller in the home page. Good job!
-			$sql = "SELECT SUBSTRING(note_content, 1, $str_lenght) as note_content, id, note_title, date_created FROM notes WHERE user_id = ? ORDER BY id DESC LIMIT 10"; //If you want to change the number of notes displayed in the front page, you need to change this LIMIT number and the limit variable in the main.js file. Because the number you insert here is the number of notes displayed and the js variable uses this number to add more notes. Hence, those two need to be the same!
+			$sql = "SELECT SUBSTRING(note_content, 1, $str_lenght) as note_content, id, note_title, date_created FROM notes WHERE user_id = ? ORDER BY id DESC LIMIT $limit"; //If you want to change the number of notes displayed in the front page, you need to change this LIMIT number and the limit variable in the main.js file. Because the number you insert here is the number of notes displayed and the js variable uses this number to add more notes. Hence, those two need to be the same!
 			$stmt = $this->connect()->prepare($sql);
 			$stmt->execute([$this->user_id]);
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);//If it's FETCH_OBJ, it allows me to treat the results from the database as properties of a class! If it's FETCH_ASSOC I can treat the results as an array! 
@@ -76,42 +76,7 @@
 		}
 
 
-		public function showMoreNotes($user_id, $limit){
-			$this->user_id = $user_id;
-			
-
-			//$this->connect()->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);//This allows me to treat the results from the database as properties of a class!
-			$str_lenght = 950;
-
-			$sql = "SELECT SUBSTRING(note_content, 1, $str_lenght) as note_content, id, note_title, date_created FROM notes WHERE user_id = ? ORDER BY id DESC LIMIT $limit";
-			$stmt = $this->connect()->prepare($sql);
-			$stmt->execute([$this->user_id]);
-			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);//If it's FETCH_OBJ, it allows me to treat the results from the database as properties of a class! If it's FETCH_ASSOC I can treat the results as an array! 
-
-
-			foreach($result as $data){ ?>
-				<div class='div-note' id="note" onclick="editNote(<?php echo $data['id']; ?>)">
-					<h1 class='note_title'><?php echo $data['note_title']; ?></h1>
-					<p class='note_content'><?php
-
-					 echo $data['note_content']; 
-					 if(strlen($data['note_content']) == $str_lenght){
-					 	echo "...";
-					 }
-
-					 ?></p>
-					<p class='date'>Created at: <?php echo $data['date_created']; ?></p>
-					<p id="<?php echo $data['id']; ?>" style="display: none"></p>
-					<img id='delete-icon' onclick="deleteNote(<?php echo $data['id']; ?>)" src="images/trash.png">
-					
-					
-										
-
-				</div>
-			<?php	}
-
-			//return $this->countNotes($this->user_id);//This will return the total number of notes the user has.
-		}
+		
 
 
 		public function editNote($note_id, $note_title, $note_content){

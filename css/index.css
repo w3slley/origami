@@ -246,7 +246,7 @@ smaller way to do that*/
 /*THE PAGE ITSELF*/
 .body{
 	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-bottom: 70px;
 	position: absolute;
 	right: 0;
 	width: 100%;
@@ -323,16 +323,29 @@ smaller way to do that*/
 	text-align: justify;
 	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/	
 	transition: box-shadow .4s;
+}
+.div-note-first{
+	font-family: Rajdhani;
+	position: relative;
+	padding: 0px 5px 30px 5px;
+	border-radius: 5px;
+	background-color: rgba(67, 114, 36, 0.8);
+	margin: 0 auto;
+	width: 70%;
+	text-align: justify;
+	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/	
 	animation-name: note-animation-in;
-	animation-duration: 1s;
+	animation-duration: 5s;
+
+	
 }
 
-/*@keyframes note-animation-in{
-	from{padding: 0px 15px 40px 15px;
-		box-shadow: 2px 2px 15px #111;}
-	to{padding: 0px 5px 30px 5px;
-		box-shadow: none;}
-}*/
+@keyframes note-animation-in{
+	from{opacity: 0;
+		}
+	to{opacity: 1;
+		}
+}
 
 #delete-icon {
 	width: 30px;
@@ -982,7 +995,7 @@ smaller way to do that*/
 	.loader {
 		position: absolute;
 		bottom: -60px;
-		left: 45%;
+		left: 43%;
 	}
 
 

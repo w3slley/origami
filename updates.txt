@@ -79,7 +79,8 @@ Features done:
 13/07 13:26
 Features done:
 	1) Made sure that when the user deletes a note, the page automatically loads the 10 notes from the DB (which is the limit I set). This fixed the error of not displaying any notes if the user decided to delete the 10 notes displayed originally when the page loaded. Now every time the user deletes the note, the 10 notes must appear on the screen. When the number of notes reaches 10 or less, the page don't load any.
-	2)Made sure that when the user gets to the bottom of the page, the countNum variable that counts the number of notes in the DB gets updated. This solved the problem of not loading the adicional notes due to the variable not loading the number sometimes when a note is added.
+	2)Made sure that when the user gets to the bottom of the page, the countNum variable that counts the number of notes in the DB gets updated. This solved the problem of not loading the adicional notes due to the variable not loading the number sometimes when a note is added.	
+	3) Before, when the user loaded all of the notes and then deleted one that was not in the first 10 in the beginning, the page would load again only the first 10 due to an line of code i wrote. Now this doesn't happen anymore.
 
 Things I still have to implement:
 
@@ -87,11 +88,11 @@ Things I still have to implement:
 2) Edit notes (DONE)
 3)Delete notes (DONE)
 4)Display the date of the creation of the note.(DONE)
-5) add error handlers in the sign up and login.(working on it)
+5) add error handlers in the sign up and login.(DONE)
 6) add error handlers in the add note section. (working on it)
 7) Add images to the notes.
 8) Make sure that when the user clicks out of the note, the note is automatically saved.
-9) ADD a navbar with the search feature using AJAX.
+9) ADD a navbar with the search feature using AJAX. (Done not using Ajax)
 10) When the first note is added, it is not displayed in the browser without reloading. Have to fix this...(DONE-I think... :D)
 11) Display a fix amount of notes in the home page and, when scroll down to the last position, display more notes.(DONE)
 11.2)Create loading animation in the bottom of the page. (DONE)
@@ -100,10 +101,13 @@ Things I still have to implement:
 13) Make sure that when the user clicks outside the textarea, the title input fades away and the textarea shrinks in padding bottom. Right now it only does that if the div notes is clicked.(DONE)
 14) Implement the profile page with user information and image.(DONE)
 15) Create box that shows up when the user clicks the profile image in the navbar.
-16) Insert the buttons in the side bar. (probably setting buttons and so on)
+16) Insert the buttons in the side bar. (probably setting buttons and so on) (Partially done)
 17) IDEA->Create a version of the app that encrypts the notes (a more secure alternative)
 18) Create in the setting part a feature that allows the user to change the main color of the app among other things!
 19) Make sure that when the user types something this is stores directly into the database without clicking the save changes button! This is important.
+20) Create animation on the note that was added!
+21) Need to fix the loading problem on mobile devices (right now when you go to the bottom of the page the rest of the notes are not loaded.
+22) I still need to solve the problem of the bottoms going on top of the text when the keyboard is used in mobile devices.
 
 
 

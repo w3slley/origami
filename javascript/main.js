@@ -18,20 +18,13 @@ $("#addNote-form").submit(function(event){//When the form is submited (button is
 	 note is added!*/
 		$("#addNote-title").val("");
 		$("#addNote-content").val("");
-
-	});
-});
-
-
-
-
-//When the add note button is clicked, the page loads the showNotes.php file without realoading itself and adds the title and content to the database behind the scenes.
-$(document).ready(function(){
-	$("#notes").load("action/showNotes.php");
-	$("#addNote-form").submit(function(){
 		$("#notes").load("action/showNotes.php");//show notes module limits 10 notes in the page
+		//$('.div-note')[0].setAttribute('class', 'div-note-first');
 	});
+
 });
+
+
 
 
 //Modal Variables
@@ -49,12 +42,11 @@ function deleteNote(note_id){//delete notes using AJAX
 		$.post('action/deleteNote.php', { id: note_id }, function(){ //run the deleteNote.php file using AJAX.
 			modal.style.display = 'none';
 			var x = document.getElementById(note_id).parentNode.outerHTML = '';//Selects the parent node (the element the button is in) from the button that has the note's id and deletes it!	I created a button with an id that is equal to the note's id in the database. So, when I delete the note in the database using AJAX, I can also delete its content from the client webpage using the same id.
-			document.body.style.overflow = 'scroll';
 			$('#notes').load('action/showNotes.php');/*Everytime a note is deleted, 
 			the page makes sure 10 notes are displayed. (this solves a problem I was
 			having where if I deleted all 10 notes without reloading the page, no page
 			was displayed anymore.*/
-
+			document.body.style.overflow = 'scroll';
 		});
 	}
 }	

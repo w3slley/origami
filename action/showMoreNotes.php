@@ -5,6 +5,6 @@
 	$limit = $_POST['limit']; //limit number gathered from the ajax post in the main.js file!
 
 	$notes = new Notes;
-	$notes->showMoreNotes($_SESSION['id'], $limit);
+	$notes->showNotes($_SESSION['id'], $limit);
 
 

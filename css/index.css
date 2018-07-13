@@ -327,12 +327,12 @@ smaller way to do that*/
 	animation-duration: 1s;
 }
 
-@keyframes note-animation-in{
+/*@keyframes note-animation-in{
 	from{padding: 0px 15px 40px 15px;
 		box-shadow: 2px 2px 15px #111;}
 	to{padding: 0px 5px 30px 5px;
 		box-shadow: none;}
-}
+}*/
 
 #delete-icon {
 	width: 30px;
@@ -853,6 +853,7 @@ smaller way to do that*/
 		position: absolute;
 		bottom: 0;
 	}
+	
 
 	/*PROFILE SECTION - RESPONSIVE*/
 
@@ -979,8 +980,8 @@ smaller way to do that*/
 	}
 
 	.loader {
-		position: relative;
-		bottom: -30px;
+		position: absolute;
+		bottom: -60px;
 		left: 45%;
 	}
 

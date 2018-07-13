@@ -66,16 +66,20 @@ Features done:
 	2)Added feature of only displaying 950 characters in the note and thus making it more compact. When the user clicks the note all the content is displayed as you would assume.
 
 10/07 14:33
-Feature done: 
+Features done: 
 	1) Changed the font in the website to a better one.
 	2) Fixed sidebar animation and added some items on it.
 	3) Added new feature: when the user scrolls down the page, the nav automatically displays a shadow.
 	4) Fixed the signup page logic. Now the user will see some interactions and borders when something wrong is done. I still have to fix some error handlers though (check if the email is a valid one).
 
 12/07 14:33
-Feature done:
+Features done:
 	1)Fixed some display erros for mobile devices. The notes were being porly displayed. Now the notes can be seen with a greater font size and more clear. I need to fix the problem with the bottoms though.
 
+13/07 13:26
+Features done:
+	1) Made sure that when the user deletes a note, the page automatically loads the 10 notes from the DB (which is the limit I set). This fixed the error of not displaying any notes if the user decided to delete the 10 notes displayed originally when the page loaded. Now every time the user deletes the note, the 10 notes must appear on the screen. When the number of notes reaches 10 or less, the page don't load any.
+	2)Made sure that when the user gets to the bottom of the page, the countNum variable that counts the number of notes in the DB gets updated. This solved the problem of not loading the adicional notes due to the variable not loading the number sometimes when a note is added.
 
 Things I still have to implement:
 

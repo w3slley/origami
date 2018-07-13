@@ -3,6 +3,8 @@
 file without loading the page.*/
 /*I removed the ready part of the algorithm since it was adding the notes in the
 database twice...*/
+
+//ADD NOTE
 $("#addNote-form").submit(function(event){//When the form is submited (button is clicked):
 	event.preventDefault();/*this makes the form not to go to the action site. It, instead, 
 		sets everything to default (do nothing).*/
@@ -27,34 +29,39 @@ $("#addNote-form").submit(function(event){//When the form is submited (button is
 $(document).ready(function(){
 	$("#notes").load("action/showNotes.php");
 	$("#addNote-form").submit(function(){
-		
-		$("#notes").load("action/showNotes.php");
+		$("#notes").load("action/showNotes.php");//show notes module limits 10 notes in the page
 	});
 });
 
 
-
+//Modal Variables
 var modal = document.getElementById('myModal');//getting the element of the modal
 var close = document.getElementsByClassName("close")[0];//getting the close button element
-
+//DELETENOTE FUNCTION WHICH IS RUN IN THE NOTES' CLASS (in the showNotes function)
 function deleteNote(note_id){//delete notes using AJAX
 	var confirmValue = confirm('Do you really want to delete this note?');
 	if(confirmValue == true){
 		$.post('action/countNumNotes.php', function(data){
-			$('#countNotes').html(data);
+			$('#countNotes').html(data);/*if user deletes note, the count note variable
+			gets updated as well (just as when he/she adds and when the page loads*/
 		});
 
 		$.post('action/deleteNote.php', { id: note_id }, function(){ //run the deleteNote.php file using AJAX.
 			modal.style.display = 'none';
 			var x = document.getElementById(note_id).parentNode.outerHTML = '';//Selects the parent node (the element the button is in) from the button that has the note's id and deletes it!	I created a button with an id that is equal to the note's id in the database. So, when I delete the note in the database using AJAX, I can also delete its content from the client webpage using the same id.
 			document.body.style.overflow = 'scroll';
+			$('#notes').load('action/showNotes.php');/*Everytime a note is deleted, 
+			the page makes sure 10 notes are displayed. (this solves a problem I was
+			having where if I deleted all 10 notes without reloading the page, no page
+			was displayed anymore.*/
+
 		});
 	}
 }	
 
+
+
 //EDIT NOTE 
-
-
 /*MODAL INTERACTION*/
 function editNote(note_id){ //When the note is clicked, the modal is shown.
 	modal.style.display = "block";
@@ -69,12 +76,13 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 	});
 
 }	
+//WHEN CLICKED IN THE CLOSE ICON
 close.onclick = function(){//if the close button is clicked, the modal is closed
 	modal.style.display = 'none';
 	document.body.style.overflow = 'auto';
 	
 }
-
+//WHEN CLICKED OUTSIDE modal-content
 window.onclick = function(event){ //When clicked outside the modal, it automatically closes.
 	if(event.target == modal) {
 		/*var editTitle = document.querySelector('.edit-title-modal').value;
@@ -95,7 +103,7 @@ window.onclick = function(event){ //When clicked outside the modal, it automatic
 }
 
 
-//Add animation in notes div (when clicking inside the "add note" section)
+//ANIMATION ON NOTES DIV (when clicking inside the textarea to add a new note)
 var noteContent = document.querySelector('#addNote-content')
 var noteTitle = document.querySelector('#addNote-title');
 
@@ -149,7 +157,7 @@ searchInput.onkeyup = function(){
 }*/
 
 
-//Side-bar animation. Just a heads up: from now on, only use querySelector!
+//SIDEBAR ANIMATION. Just a heads up: from now on, only use querySelector!
 var sideBarIcon = document.querySelector('.side-icon');
 var sideBar = document.querySelector('.side-bar');
 var body = document.querySelector('.body');
@@ -179,7 +187,7 @@ sideBarIcon.onclick = function(){//This is what happens when the side icon is cl
 	
 }
 
-//Getting number of notes from DB.
+//GETTING NUMBER OF NOTES FROM DATABASE.
 $(document).ready(function(){ /*The countNumNotes (number of notes the user has written)
 	is loaded into the div with id 'countNotes' every time the page is loaded, */
 	$.post('action/countNumNotes.php', function(data){
@@ -192,7 +200,7 @@ $('#addNote-form').submit(function(){//Every time the user adds a new note,
 		$('#countNotes').html(data);
 	});
 });
-//And every time the user deletes a note (is in the deleteNote function up there!)
+
 
 
 //ALGORITHM THAT DISPLAYS MORE NOTES WHEN USER REACHES THE BOTTOM OF THE PAGE(jQuery)!
@@ -209,6 +217,11 @@ $(document).ready(function(){
 		var scrollPosition = $(window).height() + $(document).scrollTop();
 
 		if(scrollPosition == scrollHeight){
+			$.post('action/countNumNotes.php', function(data){
+				$('#countNotes').html(data);/*if user deletes note, the count note variable
+			gets updated as well (just as when he/she adds and when the page loads-the
+			code is up there)*/
+			});
 			loader.setAttribute('class', 'loader');
 			function setNotes(){
 				limit+= 10; /*Number of aditional notes displayed when user
@@ -246,10 +259,10 @@ $(document).ready(function(){
 
 			}
 			else{
-				setTimeout(setNotes, 2000);/*This is a function that runs another function
+				setTimeout(setNotes, 1000);/*This is a function that runs another function
 			but waits a certain amount of time. The first parameter is the function
 			it's going to execute and the second is the time it will take to do it (in
-			miliseconds) - in this case, it will wait 2 seconds to execute the
+			miliseconds) - in this case, it will wait 1 seconds to execute the
 			function setNotes!*/
 
 			/*The loading animation and the AJAX feature will only occur if the 
@@ -321,7 +334,7 @@ $('.edit_note_content').keyup(function(){
 });
 
 
-
+//Box shadow animation
 var nav = document.querySelector('.nav');
 window.onscroll = function(){
 	if ($(window).scrollTop() == 0){
@@ -332,3 +345,4 @@ window.onscroll = function(){
 		nav.style.boxShadow = '5px 0px 15px #111';
 	}
 }
+

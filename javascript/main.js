@@ -1,3 +1,11 @@
+var numNotesPage = document.querySelectorAll('#note').length;
+var limit = 10; /*This number is equal to the number of LIMIT in the showNotes 
+	function!*/
+var numberControl = 0; /*This is a control number that controls the
+	number of times the user went into the bottom of the page.*/
+var countNumNotes = parseInt($('#countNotes').html());/*value of notes comming
+	from the database that its stored in a hidden div in the initial-page.php file!*/
+
 
 /*This will make the data from the form go to the addNote.php 
 file without loading the page.*/
@@ -19,7 +27,7 @@ $("#addNote-form").submit(function(event){//When the form is submited (button is
 		$("#addNote-title").val("");
 		$("#addNote-content").val("");
 		$("#notes").load("action/showNotes.php");//show notes module limits 10 notes in the page
-		//$('.div-note')[0].setAttribute('class', 'div-note-first');
+		numberControl = 0;
 	});
 
 });
@@ -38,15 +46,29 @@ function deleteNote(note_id){//delete notes using AJAX
 			$('#countNotes').html(data);/*if user deletes note, the count note variable
 			gets updated as well (just as when he/she adds and when the page loads*/
 		});
+		numberControl = 0;
 
-		$.post('action/deleteNote.php', { id: note_id }, function(){ //run the deleteNote.php file using AJAX.
+		$.post('action/deleteNote.php', { id: note_id }, function(){ /*run the deleteNote.php 
+			file using AJAX.*/
 			modal.style.display = 'none';
-			var x = document.getElementById(note_id).parentNode.outerHTML = '';//Selects the parent node (the element the button is in) from the button that has the note's id and deletes it!	I created a button with an id that is equal to the note's id in the database. So, when I delete the note in the database using AJAX, I can also delete its content from the client webpage using the same id.
-			$('#notes').load('action/showNotes.php');/*Everytime a note is deleted, 
-			the page makes sure 10 notes are displayed. (this solves a problem I was
-			having where if I deleted all 10 notes without reloading the page, no page
-			was displayed anymore.*/
 			document.body.style.overflow = 'scroll';
+			if(numNotesPage > limit){ /*if the number of notes in the db is greater then 
+				the limit, it will display all the notes in the db but the one deleted
+				because the limit is equal to the number of notes in the database*/
+				$.post('action/showMoreNotes.php', {limit: countNumNotes}, function(data){
+				$('#notes').html(data);
+				});
+				
+			}
+			else{/*if the # of notes in DB is lesser than the limit, it will display
+			 10 notes only*/
+				$.post('action/showMoreNotes.php', {limit: limit}, function(data){
+				$('#notes').html(data);
+				});
+			
+			}
+			
+
 		});
 	}
 }	
@@ -197,13 +219,7 @@ $('#addNote-form').submit(function(){//Every time the user adds a new note,
 
 //ALGORITHM THAT DISPLAYS MORE NOTES WHEN USER REACHES THE BOTTOM OF THE PAGE(jQuery)!
 $(document).ready(function(){
-	var limit = 10; /*This number is equal to the number of LIMIT in the showNotes 
-	function!*/
-	var numberControl = 0; /*This is a control number that controls the
-	number of times the user went into the bottom of the page.*/
 	var loader = document.querySelector('.loading');
-	var countNumNotes = parseInt($('#countNotes').html());/*value of notes comming
-	from the database that its stored in a hidden div in the initial-page.php file!*/
 	$(window).scroll(function(){
 		var scrollHeight = $(document).height();
 		var scrollPosition = $(window).height() + $(document).scrollTop();
@@ -312,18 +328,6 @@ searchIcon.onclick = function(){
 		sideCount++;
 	}
 };
-
-	
-
-
-$('.edit_note_content').keyup(function(){
-	var content = $('.edit_note_content').val();
-	var title = $('.title_edit').val();
-	var id = $('.id').val();
-	$.post('action/editNote.php', {note_id: id, note_title: title, note_content: content}, function(){
-		alert('success');
-	});
-});
 
 
 //Box shadow animation

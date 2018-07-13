@@ -4,7 +4,7 @@
 
 		private $serverName = 'localhost';
 		private $userName = 'wvict';
-		private $password = '31415';
+		private $password = '$securedatabase.@';
 		private $dbName = 'oop_database';
 
 		protected function connect(){

@@ -108,6 +108,6 @@ Things I still have to implement:
 20) Create animation on the note that was added!
 21) Need to fix the loading problem on mobile devices (right now when you go to the bottom of the page the rest of the notes are not loaded.
 22) I still need to solve the problem of the bottoms going on top of the text when the keyboard is used in mobile devices.
-23) And I still need to fix the problem with the scrollbar visibily: sometimes when the user deletes a note the scrollbar dissapears and won't appear again.
+23) And I still need to fix the problem with the scrollbar visibily: sometimes when the user deletes a note the scrollbar dissapears and won't appear again - I know code this, but still have to fix what is causing the issue.
 
 

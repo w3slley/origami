@@ -48,7 +48,7 @@
 
 					 echo $data['note_content']; 
 					 if(strlen($data['note_content']) == $str_lenght){ //If the number of characters in the note_content is equal to the limit, that means (in principle) there's more content in the database and it echos "..."!
-					 	echo "...";
+					 	echo "[...]";
 					 }
 
 					 ?></p>
@@ -96,7 +96,7 @@
 
 					 echo $data['note_content']; 
 					 if(strlen($data['note_content']) == $str_lenght){
-					 	echo "...";
+					 	echo "[...]";
 					 }
 
 					 ?></p>
@@ -178,7 +178,7 @@
 
 					 echo $data['note_content']; 
 					 if(strlen($data['note_content']) == $str_lenght){
-					 	echo "...";
+					 	echo "[...]";
 					 }
 
 					 ?></p>

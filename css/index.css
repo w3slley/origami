@@ -291,10 +291,10 @@ smaller way to do that*/
 }
 #addNote-content{
 	margin-top: 5px;
-	padding-bottom: 0;
+	height: 30px;
 	margin-bottom: 15px;
 	outline: none;
-	transition: padding-bottom .5s;
+	transition: height .5s;
 
 
 }

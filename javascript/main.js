@@ -129,7 +129,7 @@ document.addEventListener('click', function(event){
 			clicks in the noteContent or the noteTitle, the animation will occur. 
 			The only way I could make this work is using only one |. For now, I don't 
 			know why. I will try to figure it out...*/
-			noteContent.style.paddingBottom = '200px';
+			noteContent.style.height = '250px';
 			noteTitle.style.opacity = '1';
 			noteTitle.style.top = '10px';
 			noteTitle.style.cursor = 'text';
@@ -147,11 +147,16 @@ document.addEventListener('click', function(event){
 		targetElement = targetElement.parentNode;
 	}
 	while(targetElement);
+	if(noteContent.value != ''){
+		
+	}
+	else{
+		noteContent.style.height = '30px';
+		noteTitle.style.opacity = '0';	
+		noteTitle.style.cursor = 'default';
+		noteTitle.style.zIndex = '-1';
+	}
 	
-	noteContent.style.paddingBottom = '0';
-	noteTitle.style.opacity = '0';	
-	noteTitle.style.cursor = 'default';
-	noteTitle.style.zIndex = '-1';
 	
 		
 });

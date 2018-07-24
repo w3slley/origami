@@ -13,7 +13,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Quicksand" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/welcome.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> <!-- This is how you display the favicon icon in the website! Fucking awesome!! -->
-	<script src="javascript/main.js"></script>
+	<script src="java-script/main.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Poor+Story|Ubuntu|Amatic+SC|Righteous|Kaushan+Script|Cardo" rel="stylesheet">
 
 

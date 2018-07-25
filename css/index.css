@@ -393,16 +393,17 @@ smaller way to do that*/
 }
 
 .edit_note_content {
-	height: 420px;/*This was what fixed the */
+	height: 320px;
 	resize: none;
 	font-size: 20px;
 	font-family: Rajdhani;
 	background-color: #A5C882;
-	padding: 10px 10px 10px 10px;
-	margin: 0 auto;
+	padding: 10px 10px 100px 10px;
+	margin: 0px auto;
 	width: 95%;
 	outline: none;
 	border: none;
+	
 
 
 }
@@ -460,9 +461,13 @@ smaller way to do that*/
 }
 .note-bottom-div{
 	position: absolute;
-	width: 100%;
-	left: 0;
 	bottom: 0;
+	width: 99%;
+	background-color: #A5C882;
+	
+	 
+	
+	
 
 	
 }
@@ -857,10 +862,10 @@ smaller way to do that*/
 		font-size: 20px;
 		font-family: Rajdhani;
 		border-radius: 5px;
-		padding: 0px 15px 0px 15px;
+		padding: 0px 15px 50px 15px;
 		width: 90%;
 		height: 400px;
-		margin-bottom: 60px;
+		
 
 		
 	}

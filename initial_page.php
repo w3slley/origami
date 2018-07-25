@@ -106,7 +106,6 @@
 				<!-- Modal -->
 				<div id="myModal" class="modal"> <!-- The modal -->
 					<div class="modal-content"> <!-- Modal's content-->
-						
 						<span class="close">&times;</span> <!-- close button -->
 						<p id="data"><div class="loader-edit"></div></p>
 					</div> 

@@ -393,7 +393,7 @@ smaller way to do that*/
 }
 
 .edit_note_content {
-	height: 400px;/*This was what fixed the */
+	height: 420px;/*This was what fixed the */
 	resize: none;
 	font-size: 20px;
 	font-family: Rajdhani;
@@ -424,11 +424,11 @@ smaller way to do that*/
 .title_edit::selection{
 	background: white;
 }
-.edit_note button {
+.save {
 	font-size: 20px;
 	position: absolute;
-	right: 1%;
-	bottom: 1%;
+	right: 5px;
+	bottom: 5px;
 	border: none;
 	background-color: rgba(1, 1, 1, 0.1);
 	color: black;
@@ -441,25 +441,30 @@ smaller way to do that*/
 }
 
 #last-edited {
-	position: absolute;
-	bottom: 0;
-	left: 40%;
 	font-size: 15px;
 	font-family: Rajdhani;
 }
 
 .delete {
 	position: absolute;
+	left: 5px;
+	bottom: 5px;
 	font-size: 20px;
-	bottom: 1%;
 	font-family: Rajdhani;
-	left: 10px;
 	border: none;
 	padding: 5px;
 	background-color:rgba(1, 1, 1, 0.1);
 	color: black;
 	cursor: pointer;
 	outline: none;
+}
+.note-bottom-div{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+
+	
 }
 
 
@@ -800,28 +805,53 @@ smaller way to do that*/
 	.note_content {
 		font-size: 15px;
 	}
-	.delete {
-	display: block;
-	position: absolute;
-	font-size: 20px;
-	bottom: 5px;
-	right: 2%;
-	border: none;
-	padding: 5px;
-	background-color:rgba(1, 1, 1, 0.1);
-	outline: none;
-	
+
+	.note-bottom-div{
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		margin: 0;
+		background-color: #A5C882; 
+		height: 85px;
 	}
 
+	.save {
+		font-size: 20px;
+		position: absolute;
+		right: 1%;
+		bottom: 1%;
+		border: none;
+		background-color: rgba(1, 1, 1, 0.1);
+		color: black;
+		margin-top: 10px;
+		padding: 10px;
+		font-family: Rajdhani;
+		cursor: pointer;
+		outline: none;
+	
+	}
 	
 	#last-edited {
-		position: absolute;
-		margin: 0 auto;
-		left: 22%;
-		bottom: 12%;
-
+		text-align: center;
+		font-size: 15px;
+		font-family: Rajdhani;
 	}
-
+	
+	.delete {
+		position: absolute;
+		left: 5px;
+		bottom: 10px;
+		font-size: 20px;
+		font-family: Rajdhani;
+		border: none;
+		padding: 5px;
+		background-color:rgba(1, 1, 1, 0.1);
+		color: black;
+		cursor: pointer;
+		outline: none;
+	}
+	
 	.edit_note_content {
 		resize: none;
 		font-size: 20px;
@@ -829,7 +859,8 @@ smaller way to do that*/
 		border-radius: 5px;
 		padding: 0px 15px 0px 15px;
 		width: 90%;
-		height: 310px;
+		height: 400px;
+		margin-bottom: 60px;
 
 		
 	}
@@ -862,10 +893,7 @@ smaller way to do that*/
 		font-weight: bold;
 	}	
 
-	.save{
-		position: absolute;
-		bottom: 0;
-	}
+	
 	
 
 	/*PROFILE SECTION - RESPONSIVE*/

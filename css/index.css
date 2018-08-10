@@ -393,12 +393,12 @@ smaller way to do that*/
 }
 
 .edit_note_content {
-	height: 320px;
+	height: 420px;
 	resize: none;
 	font-size: 20px;
 	font-family: Rajdhani;
 	background-color: #A5C882;
-	padding: 10px 10px 100px 10px;
+	padding: 10px 10px 10px 10px;
 	margin: 0px auto;
 	width: 95%;
 	outline: none;
@@ -525,8 +525,8 @@ smaller way to do that*/
     border: 1px solid #888;
     border-radius: 5px;
     width: 85%; /* Could be more or less, depending on screen size */
-    animation-name: animation;
-    animation-duration: 1.5s;
+    /*animation-name: animation;
+    animation-duration: 1.5s;*/
     overflow: auto;
     background-color: #A5C882;
     
@@ -540,9 +540,10 @@ smaller way to do that*/
 }
 /* The Close Button */
 		.close {
-		    color: #484538;
+		    color: white;
 		    float: right;
-		    font-size: 28px;
+		    margin-right: 10px;
+		    font-size: 40px;
 		    font-weight: bold;
 		}
 		.close:hover{

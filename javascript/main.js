@@ -94,6 +94,7 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 close.onclick = function(){//if the close button is clicked, the modal is closed
 	modal.style.display = 'none';
 	document.body.style.overflow = 'auto';
+	document.getElementById('data').innerHTML = '';
 	
 }
 //WHEN CLICKED OUTSIDE modal-content
@@ -113,6 +114,7 @@ window.onclick = function(event){ //When clicked outside the modal, it automatic
 		
 		modal.style.display = 'none';
 		document.body.style.overflow = 'auto';
+		document.getElementById('data').innerHTML = '';
 	}
 }
 

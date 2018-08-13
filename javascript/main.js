@@ -1,3 +1,4 @@
+
 var numNotesPage = document.querySelectorAll('#note').length;
 var limit = 10; /*This number is equal to the number of LIMIT in the showNotes 
 	function!*/
@@ -90,6 +91,15 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 	});
 
 }	
+
+//WHEN PRESSED "ESC" - This is how you can use the keyboard to do something in the website! You can make even a game with this... I assume every key in the keyboard has a unique number.
+document.onkeyup = function(event){
+	if(event.keyCode == 27){
+		modal.style.display = 'none';
+		document.body.style.overflow = 'auto';
+		document.getElementById('data').innerHTML = '';
+	}
+}
 //WHEN CLICKED IN THE CLOSE ICON
 close.onclick = function(){//if the close button is clicked, the modal is closed
 	modal.style.display = 'none';
@@ -195,7 +205,7 @@ sideBarIcon.onclick = function(){//This is what happens when the side icon is cl
 		sideBar.style.animationDuration = '.3s';
 		sideBar.style.left = '0';
 		sideBar.style.width = '20%';
-		body.style.width = '80%';
+		body.style.width = '90%';
 		count++;
 	}
 	else { /*When the modulo is not equal to zero, the side bar will slide back with animation.*/

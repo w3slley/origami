@@ -393,9 +393,10 @@ smaller way to do that*/
 }
 
 .edit_note_content {
-	height: 420px;
+	display: table;
+	height: auto;
 	resize: none;
-	font-size: 20px;
+	font-size: 25px;
 	font-family: Rajdhani;
 	background-color: #A5C882;
 	padding: 10px 10px 10px 10px;
@@ -404,11 +405,12 @@ smaller way to do that*/
 	outline: none;
 	border: none;
 	
-
-
 }
 .edit_note_content::selection{
 	background: white;
+}
+.bottom{
+
 }
 .title_edit {
 	outline: none; /*This removes the border when typing anything in the textarea/input*/
@@ -438,6 +440,7 @@ smaller way to do that*/
 	font-family: Rajdhani;
 	cursor: pointer;
 	outline: none;
+	border-radius: 2px;
 
 }
 
@@ -449,7 +452,7 @@ smaller way to do that*/
 .delete {
 	position: absolute;
 	left: 5px;
-	bottom: 5px;
+	bottom: 10px;
 	font-size: 20px;
 	font-family: Rajdhani;
 	border: none;
@@ -458,12 +461,15 @@ smaller way to do that*/
 	color: black;
 	cursor: pointer;
 	outline: none;
+	border-radius: 2px;
 }
 .note-bottom-div{
-	position: absolute;
+	position: fixed;
+	left: 0;
 	bottom: 0;
-	width: 99%;
-	background-color: #A5C882;
+	padding-top: 5px;
+	width: 100%;
+	background-color:#A5C882;
 	
 	 
 	
@@ -519,12 +525,12 @@ smaller way to do that*/
 }
 .modal-content {
 	position: relative;
-	height: 85%;
-	margin: 5% auto; /* 5% from the top and centered */
+	height: 92%;
+	margin: 0% auto; /* 5% from the top and centered */
     padding: 5px 5px 0px 5px;
     border: 1px solid #888;
     border-radius: 5px;
-    width: 85%; /* Could be more or less, depending on screen size */
+    width: 99.2%; /* Could be more or less, depending on screen size */
     /*animation-name: animation;
     animation-duration: 1.5s;*/
     overflow: auto;
@@ -540,9 +546,9 @@ smaller way to do that*/
 }
 /* The Close Button */
 		.close {
+			position: fixed;
+			right: 20px;
 		    color: white;
-		    float: right;
-		    margin-right: 10px;
 		    font-size: 40px;
 		    font-weight: bold;
 		}
@@ -818,6 +824,7 @@ smaller way to do that*/
 		bottom: 0;
 		left: 0;
 		margin: 0;
+		padding-top: 15px;
 		background-color: #A5C882; 
 		height: 85px;
 	}

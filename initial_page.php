@@ -107,7 +107,7 @@
 				<div id="myModal" class="modal"> <!-- The modal -->
 					<div class="modal-content"> <!-- Modal's content-->
 						<span class="close">&times;</span> <!-- close button -->
-						<p id="data"><div class="loader-edit"></div></p>
+						<p id="data"></div></p>
 					</div> 
 				</div>
 					 
@@ -155,8 +155,10 @@
 			<div id="myModal" class="modal"> <!-- The modal -->
 				<div class="modal-content"> <!-- Modal's content-->
 					<span class="close">&times;</span> <!-- close button -->
-					<p id="data"><div class="loader-edit" id='loader-edit'></div></p> 
-					 
+					<div id="data">
+						<div class="loader-edit" id='loader-edit'></div>
+						
+					</div>  
 				</div>
 			</div>
 

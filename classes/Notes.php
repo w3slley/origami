@@ -143,15 +143,24 @@
 					<?php echo '<textarea id="edit-content-modal" spellcheck = "false" cols="60" rows="10" class="edit_note_content" name = "edit_note_content" >'.str_replace('<br />', '&#13;', $data->note_content).'</textarea>' //This '&#13' turns the break line tag into a enter in the text! ?><br>
 
 					<?php echo '<input class="id" style="display: none" name="note_id" value="'.$this->id.'">' //The note's id, hidden in this input that is not displayed, will be sended via POST to the file editNote.php?>
-					<div class="bottom"></div>
-					<div class="note-bottom-div">
+					
+					
 						<button class="delete" onclick="deleteNote(<?php echo $_POST['id']; ?>)">Delete</button>
 						<p id="last-edited">Last edited: <?php echo $data->date_added; ?></p>
 						<button class="save">Save changes</button>
-					</div>
 					
-
+					
 				</form>
+				<!--javascript code to save data when typed -->
+				<script>
+					
+				</script>
+				<!--
+				<form action="action/addImageNote.php" method="POST" enctype="multipart/form-data">
+					<input type="file" name="image">
+					<button type="submit" name="submit">Add image</button>
+				</form>
+				-->
 
 			</div>
 		<?php }

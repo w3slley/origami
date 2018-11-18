@@ -196,7 +196,7 @@ smaller way to do that*/
 
 @keyframes animation-sidebar{
 	from{
-		left: -300px;
+		left: -800px;
 		}
 	to{
 		left: 0;
@@ -209,7 +209,7 @@ smaller way to do that*/
 		width: 20%;		
 		}
 	to{
-		left: -300px;
+		left: -800px;
 	}
 }
 
@@ -393,17 +393,16 @@ smaller way to do that*/
 }
 
 .edit_note_content {
-	display: table;
-	height: auto;
-	resize: none;
+	position: relative;
 	font-size: 25px;
 	font-family: Rajdhani;
 	background-color: #A5C882;
 	padding: 10px 10px 10px 10px;
-	margin: 0px auto;
-	width: 95%;
+	width: 88%;
 	outline: none;
 	border: none;
+	
+	height: 380px;
 	
 }
 .edit_note_content::selection{
@@ -417,7 +416,7 @@ smaller way to do that*/
 	font-weight: bold;
 	font-size: 30px;
 	font-family: Josefin Slab;
-	padding: 10px 0 10px 0;
+	padding: 20px 0 10px 0;
 	background-color: #A5C882;
 	border: none;
 	margin: 0 auto;
@@ -433,7 +432,7 @@ smaller way to do that*/
 	right: 5px;
 	bottom: 5px;
 	border: none;
-	background-color: rgba(1, 1, 1, 0.1);
+	background-color: white;
 	color: black;
 	margin-top: 10px;
 	padding: 10px;
@@ -457,14 +456,15 @@ smaller way to do that*/
 	font-family: Rajdhani;
 	border: none;
 	padding: 5px;
-	background-color:rgba(1, 1, 1, 0.1);
+	background-color:white;
 	color: black;
 	cursor: pointer;
 	outline: none;
 	border-radius: 2px;
 }
+
 .note-bottom-div{
-	position: fixed;
+	position: absolute;
 	left: 0;
 	bottom: 0;
 	padding-top: 5px;
@@ -522,19 +522,20 @@ smaller way to do that*/
     background-color: rgb(1,1,1); /* Fallback color */
     background-color: rgba(1,1,1,0.4); /* Black w/ opacity */
     z-index: 200;
+
 }
 .modal-content {
 	position: relative;
-	height: 92%;
-	margin: 0% auto; /* 5% from the top and centered */
+	height: 82%;
+	margin: 6% auto; /* 5% from the top and centered */
     padding: 5px 5px 0px 5px;
     border: 1px solid #888;
-    border-radius: 5px;
-    width: 99.2%; /* Could be more or less, depending on screen size */
+    width: 93%; /* Could be more or less, depending on screen size */
     /*animation-name: animation;
     animation-duration: 1.5s;*/
-    overflow: auto;
+    border-radius: 5px;
     background-color: #A5C882;
+
     
    
 
@@ -546,7 +547,7 @@ smaller way to do that*/
 }
 /* The Close Button */
 		.close {
-			position: fixed;
+			position: absolute;
 			right: 20px;
 		    color: white;
 		    font-size: 40px;
@@ -819,7 +820,7 @@ smaller way to do that*/
 	}
 
 	.note-bottom-div{
-		position: fixed;
+		position: relative;
 		width: 100%;
 		bottom: 0;
 		left: 0;

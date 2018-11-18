@@ -82,6 +82,11 @@ Features done:
 	2)Made sure that when the user gets to the bottom of the page, the countNum variable that counts the number of notes in the DB gets updated. This solved the problem of not loading the adicional notes due to the variable not loading the number sometimes when a note is added.	
 	3) Before, when the user loaded all of the notes and then deleted one that was not in the first 10 in the beginning, the page would load again only the first 10 due to an line of code i wrote. Now this doesn't happen anymore.
 
+13/08 17:10
+Features done:
+	1) Made the notes fullscreen to fix some errors (height of the note content)
+	2) Fixed what was needed to start implementing the image feature in the notes
+
 Things I still have to implement:
 
 1)add label system to the notes.(DONE)

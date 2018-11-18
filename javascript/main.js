@@ -1,4 +1,3 @@
-
 var numNotesPage = document.querySelectorAll('#note').length;
 var limit = 10; /*This number is equal to the number of LIMIT in the showNotes 
 	function!*/
@@ -130,7 +129,7 @@ window.onclick = function(event){ //When clicked outside the modal, it automatic
 
 
 //ANIMATION ON NOTES DIV (when clicking inside the textarea to add a new note)
-var noteContent = document.querySelector('#addNote-content')
+var noteContent = document.querySelector('#addNote-content');
 var noteTitle = document.querySelector('#addNote-title');
 
 document.addEventListener('click', function(event){
@@ -159,7 +158,8 @@ document.addEventListener('click', function(event){
 		targetElement = targetElement.parentNode;
 	}
 	while(targetElement);
-	if(noteContent.value != ''){
+
+	if(noteContent.value != ' '){
 		
 	}
 	else{
@@ -211,7 +211,7 @@ sideBarIcon.onclick = function(){//This is what happens when the side icon is cl
 	else { /*When the modulo is not equal to zero, the side bar will slide back with animation.*/
 		sideBar.style.animationName = 'animation-out-sidebar';
 		sideBar.style.animationDuration = '.4s';
-		sideBar.style.left = '-300px';
+		sideBar.style.left = '-800px';
 		body.style.width = '100%';
 		count++;
 	}
@@ -354,8 +354,17 @@ window.onscroll = function(){
 		nav.style.boxShadow = 'none';
 	}
 	else if ($(window).scrollTop() > 0){
-		
 		nav.style.boxShadow = '5px 0px 15px #111';
 	}
 }
 
+//Add image into note
+/*var button = document.querySelector('.add-image');
+button.onclick = function(event){
+	event.preventDefault();
+	alert('test');
+}*/
+contentModal = document.getElementById('edit-content-modal');
+contentModal.onclick = function(){
+	alert('123');
+}

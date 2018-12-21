@@ -41,6 +41,10 @@
 					<img class="notes-icon" src="images/config.png">
 					<p class="sidebar-text" style="position: relative">Settings</p>
 				</li>
+				<li>
+						<img class="notes-icon" src="images/logout.png">
+						<p class="sidebar-text logout-button">Logout</p>	
+				</li>
 			</ul>		
 		</div>
 

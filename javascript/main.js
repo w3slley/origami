@@ -168,7 +168,7 @@ document.addEventListener('click', function(event){
 		noteTitle.style.cursor = 'default';
 		noteTitle.style.zIndex = '-1';
 	}
-	
+
 	
 	
 		
@@ -194,6 +194,11 @@ searchInput.onkeyup = function(){
 
 //SIDEBAR CODE
 
+//SIDEBAR ANIMATION. Just a heads up: from now on, only use querySelector!
+var sideBarIcon = document.querySelector('.side-icon');
+var sideBar = document.querySelector('.side-bar');
+var body = document.querySelector('.body');
+
 /*When the user clicks for the first time, the count variable is equal to 0 and, thus
 will display the fade in animation. The count will be increase by one. The second
 time, the count variable will be equal to 1 and the module of 1 and 2 is not 0, 
@@ -218,10 +223,6 @@ sideBarIcon.onclick = function(){//This is what happens when the side icon is cl
 	}
 	
 }
-//SIDEBAR ANIMATION. Just a heads up: from now on, only use querySelector!
-var sideBarIcon = document.querySelector('.side-icon');
-var sideBar = document.querySelector('.side-bar');
-var body = document.querySelector('.body');
 
 //Notes
 var notesSideBar = document.querySelector('.side-bar-notes');

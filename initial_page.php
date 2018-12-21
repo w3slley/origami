@@ -88,6 +88,10 @@
 						<img class="notes-icon" src="images/config.png">
 						<p class="sidebar-text" style="position: relative">Settings</p>
 					</li>
+					<li>
+						<img class="notes-icon" src="images/logout.png">
+						<p class="sidebar-text logout-button">Logout</p>	
+					</li>
 				</ul>		
 			</div>
 
@@ -119,22 +123,28 @@
 		<?php }
 		else { ?>	
 
-		<form class="logout-form" method="POST" action="action/logout.php">
-				<button class="logout" type="submit" name="submit">Logout</button>
-		</form>
+		
 		
 		<div class="side-bar">
 			<ul>
-				<a href="initial_page.php">
-					<li>
-						<img class="notes-icon" src="images/notes.png">
-						<p class="sidebar-text" style="position: relative">Your notes</p>
-					</li>
-				</a>
+				
+				<li>
+					<img class="notes-icon" src="images/notes.png">
+					<p class="sidebar-text side-bar-notes" style="position: relative">Your notes</p>
+				</li>
+				
 				<li>
 					<img class="notes-icon" src="images/config.png">
 					<p class="sidebar-text" style="position: relative">Settings</p>
 				</li>
+				<li>
+					
+					<img class="notes-icon" src="images/logout.png">
+					<p class="sidebar-text logout-button">Logout</p>	
+				</li>
+				
+				
+		</form>
 			</ul>
 			
 		</div>

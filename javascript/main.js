@@ -159,7 +159,7 @@ document.addEventListener('click', function(event){
 	}
 	while(targetElement);
 
-	if(noteContent.value != ' '){
+	if(noteContent.value != ''){
 		
 	}
 	else{
@@ -168,6 +168,7 @@ document.addEventListener('click', function(event){
 		noteTitle.style.cursor = 'default';
 		noteTitle.style.zIndex = '-1';
 	}
+	
 	
 	
 		
@@ -188,10 +189,10 @@ searchInput.onkeyup = function(){
 }*/
 
 
-//SIDEBAR ANIMATION. Just a heads up: from now on, only use querySelector!
-var sideBarIcon = document.querySelector('.side-icon');
-var sideBar = document.querySelector('.side-bar');
-var body = document.querySelector('.body');
+
+
+
+//SIDEBAR CODE
 
 /*When the user clicks for the first time, the count variable is equal to 0 and, thus
 will display the fade in animation. The count will be increase by one. The second
@@ -216,6 +217,21 @@ sideBarIcon.onclick = function(){//This is what happens when the side icon is cl
 		count++;
 	}
 	
+}
+//SIDEBAR ANIMATION. Just a heads up: from now on, only use querySelector!
+var sideBarIcon = document.querySelector('.side-icon');
+var sideBar = document.querySelector('.side-bar');
+var body = document.querySelector('.body');
+
+//Notes
+var notesSideBar = document.querySelector('.side-bar-notes');
+notesSideBar.onclick = function(){
+	window.location = 'initial_page.php'
+}
+//Logout
+var logoutButton = document.querySelector('.logout-button');
+logoutButton.onclick = function(){
+	window.location = 'action/logout.php';
 }
 
 //GETTING NUMBER OF NOTES FROM DATABASE.
@@ -364,7 +380,3 @@ button.onclick = function(event){
 	event.preventDefault();
 	alert('test');
 }*/
-contentModal = document.getElementById('edit-content-modal');
-contentModal.onclick = function(){
-	alert('123');
-}

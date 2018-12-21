@@ -52,7 +52,7 @@
 		function Redirect() {  
         window.location="initial_page.php"; 
     	} 
-	    setTimeout(Redirect(), 4000); //This is how you make the webbrowser to wait a certain amount of tima and then redirect it to some other page! The setTimeout executes the function in the first parameter after the amount of time (in miliseconds) has passed.
+	    setTimeout(Redirect(), 4000); //This is how you make the web browser to wait a certain amount of tima and then redirect it to some other page! The setTimeout executes the function in the first parameter after the amount of time (in miliseconds) has passed.
 	</script>
 </body>
 </html>

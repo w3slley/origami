@@ -185,10 +185,9 @@ smaller way to do that*/
 	margin-top: 70px;
 	left: 0;
 	background-color: #B6BCA4;
-	padding: 0 0 500px 0;
+	height: 35em;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	max-height: 90%;
 	overflow: auto;
 	z-index: 9;
 	
@@ -223,8 +222,10 @@ smaller way to do that*/
 
 }
 .side-bar ul{
+	padding: 0;
 	position: absolute;
 	width: 100%;
+	left: 0;
 	top: 0;
 	-webkit-padding-start: 0px; /*This was causing a padding-left of 40px. I don't know why.. 
 	But now it's fixed.*/
@@ -235,12 +236,14 @@ smaller way to do that*/
 	color: black;
 	cursor: pointer;
 	padding-left: 10px;
-	transition: background-color .2s;
+	
 }
 
 .side-bar ul li:hover{
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 100px;
 }
+
 
 
 /*THE PAGE ITSELF*/
@@ -394,14 +397,13 @@ smaller way to do that*/
 
 .edit_note_content {
 	position: relative;
-	font-size: 25px;
+	font-size: 20px;
 	font-family: Rajdhani;
 	background-color: #A5C882;
 	padding: 10px 10px 10px 10px;
-	width: 88%;
+	width: 94%;
 	outline: none;
 	border: none;
-	
 	height: 380px;
 	
 }

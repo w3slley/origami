@@ -78,6 +78,7 @@ function deleteNote(note_id){//delete notes using AJAX
 //EDIT NOTE 
 /*MODAL INTERACTION*/
 function editNote(note_id){ //When the note is clicked, the modal is shown.
+	
 	modal.style.display = "block";
 		$.post('action/editNote-modal.php', {id: note_id}, function (data){
 			document.getElementById('data').innerHTML = data;
@@ -249,7 +250,20 @@ $('#addNote-form').submit(function(){//Every time the user adds a new note,
 	});
 });
 
+//
+noteDiv = document.getElementsByClassName('div-note');
+deleteIcon = document.getElementsByClassName('delete-icon');
+deleteButton = document.querySelector('.delete-button');
+//Two very useful event handlers that I'll use later on.
+noteDiv.onmouseover = function(){
+		deleteIcon.style.opacity = '1';
+		deleteIcon.style.width = '200px';
 
+}
+noteDiv.onmouseout = function(){
+	deleteIcon.style.opacity = '0';
+	
+}
 
 //ALGORITHM THAT DISPLAYS MORE NOTES WHEN USER REACHES THE BOTTOM OF THE PAGE(jQuery)!
 $(document).ready(function(){

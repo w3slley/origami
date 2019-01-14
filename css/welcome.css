@@ -1,7 +1,40 @@
 body {
 	margin: 0;
+}
+nav{
+	background-color: transparent;
+	padding-bottom: 40px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	transition: background-color .7s;
+}
+
+
+nav ul{
+	position: absolute;
+	right: 0;
+
+
 	
-	
+}
+nav ul li{
+	display: inline-block;
+	padding: 0 30px 0 30px;	
+
+}
+.item-nav{
+	color: black;
+	text-decoration: none;
+	font-size: 22px;
+	font-family: 'Poiret One', cursive;
+	transition: color .7s;
+
+}
+.item-nav:hover{
+	color: black;
+	text-decoration: none;
 }
 #signin-form{
 	text-align: center;
@@ -39,7 +72,7 @@ body {
 }
 .welcome {
 	position: absolute;
-	top: 10%;
+	top: 20%;
 	margin: 0% 50% auto;
 	width: 40%;
 	color: white;
@@ -56,7 +89,7 @@ body {
 		}
 	to{
 		position: absolute;
-		top: 10%;
+		top: 20%;
 	}
 	
 }
@@ -74,6 +107,64 @@ body {
 	font-family: Cardo;
 	font-size: 30px;
 	text-align: center;
+}
+.container{
+	margin: 0 auto;
+
+}
+
+.main{
+	margin: 0 auto;
+	width: 90%;
+
+}
+.container .row{
+	margin: 5% 0 5% 0;
+}
+.main .row{
+	margin: 200px 0 200px 0;
+}
+.main .row img{
+	width: 80%;
+}
+.main h1{
+	margin-bottom: 80px;
+}
+.main p{
+	font-size: 25px;
+}
+.container2{
+	background-color: #E8EDDF;
+	margin-bottom: 20px;
+	padding: 20px;
+	text-align: center;
+	border-radius: 10px;
+}
+.container2 .col-md-6 img{
+	width: 150px;
+	margin-bottom: 30px;
+
+}
+footer{
+	background-color: black;
+	color: white;
+}
+footer ul li{
+
+	list-style-type: none;
+}
+footer ul li a {
+	text-decoration: none;
+	color: white;
+}
+footer ul li a:hover{
+	color: white;
+}
+footer .trademark{
+	margin: 0;
+	text-align: center;
+	position: relative;
+	bottom: 0;
 }
 
 /*SIGN UP*/

@@ -313,6 +313,7 @@ smaller way to do that*/
 #notes { /*This is how you make a grid system. I have to explore this later on*/
 	/*display: grid;
 	grid-template-columns: auto auto auto;*/
+	padding-bottom: 50px;
 }
 
 .div-note {
@@ -323,9 +324,8 @@ smaller way to do that*/
 	background-color: rgba(67, 114, 36, 0.8);
 	margin: 0 auto;
 	width: 70%;
-	text-align: justify;
 	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/	
-	transition: box-shadow .4s;
+	transition: box-shadow .2s;
 }
 .div-note-first{
 	font-family: Rajdhani;
@@ -354,6 +354,7 @@ smaller way to do that*/
 	width: 30px;
 	position: absolute;
 	bottom: 10px;
+	left: -40px;
 	cursor: pointer;
 	opacity: 0;
 	transition: opacity .5s;
@@ -361,7 +362,7 @@ smaller way to do that*/
 }
 /*Note's animation*/
 .div-note:hover {
-	box-shadow: 2px 2px 15px #111;
+	box-shadow: 2px 2px 9px #111;
 	
 }
 .div-note:hover #delete-icon {

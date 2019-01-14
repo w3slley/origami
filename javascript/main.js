@@ -77,10 +77,14 @@ function deleteNote(note_id){//delete notes using AJAX
 
 //EDIT NOTE 
 /*MODAL INTERACTION*/
+
+//14/01/2019 - Fixed (for now) the main security hole in the app.
+
+//So, the solution to the security hole was to add another parameter for searching the note in the database. Now, in the browser you can only see the note id, but in the server it checks if the present user id is the same as the user id of the person who created the note. If these two numbers disagree, the note will not be pulled of from the database and the user gets an error message. There'll probably be more security flaws in the future and sooner or later I will discover another one. But the important thing is to always learn from them.
 function editNote(note_id){ //When the note is clicked, the modal is shown.
 	
 	modal.style.display = "block";
-		$.post('action/editNote-modal.php', {id: note_id}, function (data){
+		$.post('action/editNote-modal.php', {noteId: note_id}, function (data){
 			document.getElementById('data').innerHTML = data;
 			document.body.style.overflow = 'hidden';
 			document.querySelector('#loader-edit').classList.remove('loader-edit');/*This

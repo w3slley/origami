@@ -354,7 +354,7 @@ smaller way to do that*/
 	width: 30px;
 	position: absolute;
 	bottom: 10px;
-	left: -40px;
+	left: 0px;
 	cursor: pointer;
 	opacity: 0;
 	transition: opacity .5s;

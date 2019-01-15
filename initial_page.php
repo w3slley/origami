@@ -155,7 +155,7 @@
 				<form id="addNote-form" method="POST" action="action/addNote.php">
 					<input id="addNote-title" name="note_title"placeholder="Note title"><br><br>
 					<textarea id="addNote-content" spellcheck = "false" style="resize:none" name="note_content" class="index_write_note" placeholder="Write a new note..."></textarea><br> 
-					<button id="addNote-submit" type="submit" name="submit"><img src="plus.png" width="70px"></button>
+					<button id="addNote-submit" type="submit" name="submit"><img src="images/plus.png" width="70px"></button>
 				</form>
 			
 			</div>
@@ -167,7 +167,6 @@
 					<span class="close">&times;</span> <!-- close button -->
 					<div id="data">
 						<div class="loader-edit" id='loader-edit'></div>
-						
 					</div>  
 				</div>
 			</div>

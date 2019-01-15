@@ -18,7 +18,7 @@
 		$_SESSION['password'] = $data['password'];
 
 
-		header("Location: ../validation.php");
+		header("Location: ../validation.php?logged=y");
 
 
 	}

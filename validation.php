@@ -1,3 +1,5 @@
+<?php
+	if(isset($_GET['logged'])){ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +17,7 @@
 		    border-radius: 50%;
 		    width: 80px;
 		    height: 80px;
-		    animation: spin 2s linear infinite;
+		    animation: spin 1s linear infinite;
 		    margin: 0 auto;
 		    display: block;
 		   	margin-top: 250px;
@@ -31,7 +33,7 @@
 			    border-radius: 50%;
 			    width: 160px;
 			    height: 160px;
-			    animation: spin 2s linear infinite;
+			    animation: spin 1s linear infinite;
 			    margin: 0 auto;
 			    display: block;
 			   	margin-top: 140px;
@@ -47,12 +49,21 @@
 </head>
 <body>
 	<div class="loader"></div>
-	
 	<script>
-		function Redirect() {  
-        window.location="initial_page.php"; 
-    	} 
-	    setTimeout(Redirect(), 4000); //This is how you make the web browser to wait a certain amount of tima and then redirect it to some other page! The setTimeout executes the function in the first parameter after the amount of time (in miliseconds) has passed.
+		
+	    setTimeout(function (){
+			window.location = 'initial_page.php';
+		}, 3000); //This is how you make the web browser to wait a certain amount of tima and then redirect it to some other page! The setTimeout executes the function in the first parameter after the amount of time (in miliseconds) has passed.
 	</script>
 </body>
 </html>
+
+
+<?php	}
+
+	else{
+		header("Location: index.php");
+	}
+?>
+
+

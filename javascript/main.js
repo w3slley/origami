@@ -82,17 +82,16 @@ function deleteNote(note_id){//delete notes using AJAX
 
 //So, the solution to the security hole was to add another parameter for searching the note in the database. Now, in the browser you can only see the note id, but in the server it checks if the present user id is the same as the user id of the person who created the note. If these two numbers disagree, the note will not be pulled of from the database and the user gets an error message. There'll probably be more security flaws in the future and sooner or later I will discover another one. But the important thing is to always learn from them.
 function editNote(note_id){ //When the note is clicked, the modal is shown.
-	
+	let loaderEdit = document.querySelector('#loader-edit');
 	modal.style.display = "block";
-		$.post('action/editNote-modal.php', {noteId: note_id}, function (data){
-			document.getElementById('data').innerHTML = data;
-			document.body.style.overflow = 'hidden';
-			document.querySelector('#loader-edit').classList.remove('loader-edit');/*This
-			makes a loader icon appear when the note is being retrieve from the database*/
-			/*$(document).on('touchmove', function(e) {
-		  	  e.preventDefault();
-			});*/ //Removed this both here and in the server. Will push to github as a new commit.
+	$.post('action/editNote-modal.php', {noteId: note_id}, function (data){
+		document.getElementById('data').innerHTML = data;
+		document.body.style.overflow = 'hidden';
+		/*loaderEdit.classList.remove('loader-edit');/*This
+		makes a loader icon appear when the note is being retrieve from the database*/
+		
 	});
+
 
 }	
 
@@ -101,14 +100,17 @@ document.onkeyup = function(event){
 	if(event.keyCode == 27){
 		modal.style.display = 'none';
 		document.body.style.overflow = 'auto';
-		document.getElementById('data').innerHTML = '';
+		document.getElementById('data').innerHTML = "<div class='loader-edit' id='loader-edit'></div>"; //This right here fixed the problem I was having with the loader in the modal. Now, (15/01/2019) when the notes area loading, the animation will be displayed.
 	}
 }
 //WHEN CLICKED IN THE CLOSE ICON
 close.onclick = function(){//if the close button is clicked, the modal is closed
+	let loaderEdit = document.querySelector('#loader-edit');
 	modal.style.display = 'none';
 	document.body.style.overflow = 'auto';
-	document.getElementById('data').innerHTML = '';
+	document.getElementById('data').innerHTML = "<div class='loader-edit' id='loader-edit'></div>";
+	
+
 	
 }
 //WHEN CLICKED OUTSIDE modal-content
@@ -128,7 +130,8 @@ window.onclick = function(event){ //When clicked outside the modal, it automatic
 		
 		modal.style.display = 'none';
 		document.body.style.overflow = 'auto';
-		document.getElementById('data').innerHTML = '';
+		document.getElementById('data').innerHTML = "<div class='loader-edit' id='loader-edit'></div>";
+		
 	}
 }
 
@@ -384,7 +387,8 @@ searchIcon.onclick = function(){
 
 //Box shadow animation
 var nav = document.querySelector('.nav');
-window.onscroll = function(){
+//Managing the scroll bar possition with jQuery is much more easier! But I need to know both ways.
+window.onscroll = function(){ 
 	if ($(window).scrollTop() == 0){
 		nav.style.boxShadow = 'none';
 	}
@@ -392,10 +396,3 @@ window.onscroll = function(){
 		nav.style.boxShadow = '5px 0px 15px #111';
 	}
 }
-
-//Add image into note
-/*var button = document.querySelector('.add-image');
-button.onclick = function(event){
-	event.preventDefault();
-	alert('test');
-}*/

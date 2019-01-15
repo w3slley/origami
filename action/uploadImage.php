@@ -12,7 +12,7 @@
 	$format = explode('.', $fileName);
 	$imgFormat = $format[1];
 	$formatAllowed = array('png', 'jpg', 'jpeg');
-	$image_path = '/var/www/html/PHP_projects/Notes_app/profile_images/user'.$_SESSION['id'].'.'.$imgFormat;
+	$image_path = '../profile_images/user'.$_SESSION['id'].'.'.$imgFormat;
 	if($fileError == 0){
 		if($fileSize < 2000000){
 			if(in_array($imgFormat, $formatAllowed)){

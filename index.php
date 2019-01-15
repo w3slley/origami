@@ -15,7 +15,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Quicksand" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/welcome.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> <!-- This is how you display the favicon icon in the website! Fucking awesome!! -->
-	<script src="javascript/main.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Poor+Story|Ubuntu|Amatic+SC|Righteous|Kaushan+Script|Cardo|Poiret+One" rel="stylesheet">
 	
 
@@ -71,7 +70,7 @@
 				<img src="icons/note4.svg">
 			</div>
 			<div class="col-md-6 col-ms-6">
-				<h1>some other text</h1>
+				<h1>No more complications!</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -86,13 +85,13 @@
          <div class="row">
               <div class="col-md-6">
                 <img id="img-left" src="http://www.freeiconspng.com/uploads/cd-icon-flat-multimedia-29.png">
-                <h3>This is a Heading</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <h3>Start today!</h3>
+                <p>You can start using Notes today without paying anything. If you want to access new features, we have a monthly package that will fit your needs.</p>
               </div>
               <div class="col-md-6">
                 <img id="img-center" src="https://forwardjump.com/wp-content/uploads/2017/02/design-icon.png">
-                <h3>This is a Heading</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3>Are you a company? </h3>
+                <p>If so, you can use Notes to increase productivity in the office and deliver more for your customers.</p>
               </div>      
            </div>    
       </div>

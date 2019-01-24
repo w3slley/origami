@@ -87,13 +87,17 @@ Features done:
 	1) Made the notes fullscreen to fix some errors (height of the note content)
 	2) Fixed what was needed to start implementing the image feature in the notes
 
-15/01/2018 09:38
+15/01/2019 09:38
 Hi there. I'm back again hehehe.
 Yesterday I fixed a very dangerous security flaw with regard to the accessibility of the notes by non authorized user in the front end. I think that is now fixed, but I have to be careful with the desing of the back end, otherwise things like this will happen in the future - and they probably will. I think I'll find another one of these again. The thing is that I have to be always learn from mistakes like these.
 Well, these are the features done yesterday and today:
 	1)Fixed security issue;
 	2) Fixed notes loading animation;
 	3) Fixed problem with the validation page. Before, anyone could just go into the page with the browser and see the animation page. Now, it will only be displayed after the user logged in. I also set the delay time in the validation page to 3 seconds. Before it wasn't working but now it is.
+
+24/01/2019 22:05
+	1)Implemented the fade-in animation of the notes (have to fix the fade-out animation)
+	2) Removed the fact that the scrollbar would be hidden when the note was clicked.
 	
 Things I still have to implement:
 

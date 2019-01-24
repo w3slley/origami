@@ -394,6 +394,7 @@ smaller way to do that*/
 	text-align: center;
 	margin:0;
 	padding: 0;
+	
 }
 
 .edit_note_content {
@@ -405,6 +406,7 @@ smaller way to do that*/
 	width: 94%;
 	outline: none;
 	border: none;
+	resize: none;
 	height: 380px;
 	
 }
@@ -524,7 +526,9 @@ smaller way to do that*/
     /* overflow: auto; Enable scroll if needed */
     background-color: rgb(1,1,1); /* Fallback color */
     background-color: rgba(1,1,1,0.4); /* Black w/ opacity */
-    z-index: 200;
+	z-index: 200;
+	
+	
 
 }
 .modal-content {
@@ -537,16 +541,18 @@ smaller way to do that*/
     /*animation-name: animation;
     animation-duration: 1.5s;*/
     border-radius: 5px;
-    background-color: #A5C882;
-
-    
-   
+	background-color: #A5C882;
+	
 
 }
 
 @keyframes animation { /*This is the code that creates the animation*/
   	from {opacity: 0}
   	to {opacity: 1}
+}
+@keyframes animation-out{
+	from{opacity:1}
+	to {opacity:0}
 }
 /* The Close Button */
 		.close {
@@ -696,6 +702,18 @@ smaller way to do that*/
 	background-color: #679436;
 	color: white;
 }
+
+
+/* SETTINGS PAGE STYLE*/
+.setting-body{
+	margin: 0 auto;
+	position: relative;
+	display: block;
+	width: 70%;
+	right: 0;
+}
+
+
 
 
 /*Styling mobile*/

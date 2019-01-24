@@ -4,7 +4,7 @@ window.onscroll = function(){
 	const navItems = document.querySelectorAll('.item-nav');
 	
 		if(scroll != 0){
-		nav.style.backgroundColor = 'black';
+		nav.style.backgroundColor = '#343434';
 
 		for(let i=0;i<navItems.length; i++){
 			navItems[i].style.color = 'white';

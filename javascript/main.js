@@ -38,6 +38,7 @@ $("#addNote-form").submit(function(event){//When the form is submited (button is
 //Modal Variables
 var modal = document.getElementById('myModal');//getting the element of the modal
 var close = document.getElementsByClassName("close")[0];//getting the close button element
+var modalContent = document.getElementsByClassName('modal-content')[0];
 //DELETENOTE FUNCTION WHICH IS RUN IN THE NOTES' CLASS (in the showNotes function)
 function deleteNote(note_id){//delete notes using AJAX
 	var confirmValue = confirm('Do you really want to delete this note?');
@@ -83,10 +84,13 @@ function deleteNote(note_id){//delete notes using AJAX
 //So, the solution to the security hole was to add another parameter for searching the note in the database. Now, in the browser you can only see the note id, but in the server it checks if the present user id is the same as the user id of the person who created the note. If these two numbers disagree, the note will not be pulled of from the database and the user gets an error message. There'll probably be more security flaws in the future and sooner or later I will discover another one. But the important thing is to always learn from them.
 function editNote(note_id){ //When the note is clicked, the modal is shown.
 	let loaderEdit = document.querySelector('#loader-edit');
-	modal.style.display = "block";
+	modal.style.display = 'block';
+	modal.style.animationName = 'animation';
+	modal.style.animationDuration = '.7s'
 	$.post('action/editNote-modal.php', {noteId: note_id}, function (data){
 		document.getElementById('data').innerHTML = data;
-		document.body.style.overflow = 'hidden';
+		//document.body.style.overflow = 'hidden';
+		
 		/*loaderEdit.classList.remove('loader-edit');/*This
 		makes a loader icon appear when the note is being retrieve from the database*/
 		
@@ -99,16 +103,21 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 document.onkeyup = function(event){
 	if(event.keyCode == 27){
 		modal.style.display = 'none';
-		document.body.style.overflow = 'auto';
-		document.getElementById('data').innerHTML = "<div class='loader-edit' id='loader-edit'></div>"; //This right here fixed the problem I was having with the loader in the modal. Now, (15/01/2019) when the notes area loading, the animation will be displayed.
+		
+		modal.style.animationName = 'animation-out';
+		modal.style.animationDuration = '1s'
+		//document.body.style.overflow = 'auto';
+		document.getElementById('data').innerHTML = "";//coloquei isso para desabilitar temporariamente o loader. Se você quiser que a animação loading volte a funcionar, é só descomentar o código abaixo e comentar esse.
+		//document.getElementById('data').innerHTML = "<div class='loader-edit' id='loader-edit'></div>"; //This right here fixed the problem I was having with the loader in the modal. Now, (15/01/2019) when the notes area loading, the animation will be displayed.
 	}
 }
 //WHEN CLICKED IN THE CLOSE ICON
 close.onclick = function(){//if the close button is clicked, the modal is closed
 	let loaderEdit = document.querySelector('#loader-edit');
 	modal.style.display = 'none';
-	document.body.style.overflow = 'auto';
-	document.getElementById('data').innerHTML = "<div class='loader-edit' id='loader-edit'></div>";
+	//document.body.style.overflow = 'auto';
+	document.getElementById('data').innerHTML = "";
+	//document.getElementById('data').innerHTML = "<div class='loader-edit' id='loader-edit'></div>";
 	
 
 	
@@ -129,8 +138,9 @@ window.onclick = function(event){ //When clicked outside the modal, it automatic
 		//I will try to implement this later!
 		
 		modal.style.display = 'none';
-		document.body.style.overflow = 'auto';
-		document.getElementById('data').innerHTML = "<div class='loader-edit' id='loader-edit'></div>";
+		//document.body.style.overflow = 'auto';
+		document.getElementById('data').innerHTML = "";
+		//document.getElementById('data').innerHTML = "<div class='loader-edit' id='loader-edit'></div>";
 		
 	}
 }
@@ -237,11 +247,18 @@ var notesSideBar = document.querySelector('.side-bar-notes');
 notesSideBar.onclick = function(){
 	window.location = 'initial_page.php'
 }
+//Settings
+var settingsSideBar = document.querySelector('.side-bar-settings');
+settingsSideBar.onclick = function(){
+	window.location = 'settings.php'
+}
+
 //Logout
 var logoutButton = document.querySelector('.logout-button');
 logoutButton.onclick = function(){
 	window.location = 'action/logout.php';
 }
+
 
 //GETTING NUMBER OF NOTES FROM DATABASE.
 $(document).ready(function(){ /*The countNumNotes (number of notes the user has written)

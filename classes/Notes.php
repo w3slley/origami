@@ -151,7 +151,7 @@
 
 						<?php echo '<textarea id="edit-content-modal" spellcheck = "false" cols="60" rows="10" class="edit_note_content" name = "edit_note_content" placeholder="Write here your note..." >'.str_replace('<br />', '&#13;', $data->note_content).'</textarea>' //This '&#13' turns the break line tag into a enter in the text! ?><br>
 
-						<?php echo '<input class="id" style="display: none" name="note_id" value="'.$this->id.'">' //The note's id, hidden in this input that is not displayed, will be sended via POST to the file editNote.php?>
+						<?php echo '<input class="id" style="display: none" name="note_id" value="'.$this->note_id.'">' //The note's id, hidden in this input that is not displayed, will be sended via POST to the file editNote.php?>
 						
 						
 							<button class="delete" onclick="deleteNote(<?php echo $_POST['id']; ?>)">Delete</button>

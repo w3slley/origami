@@ -41,3 +41,19 @@ searchIcon.onclick = function(){
 	}
 };
 
+//Notes
+var notesSideBar = document.querySelector('.side-bar-notes');
+notesSideBar.onclick = function(){
+	window.location = 'initial_page.php'
+}
+//Settings
+var settingsSideBar = document.querySelector('.side-bar-settings');
+settingsSideBar.onclick = function(){
+	window.location = 'settings.php'
+}
+//Logout
+var logoutButton = document.querySelector('.logout-button');
+logoutButton.onclick = function(){
+	window.location = 'action/logout.php';
+}
+

@@ -30,22 +30,21 @@
 		</div>
 
 		<div class="side-bar">
-			<ul>
-				<a href="initial_page.php">
+			<ul>	
+                    <li>
+                        <img class="notes-icon" src="images/notes.png">
+                        <p class="sidebar-text side-bar-notes" style="position: relative">Your notes</p>
+                    </li>
+				
 					<li>
-						<img class="notes-icon" src="images/notes.png">
-						<p class="sidebar-text" style="position: relative">Your notes</p>
+						<img class="notes-icon" src="images/config.png">
+						<p class="sidebar-text side-bar-settings" style="position: relative">Settings</p>
 					</li>
-				</a>
-				<li>
-					<img class="notes-icon" src="images/config.png">
-					<p class="sidebar-text" style="position: relative">Settings</p>
-				</li>
-				<li>
+					<li>
 						<img class="notes-icon" src="images/logout.png">
 						<p class="sidebar-text logout-button">Logout</p>	
-				</li>
-			</ul>		
+					</li>
+				</ul>		
 		</div>
 
 		<form class="search-form" method="GET">

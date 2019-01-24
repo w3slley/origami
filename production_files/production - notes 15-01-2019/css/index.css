@@ -1,0 +1,1048 @@
+body {
+	background-color: #E8EDDF;
+	margin: 0;
+	
+}
+
+nav {
+	position: fixed;
+	top:0;
+	width: 100%;
+	background-color: #679436;
+	padding: 10px 0 10px 0;
+	z-index: 10;
+	box-shadow: none;
+	transition: box-shadow .5s;
+
+	
+}
+.side-icon {
+	position: absolute;
+	width: 25px;
+	left: 10px;
+	bottom: 18px;
+	cursor: pointer;
+}
+
+.logo {
+	position: absolute;
+	left: 60px;
+	width: 50px;
+	top: 5px;
+}
+
+.logo-text{
+	font-family: Kaushan Script;
+	font-size: 55px;
+	color: white;
+	position: absolute;
+	top: -57px;
+	left: 115px;
+	
+
+}
+
+.search-form input{
+	position: relative;
+	left: 25%;
+	top: 0;
+	width: 50%;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	padding: 5px 0 5px 10px;
+	height: 40px;
+	font-size: 20px;
+	font-family:  Rajdhani;
+	background-color: rgba(67, 94, 36, 0.2);
+	transition: background-color .5s, border .5s;
+	color: white;
+
+
+}
+#search-input::placeholder {/*This is how you change the placeholder's properties*/
+	color: white;
+}
+#search-input-js::placeholder {/*This is how you change the placeholder's properties*/
+	color: gray;
+}
+
+.search-form input::selection {
+	background-color: #427AA1;
+}
+
+#search-button{
+	background: none;
+	border: none;
+	border-radius: 10px;
+	position: absolute;
+	cursor: pointer;
+	top: 7px;
+	right: 20.5%;
+	outline: none;
+	opacity: 0;
+	transition: opacity .5s;
+	
+}
+#search-img{
+	display: none;
+	
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}/*This is how you remove the 'x' from the search input. I'll look into a 
+smaller way to do that*/
+
+.searched-notes{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.text-search {
+	font-family: Rajdhani;
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+
+
+.profile-img-nav{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	border-radius: 100%;
+	cursor: pointer;
+	
+
+
+}
+
+.dropdown-settings{
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 60px;
+	width: 100px;
+	height: 100px;
+	z-index: 100;
+	background-color: white;
+	border-radius: 5px;
+
+}
+.dropdown-settings ul{
+	list-style-type: none;
+	font-size: 20px;
+	
+
+}
+.dropdown-settings ul li{
+	position: relative;
+	background-color: gray;
+	width: 100%;
+	left: 0;
+	
+	
+
+}
+.dropdown-settings ul li a{
+
+	text-decoration: none;
+	color: black;
+	font-family: Rajdhani;
+
+
+	
+}
+
+
+.logout {
+	border: none;
+	font-size: 20px;
+	font-family: Rajdhani;
+	background: none;
+	cursor: pointer;
+	padding: 0;
+	
+
+
+}
+
+.logout-form{
+	position: absolute;
+	right: 0;
+	top: 10%;
+}
+.side-bar{
+	width: 0%;
+	position: fixed;
+	margin-top: 70px;
+	left: 0;
+	background-color: #B6BCA4;
+	height: 35em;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	overflow: auto;
+	z-index: 9;
+	
+}
+
+@keyframes animation-sidebar{
+	from{
+		left: -800px;
+		}
+	to{
+		left: 0;
+		width: 20%;
+	}
+}
+@keyframes animation-out-sidebar{
+	from{
+		left:0;
+		width: 20%;		
+		}
+	to{
+		left: -800px;
+	}
+}
+
+.notes-icon {
+	width: 40px;
+}
+.sidebar-text{
+	display: inline-block;
+	font-size: 30px;
+	font-family: Rajdhani;
+
+}
+.side-bar ul{
+	padding: 0;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	-webkit-padding-start: 0px; /*This was causing a padding-left of 40px. I don't know why.. 
+	But now it's fixed.*/
+}
+
+.side-bar ul li {
+	list-style-type: none;
+	color: black;
+	cursor: pointer;
+	padding-left: 10px;
+	
+}
+
+.side-bar ul li:hover{
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 100px;
+}
+
+
+
+/*THE PAGE ITSELF*/
+.body{
+	margin-top: 100px;
+	margin-bottom: 70px;
+	position: absolute;
+	right: 0;
+	width: 100%;
+	transition: width .4s;
+}
+
+.write {
+	text-align: center;
+	
+
+}
+.write button {
+	margin: 0 auto;
+	display: block;
+	outline: none;
+	cursor: pointer;
+}
+.write input, textarea {
+	margin: 0 auto;
+	width: 58%;	
+	border: none;
+	border-radius: 10px;
+	font-size: 20px;
+	padding: 10px;
+	background-color: white;
+	font-family: Rajdhani;
+	border: 1px solid #A2A3A2;
+}
+.index_write_note {
+	font-family: Rajdhani;
+}
+#addNote-title {
+	font-weight: bold;
+	position: relative;
+	top: -500px;
+	opacity: 0;
+	outline: none;
+	cursor: default;
+	z-index: -1;
+	transition: opacity .5s;
+	
+}
+#addNote-content{
+	margin-top: 5px;
+	height: 30px;
+	margin-bottom: 15px;
+	outline: none;
+	transition: height .5s;
+
+
+}
+
+
+
+#addNote-submit {
+	background: none;
+	border: none;
+	border-radius: 100%;
+}
+
+#notes { /*This is how you make a grid system. I have to explore this later on*/
+	/*display: grid;
+	grid-template-columns: auto auto auto;*/
+	padding-bottom: 50px;
+}
+
+.div-note {
+	font-family: Rajdhani;
+	position: relative;
+	padding: 0px 5px 30px 5px;
+	border-radius: 5px;
+	background-color: rgba(67, 114, 36, 0.8);
+	margin: 0 auto;
+	width: 70%;
+	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/	
+	transition: box-shadow .2s;
+}
+.div-note-first{
+	font-family: Rajdhani;
+	position: relative;
+	padding: 0px 5px 30px 5px;
+	border-radius: 5px;
+	background-color: rgba(67, 114, 36, 0.8);
+	margin: 0 auto;
+	width: 70%;
+	text-align: justify;
+	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/	
+	animation-name: note-animation-in;
+	animation-duration: 5s;
+
+	
+}
+
+@keyframes note-animation-in{
+	from{opacity: 0;
+		}
+	to{opacity: 1;
+		}
+}
+
+#delete-icon {
+	width: 30px;
+	position: absolute;
+	bottom: 10px;
+	left: 0px;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity .5s;
+
+}
+/*Note's animation*/
+.div-note:hover {
+	box-shadow: 2px 2px 9px #111;
+	
+}
+.div-note:hover #delete-icon {
+	opacity: 1;
+	
+}
+
+
+.note_title{
+	padding-top: 5px;
+	font-family: Josefin Slab;
+}
+
+.note_content {
+	font-size: 20px;
+	padding: 10px;
+}
+.date {
+	position: absolute;
+	right: 2%;
+	bottom: 0;
+	font-family: Rajdhani;
+	font-size: 15px;
+}
+
+
+/*Note's MODAL CONTENT*/
+.edit_note {
+	text-align: center;
+	margin:0;
+	padding: 0;
+}
+
+.edit_note_content {
+	position: relative;
+	font-size: 20px;
+	font-family: Rajdhani;
+	background-color: #A5C882;
+	padding: 10px 10px 10px 10px;
+	width: 94%;
+	outline: none;
+	border: none;
+	height: 380px;
+	
+}
+.edit_note_content::selection{
+	background: white;
+}
+.bottom{
+
+}
+.title_edit {
+	outline: none; /*This removes the border when typing anything in the textarea/input*/
+	font-weight: bold;
+	font-size: 30px;
+	font-family: Josefin Slab;
+	padding: 20px 0 10px 0;
+	background-color: #A5C882;
+	border: none;
+	margin: 0 auto;
+	width: 94%;
+}
+
+.title_edit::selection{
+	background: white;
+}
+.save {
+	font-size: 20px;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	border: none;
+	background-color: white;
+	color: black;
+	margin-top: 10px;
+	padding: 10px;
+	font-family: Rajdhani;
+	cursor: pointer;
+	outline: none;
+	border-radius: 2px;
+
+}
+
+#last-edited {
+	font-size: 15px;
+	font-family: Rajdhani;
+}
+
+.delete {
+	position: absolute;
+	left: 5px;
+	bottom: 10px;
+	font-size: 20px;
+	font-family: Rajdhani;
+	border: none;
+	padding: 5px;
+	background-color:white;
+	color: black;
+	cursor: pointer;
+	outline: none;
+	border-radius: 2px;
+}
+
+.note-bottom-div{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-top: 5px;
+	width: 100%;
+	background-color:#A5C882;
+	
+	 
+	
+	
+
+	
+}
+
+
+
+.loader {
+	border: 5px solid white; /* Light grey */
+    border-top: 5px solid #70A288; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    bottom: -60px;
+    left: 48.1%;
+
+
+}
+.loader-edit {
+	border: 15px solid white; /* Light grey */
+    border-top: 15px solid #70A288; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    margin: 10% auto;
+
+
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*Modal Styling*/
+.modal {
+	display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /* overflow: auto; Enable scroll if needed */
+    background-color: rgb(1,1,1); /* Fallback color */
+    background-color: rgba(1,1,1,0.4); /* Black w/ opacity */
+    z-index: 200;
+
+}
+.modal-content {
+	position: relative;
+	height: 82%;
+	margin: 6% auto; /* 5% from the top and centered */
+    padding: 5px 5px 0px 5px;
+    border: 1px solid #888;
+    width: 93%; /* Could be more or less, depending on screen size */
+    /*animation-name: animation;
+    animation-duration: 1.5s;*/
+    border-radius: 5px;
+    background-color: #A5C882;
+
+    
+   
+
+}
+
+@keyframes animation { /*This is the code that creates the animation*/
+  	from {opacity: 0}
+  	to {opacity: 1}
+}
+/* The Close Button */
+		.close {
+			position: absolute;
+			right: 20px;
+		    color: white;
+		    font-size: 40px;
+		    font-weight: bold;
+		}
+		.close:hover{
+		    color: black;
+		    cursor: pointer;
+		}
+
+
+
+/*PROFILE PAGE STYLING*/
+.profile{/*This is the equivalent of the class 'body' in the initial_page.php*/
+	position: absolute;
+	right: 0;
+	width: 100%;
+	transition: width .4s;
+}
+.profile-body{ /*This is the part where all the information and profile image is*/
+	border-radius: 5px;
+	margin: 6% auto;
+	width: 90%;
+	position: relative;
+	font-family: Rajdhani;
+}
+.profile-body p {
+	margin: 10px 0 15px 0;
+}
+.image-container{
+	position: absolute;
+	width: 30%;
+	
+	height: 100%;
+}
+.information-container{
+	position: absolute;
+	right: 0;
+	margin: 0 0 0 0;
+	width: 65%;
+	height: 100%;
+	font-size: 20px;
+	
+}
+.profile-img {
+	margin: 10% auto;
+	display: block;
+	width: 80%;
+	border-radius: 5px;
+}
+.upload-img-form{
+	width: 100%;
+	margin: 10px auto;
+}
+#upload-img-input{
+	margin: 20px auto;
+	display: block;
+	width: 80%;
+	font-family: Rajdhani;
+	
+}
+#upload-img-button{
+	margin: 20px auto;
+	display: block;
+	width: 80%;
+	font-size: 30px;
+	font-family: Rajdhani;
+	border-radius: 5px;
+	background-color: white;
+	color: #332C23;
+	border: 1px solid #82816D;
+	cursor: pointer;
+	transition: color .5s, background-color .5s, border .5s;
+
+}
+
+#upload-img-button:hover{
+	border: none;
+	background-color: #679436;
+	color: white;
+}
+.form-profile{
+	font-size: 18px;
+}
+
+#information-text{
+	font-size: 45px;
+	font-family: Rajdhani;
+	margin: 0;
+}
+#input-name{
+	width: 70%;
+	padding: 5px 0px 5px 5px;
+	font-size: 18px;
+	font-family:Rajdhani;
+	border: 1px solid black;
+	border-radius: 5px;
+
+}
+#input-username{
+	width: 70%;
+	padding: 5px 0px 5px 5px;
+	font-size: 18px;
+	font-family: Rajdhani;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#input-email{
+	width: 70%;
+	padding: 5px 0px 5px 5px;
+	font-size: 18px;
+	font-family: Rajdhani;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#input-password{
+	width: 70%;
+	padding: 5px 0px 5px 5px;
+	font-size: 18px;
+	font-family: Rajdhani;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+#info-button{
+	margin: 8px auto;
+	display: block;
+	position: absolute;
+	right: 0;
+	font-size: 30px;
+	font-family: Rajdhani;
+	border-radius: 5px;
+	background-color: white;
+	color: #332C23;
+	border: 1px solid #82816D;
+	cursor: pointer;
+	transition: color .5s, background-color .5s, border .5s;
+
+}
+
+#info-button:hover{
+	border: none;
+	background-color: #679436;
+	color: white;
+}
+
+
+/*Styling mobile*/
+@media only screen and (max-width: 600px) {
+	body {
+		margin: 0;
+
+
+	}
+	#signin-form{
+		width: 100%;
+		background-color: rgba(1,1,1,0.2);
+		border-radius: 10px;
+		margin-bottom: 100px;
+		
+	}
+	#signin-form h1 {
+		margin: 0 0 20px 0;
+	}
+	#signin-form input{
+		font-size: 20px;
+		border:none;
+		border-radius: 5px;
+		padding: 10px;
+		
+
+	}
+	#signin-form button {
+		border:none;
+		background-color: white;
+		color: black;
+		padding: 10px;
+		border-radius: 10px;
+		margin-top: 10px;
+
+	}
+
+
+	#signup-form{
+		width: 100%;
+		background-color: rgba(1,1,1,0.2);
+		border-radius: 10px;
+	}
+	#signup-form h1 {
+		margin: 0 0 20px 0;
+	}
+	#signup-form input{
+		font-size: 20px;
+		border:none;
+		border-radius: 5px;
+		padding: 10px;
+
+	}
+	#signup-form button {
+		border:none;
+		background-color: white;
+		color: black;
+		padding: 10px;
+		border-radius: 10px;
+		margin-top: 10px;
+
+	}
+
+	.logo {
+		position: absolute;
+		left: 50px;
+		width: 40px;
+		top: 12px;
+	}
+
+	.logo-text{
+		font-family: Kaushan Script;
+		font-size: 50px;
+		color: white;
+		position: absolute;
+		top: -49px;
+		left: 90px;
+		
+	}
+	.side-bar{
+		
+	
+	}
+	.sidebar-text {
+		font-size: 20px;
+	}
+
+	.body{
+		margin-top: 80px;
+	}
+	.search-form input{
+		visibility: hidden;
+		position: relative;
+		left: 0;
+		width: 100%;
+	}
+
+	#search-img{
+		position: absolute;
+		display: block;
+		top: 10px;
+		right: 60px;
+		width: 40px;
+		height: 40px;
+	}
+
+	/*User area*/
+	.write input, textarea {
+		width: 90%;
+		padding: 10px 0 10px 2px;
+	}
+	.div-note {
+		position: relative;
+		padding: 0 5px 30px 5px;
+		border-radius: 5px;
+		background-color: rgba(67, 114, 36, 0.7);
+		margin: 0 auto;
+		width: 90%;
+		text-align: justify;
+		font-size: 10px;
+
+	}
+	.note_content {
+		font-size: 15px;
+	}
+
+	.note-bottom-div{
+		position: relative;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		margin: 0;
+		padding-top: 15px;
+		background-color: #A5C882; 
+		height: 85px;
+	}
+
+	.save {
+		font-size: 20px;
+		position: absolute;
+		right: 1%;
+		bottom: 1%;
+		border: none;
+		background-color: rgba(1, 1, 1, 0.1);
+		color: black;
+		margin-top: 10px;
+		padding: 10px;
+		font-family: Rajdhani;
+		cursor: pointer;
+		outline: none;
+	
+	}
+	
+	#last-edited {
+		text-align: center;
+		font-size: 15px;
+		font-family: Rajdhani;
+	}
+	
+	.delete {
+		position: absolute;
+		left: 5px;
+		bottom: 10px;
+		font-size: 20px;
+		font-family: Rajdhani;
+		border: none;
+		padding: 5px;
+		background-color:rgba(1, 1, 1, 0.1);
+		color: black;
+		cursor: pointer;
+		outline: none;
+	}
+	
+	.edit_note_content {
+		resize: none;
+		font-size: 20px;
+		font-family: Rajdhani;
+		border-radius: 5px;
+		padding: 0px 15px 50px 15px;
+		width: 90%;
+		height: 400px;
+		
+
+		
+	}
+	.title_edit {
+		font-weight: bold;
+		border-radius: 5px;
+		border: none;
+		width: 85%;
+		font-family: Josefin Slab;
+	}
+	.modal-content {
+		position: absolute;
+		top:0;
+		left: 0;
+		height:93%;
+	    background-color: #A5C882;
+	    margin: 0% auto; /* 15% from the top and centered */
+	    padding: 0px 0px 40px 0px;
+	    border: 1px solid #888;
+	    border-radius: 5px;
+	    width: 100%; /* Could be more or less, depending on screen size */
+	    overflow: auto;
+	}
+	.close {
+		color: black;
+		position: absolute;
+		top: 0;
+		right: 10px;
+		font-size: 28px;
+		font-weight: bold;
+	}	
+
+	
+	
+
+	/*PROFILE SECTION - RESPONSIVE*/
+
+	.profile{/*This is the equivalent of the class 'body' in the initial_page.php*/
+		position: absolute;
+		right: 0;
+		width: 100%;
+		transition: width .4s;
+	}
+	.profile-body{ /*This is the part where all the information and profile image is*/
+		border-radius: 5px;
+		margin: 25% auto;
+		width: 90%;
+		position: relative;
+		font-family: Rajdhani;
+	}
+	.profile-body p {
+		margin: 10px 0 15px 0;
+	}
+	.image-container{
+		position: relative;
+		width: 100%;
+		margin-bottom: 50px;
+		
+	}
+	.information-container{
+		position: absolute;
+		right: 0;
+		margin: 0 0 0 0;
+		width: 100%;
+		height: 100%;
+		font-size: 20px;
+		
+	}
+	.profile-img {
+		margin: 10% auto;
+		display: block;
+		width: 70%;
+		border-radius: 5px;
+	}
+	.upload-img-form{
+		width: 100%;
+		margin: 10px auto;
+	}
+	#upload-img-input{
+		margin: 20px auto;
+		display: block;
+		width: 80%;
+		font-family: Rajdhani;
+		
+	}
+	#upload-img-button{
+		margin: 20px auto;
+		display: block;
+		width: 80%;
+		font-size: 30px;
+		font-family: Rajdhani;
+		border-radius: 5px;
+		background-color: white;
+		color: #332C23;
+		border: 1px solid #82816D;
+		cursor: pointer;
+		transition: color .5s, background-color .5s, border .5s;
+
+	}
+
+	.form-profile{
+		font-size: 18px;
+	}
+
+	#information-text{
+		font-size: 30px;
+		text-align: center;
+		font-family:Rajdhani;
+		margin: 0;
+	}
+	#input-name{
+		width: 100%;
+		padding: 5px 0px 5px 5px;
+		font-size: 18px;
+		font-family: Rajdhani;
+		border: 1px solid black;
+		border-radius: 5px;
+
+	}
+	#input-username{
+		width: 100%;
+		padding: 5px 0px 5px 5px;
+		font-size: 18px;
+		font-family: Rajdhani;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+	#input-email{
+		width: 100%;
+		padding: 5px 0px 5px 5px;
+		font-size: 18px;
+		font-family: Rajdhani;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+	#input-password{
+		width: 100%;
+		padding: 5px 0px 5px 5px;
+		font-size: 18px;
+		font-family: Rajdhani;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+
+	#info-button{
+		position: relative;
+		margin: 20px 0 10px 2px;
+		width: 100%;
+		right: 0;
+		font-size: 30px;
+		font-family: Rajdhani;
+		border-radius: 5px;
+		background-color: white;
+		color: #332C23;
+		border: 1px solid #82816D;
+		
+
+	}
+
+	.loader {
+		position: absolute;
+		bottom: -60px;
+		left: 43%;
+	}
+
+
+}
+

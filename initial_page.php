@@ -135,7 +135,7 @@
 				
 				<li>
 					<img class="notes-icon" src="images/config.png">
-					<p class="sidebar-text" style="position: relative">Settings</p>
+					<p class="sidebar-text side-bar-settings" style="position: relative">Settings</p>
 				</li>
 				<li>
 					

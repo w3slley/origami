@@ -1,4 +1,60 @@
-Atualizações..., January 24, 2019
+Fixed network problem on ubuntu, April 23, 2019
+
+A couple of weeks ago I fixed the problem I was facing regarding a problem with my labtop's wireless card. Before I couldn't access the university's wifi nor my own. Now I can do both. 
+
+ ########## 
+
+, April 23, 2019
+
+I need to create a journal version of notes so that I can use it everyday. On it, only english will be used and it will be useful to store informations and notes about daily live. One option I could implement is a checkbox that sets the note title to the current date.
+
+ ########## 
+
+Password for tracktion, April 14, 2019
+
+HUXeu32V9TBRSkb
+
+ ########## 
+
+Mobile, January 27, 2019
+
+Since I now can save notes without pressing buttons, the problem I was having with the mobile version becomes less complex. The only thing I still need to do is to create a config button that displays actions the user can perform, including delete the note.
+
+ ########## 
+
+Idioma, January 26, 2019
+
+Em qual idioma eu deveria escrever as minhas anotações? Com o português, meu idioma nativo e o qual tenho mais facilidade, posso continuar praticando ainda mais minha capacidade expositiva e melhorar minha escrita. Já com o inglês é possível treinar ainda mais para criar outras obras nesse idioma, como histórias curtas, livros, ou até mesmo treinar para melhorar minhas habilidades linguísticas e de vocabulário na lingua inglesa.
+
+
+
+Vou continuar pensando nesse assunto para chegar em uma conclusão.
+
+
+
+ ########## 
+
+New features, January 26, 2019
+
+I implemented a new feature: now users can save the notes without clicking any buttom at all!
+
+ ########## 
+
+Backup de notas!, January 25, 2019
+
+Acabei de implementar o recurso de backup de notas. É algo bem legal e que demorou apenas uma noite para fazer. Como não necessita de nenhum input do usuário, nem me importei em utilizar prepared statements na interação com o Mysql. Talvez eu ainda consiga melhorar o script, mas depois dou uma olhada nisso.
+
+
+
+É, de pouco em pouco o webapp vai ficando melhor. Vamos ver até onde ele vai chegar!
+
+
+
+
+
+ ########## 
+
+Atualizações :), January 24, 2019
 
 Estou aqui novamente. Nesses últimos 6 meses eu meio que não mudei muita  coisa no Notes, ainda que nos último mês eu tenha dado uma mexida em certos aspectos do site. Hoje, 24/01/2019, eu voltei a lidar com a animação das notas quando clicadas e alterei algumas coisas (scrollbar, animações, etc). Também estou no processo de implementar outro feature: a possibilidade de fazer o download de todas as notas adicionadas. Considero esse um grande avanço visto que é uma forma de proteger todas as notas e salvá-las em um local que o usuário considera seguro. 
 
@@ -6,7 +62,7 @@ Quero falar com alguns amigos na universidade (que ainda nem conheci ainda kkk) 
 
  ########## 
 
-Planos - Porto e recursos financeiros., July 19, 2018
+Planos - Porto e recursos financeiros, July 19, 2018
 
 Estive pesquisando os preços para minha locomoção de lisboa para porto no início de setembro. Pelo que pesquisei, o meio mais em conta é o trem, que se eu comprar a passagem pelo site (precisa de um cartão de crédito) 10 dias antes eu tenho disconto de 65% (9,5 euros pelo que eu vi). É uma boa e eu consigo pagar barato para ir para lá. Tendo em visto os móveis que estou vendendo com a jheni, e se pelo menos grande parte deles forem vendidos, é possível juntar uns 1500 reais (se tudo for vendido, 2500 - se pouco, 1000). Pelo visto é possível vender a geladeira por 700-750, então aí já dá alguma coisa. Quero juntar pelo menos 400 euros para poder dar o calção e pagar a primeira parcela no quarto que vou alugar em porto. Pagando isso, já é possível estudar tranquilo (entre aspas...) pois a parcela de setembro já foi paga e a de outubro posso pagar até 31/10. O negócio seria vender mais coisas pra tentar juntar mais e ir se virando. Vou também, quando chegar em porto, verificar disponibilidade de horário - tenho que trabalhar e juntar dinheiro de alguma forma (como freelancer em web dev, ou trabalhando em restaurantes, qualquer coisa). Se tudo der certo e conseguir realmente estudar (não der nenhum problema com o visto nem nada), aí esses planos entram em ação. Muita coisa pode dar errado visto que não fiz tudo da maneira certa. Mas agora é fazer tudo o que posso para resolver o que preciso. 
 
@@ -22,7 +78,7 @@ Além disso, irei levar a bicicleta para me locomover na cidade. Isso irá permi
 
 MVC model, July 16, 2018
 
-I'm learning the basics of Laravel (PHP framework) which uses the MVC model. For what I understand so far, the MVC model works by separating some functions to specific agents in the development of the web app. The model is responsible with the interaction with the database. The view is responsible for the presentation of the web page to the user - is what the user interacts with. And the controller is the "middle man", which takes data and inputs from the model and passes to the view layer - making sure the logic holds throughout the entire process and that the web app actually functions the way it is suposed to.
+I'm learning the basics of Laravel (PHP framework) which uses the MVC model. For what I understood so far, the MVC model works by separating some functions to specific agents in the development of the web app. The model is responsible with the interaction with the database. The view is responsible for the presentation of the web page to the user - is what the user interacts with. And the controller is the "middle man", which takes data and inputs from the model and passes to the view layer - making sure the logic holds throughout the entire process and that the web app actually functions the way it is suposed to...
 
  ########## 
 
@@ -36,7 +92,7 @@ API stand for "Application Programming Interface" and they are responsible to ge
 
  ########## 
 
-Note's app and future, July 14, 2018
+Notes app and future, July 14, 2018
 
 I think the Notes web application is good. Not perfect, but good. In the process of developing this web app I learned a lot. Especially JavaScript. There's lots of mistakes in the code and it might not be the most reliable code you have ever seen. And I have to change that and learn how to make elegent and reliable code.
 
@@ -280,7 +336,7 @@ The current TCP/IP model has 5 layers:
 
  ########## 
 
-Fixed computer - in part, July 04, 2018
+Fixed computer - in part., July 04, 2018
 
 Yesterday I managed to fix (somehow) the computer which was inactive for the last 5 months. I opened it and tried essentially to rip apart its parts to understand how it works. But, in the proccess of doing that the laptop suddenly turned on. The windows copy is busted though. I tried to install Linux Mint on it but some HD problems happened. I will try, later in the day, to install other linux distro on it and see how it goes. If it works, I will give it to mom so that she can use it.
 
@@ -324,7 +380,7 @@ Sometimes I think about the areas I want to go in professionally. I have been, i
 
 Search feature implemented!, June 29, 2018
 
-Now you can search for notes you want using a term you know is inside it. It didn't take long to implement this. I will try to develop a search algorithm that uses AJAX, though. But, for now, the app it's pretty good actually...
+Now you can search for notes you want using a term you know is inside it. It didn't take long to implement this. I will try to develop a search algorithm that uses AJAX, though. But, for now, the app it's pretty good actually.
 
  ########## 
 
@@ -334,7 +390,7 @@ Faltam cerca de 2 meses para o início das aulas. Ainda não tenho recursos fina
 
  ########## 
 
-Added some colors, June 28, 2018
+Added some colors..., June 28, 2018
 
 Today I added colors to the web app. I choose the color green since the icon is already in green. I changed the body background color as well and used a some what platinum color. I think it's dope. Now I need to change the note's color when editing it inside the modal. Will do this right now...
 
@@ -440,7 +496,7 @@ There's a lot of things to implement. But, for now, the app runs fine. Will add 
 
 IT industry and plans, 
 
-I just had, this week, three interviews with three different companies in the TI business. I apply just to see how could it go and the response I would get. If everything goes wrong, and my carrer in physics don't go where I expect to, I can enter the web development industry to save money and try again. I really don't know what is going to happen. But in september my classes begin. I still don't know how to get 300 euros to cover my expense (rent and university), but I will try to do some freelancing in web development or other things. I have to get this money somehow. We will see how it goes...
+I just had, this week, three interviews with three different companies in the IT business. I apply just to see how could it go and the response I would get. If everything goes wrong, and my carrer in physics don't go where I expect to, I can enter the web development industry to save money and try again. I really don't know what is going to happen. But in september my classes begin. I still don't know how to get 300 euros to cover my expense (rent and university), but I will try to do some freelancing in web development or other things. I have to get this money somehow. We will see how it goes...
 
  ########## 
 
@@ -456,7 +512,7 @@ I'm now aware of the command tcpdump on linux that allows you to see the trafic 
 
  ########## 
 
-Update in Ubuntu, 
+Update in Ubuntu!, 
 
 Nice.. I'm using Ubuntu right now and right in this moment I just finished the migration of the database from win10 to Ubuntu just to learn how it's done. So far it all worked. I have all my notes I wrote. Let's see if everything is here.
 
@@ -474,7 +530,7 @@ Now the app has some colors going on. Today I finished the process of re-coding 
 
  ########## 
 
-Up and running, 
+Up and running., 
 
 Now the app is pretty much done - I mean, the logic part of it. The user interface is still pretty shity. But, you already can add notes, edit them and exclude them. You can create an account and login and have all your notes saved in the app. Yeah, I wrote a lot of things but some error occour and they were deleted. Ok then... Let's see how it goes.
 
@@ -492,7 +548,7 @@ This is another test. The problem, though, is that is really slow. I don't know 
 
 #Update:
 
-I finally figure out. The problem was the spellcheck: you have to set its value to false. Now, it's all smoth and fast! hehe
+I finally figure out. The problem was the spellcheck: you have to set its value to false. Now, it's all smooth and fast! hehe
 
  ########## 
 
@@ -504,7 +560,7 @@ Está indo de acordo com o esperado,
 
 #Update
 
-Já consegui implementar funções como pesquisa, edição e exclusão de notas. Falta ainda as categorias. Tá bem filé até... Hehe
+Já consegui implementar funções como pesquisa, edição e exclusão de notas. Falta ainda as categorias. Tá bem filé até... Hehehe
 
  ########## 
 
@@ -514,13 +570,13 @@ Now the break line functionality is working. I can press enter and it will be di
 
 
 
-hehe. Good job buddy.
+Hehehe. Good job buddy.
 
  ########## 
 
 Test 1, 
 
-Another test.
+Another test!!
 
 
 
@@ -529,10 +585,6 @@ Testing break line.
 
 
 Again.
-
-
-
-
 
  ########## 
 

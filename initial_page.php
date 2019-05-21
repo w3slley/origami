@@ -13,7 +13,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Nanum+Myeongjo|Kaushan+Script|Gaegu|Open+Sans+Condensed|Righteous|Rajdhani|Josefin+Slab" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-	<script src="javascript/main.js"></script>
+
 	
 
 
@@ -182,7 +182,7 @@
 			<div id="countNotes" style="display: none;">			
 			</div>
 			<div class="loading"></div>
-		
+			<div style='display:none' class="limit">10</div>
 		</div>
 
 	<?php }

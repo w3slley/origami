@@ -12,7 +12,7 @@ else{
     
     $conn = mysqli_connect($server, $username, $password, $db);
     $id = $_SESSION['id'];
-    $file_name = '/var/www/html/notes/backupNotes/backup-notes'.$_SESSION['id'].'.txt';
+    $file_name = '../backupNotes/backup-notes'.$_SESSION['id'].'.txt';
     
     $sql = 'SELECT * FROM notes WHERE user_id = '.$id.' ORDER BY id DESC';
     $result = mysqli_query($conn, $sql);

@@ -27,7 +27,11 @@ $("#addNote-form").submit(function(event){//When the form is submited (button is
 		$("#addNote-title").val("");
 		$("#addNote-content").val("");
 		$("#notes").load("action/showNotes.php");//show notes module limits 10 notes in the page
-		numberControl = 0;
+		var numberControl = 0;
+		var firstNote = document.getElementsByClassName('div-note')[0];
+		
+		//firstNote.style.animationName = 'animation-note';
+		//firstNote.style.animationDuration = '10s';
 	});
 
 });
@@ -47,7 +51,7 @@ function deleteNote(note_id){//delete notes using AJAX
 			$('#countNotes').html(data);/*if user deletes note, the count note variable
 			gets updated as well (just as when he/she adds and when the page loads*/
 		});
-		numberControl = 0;
+		var numberControl = 0;
 
 		$.post('action/deleteNote.php', { id: note_id }, function(){ /*run the deleteNote.php 
 			file using AJAX.*/
@@ -82,8 +86,11 @@ function deleteNote(note_id){//delete notes using AJAX
 //14/01/2019 - Fixed (for now) the main security hole in the app.
 
 //So, the solution to the security hole was to add another parameter for searching the note in the database. Now, in the browser you can only see the note id, but in the server it checks if the present user id is the same as the user id of the person who created the note. If these two numbers disagree, the note will not be pulled of from the database and the user gets an error message. There'll probably be more security flaws in the future and sooner or later I will discover another one. But the important thing is to always learn from them.
+
+var divLimit = document.querySelector('.limit').innerHTML;//keeps track of the limit value and uses it to update the main page with the notes the user already scrolled down.
+
 function editNote(note_id){ //When the note is clicked, the modal is shown.
-	let loaderEdit = document.querySelector('#loader-edit');
+	var loaderEdit = document.querySelector('#loader-edit');
 	modal.style.display = 'block';
 	modal.style.animationName = 'animation';
 	modal.style.animationDuration = '.7s'
@@ -93,9 +100,86 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 		
 		/*loaderEdit.classList.remove('loader-edit');/*This
 		makes a loader icon appear when the note is being retrieve from the database*/
+		var noteModalContent = document.querySelector('#edit-content-modal');
+		var noteModalTitle = document.querySelector('#edit-title-modal');
+		var noteId = document.querySelector('.id');
+		var deleteButton = document.querySelector('.delete');
 		
-	});
+		
+		
+		//ASYNC FEATURE!
+		var s = window.location.search;
 
+		//For the note title
+		noteModalTitle.onkeyup = function(){
+		
+			$.post('action/editNote.php', {noteId: noteId.value, noteContent: noteModalContent.value, noteTitle: noteModalTitle.value}, function(){
+
+			}); //saves data into the database
+
+			if(s!=''){
+				var search = s.split('=');
+				var searchTerm = search[1].replace(/\+/g, ' ');
+				//updates the search page
+				$.post('action/showSearchedNotes.php',{search: searchTerm}, function(data){
+					document.querySelector('.searched-notes').innerHTML = data;
+					
+				});
+			}
+			else{
+				//updates the main page
+				$.post('action/showMoreNotes.php',{limit: divLimit}, function(data){
+					document.querySelector('#notes').innerHTML = data;
+	
+				});
+	
+			}
+			
+		}
+		//For the note content
+		noteModalContent.onkeyup = function(){
+			$.post('action/editNote.php', {noteId: noteId.value, noteContent: noteModalContent.value, noteTitle: noteModalTitle.value}, function(){
+
+			});
+			
+			//fixing problem with loading notes in the search mode with async (not solved yet) - FIXED
+			
+			if(s!=''){
+				var search = s.split('=');
+				var searchTerm = search[1].replace(/\+/g, ' ');
+				
+				$.post('action/showSearchedNotes.php',{search: searchTerm}, function(data){
+					document.querySelector('.searched-notes').innerHTML = data;
+					
+				});
+			}
+			else{
+				$.post('action/showMoreNotes.php',{limit: divLimit}, function(data){
+					document.querySelector('#notes').innerHTML = data;
+					
+					
+				});
+			}
+			
+		}
+
+		//When the delete button is pressed!
+		deleteButton.onclick = function(e){
+			e.preventDefault();
+			var confirmation = confirm('Are you sure?');
+			if(confirmation){
+				$.post('action/deleteNote.php', {id: noteId.value}, function(data){
+					modal.style.display = 'none';
+					document.querySelector('#notes').innerHTML = data;
+					document.getElementById('data').innerHTML = "";
+				});
+			}
+			
+		}
+
+
+	});
+	
 
 }	
 
@@ -113,7 +197,7 @@ document.onkeyup = function(event){
 }
 //WHEN CLICKED IN THE CLOSE ICON
 close.onclick = function(){//if the close button is clicked, the modal is closed
-	let loaderEdit = document.querySelector('#loader-edit');
+	var loaderEdit = document.querySelector('#loader-edit');
 	modal.style.display = 'none';
 	//document.body.style.overflow = 'auto';
 	document.getElementById('data').innerHTML = "";
@@ -150,47 +234,51 @@ window.onclick = function(event){ //When clicked outside the modal, it automatic
 var noteContent = document.querySelector('#addNote-content');
 var noteTitle = document.querySelector('#addNote-title');
 
-document.addEventListener('click', function(event){
-	var	targetElement = event.target; //gets the element that trigered the event.
-
-	do{
-		if(targetElement == noteContent | targetElement == noteTitle){/* If the user 
-			clicks in the noteContent or the noteTitle, the animation will occur. 
-			The only way I could make this work is using only one |. For now, I don't 
-			know why. I will try to figure it out...*/
-			noteContent.style.height = '250px';
-			noteTitle.style.opacity = '1';
-			noteTitle.style.top = '10px';
-			noteTitle.style.cursor = 'text';
-			noteTitle.style.zIndex = '1'; /*This is what solved the problem
-			When the user clicks in the textarea, the z-index goes to 1 and
-			the user can insert the title. When clicked outside, the z-index 
-			goes to -1, and the user can no loger click on it - before it was
-			possible to click on it even if it was not visible (if you knew it
-			you could set the animation going without clicking the textarea - and
-			it was not what I wanted). Now, apparently, it's all solved with this.*/
-
-			return; //I have to return nothing here. If not, it will not work!
-				
+var x = window.location.search;
+if(x==''){ //only if the user is in the main page is that the animation in the textarea will occur.
+	document.addEventListener('click', function(event){
+		var	targetElement = event.target; //gets the element that trigered the event.
+	
+		do{
+			if(targetElement == noteContent | targetElement == noteTitle){/* If the user 
+				clicks in the noteContent or the noteTitle, the animation will occur. 
+				The only way I could make this work is using only one |. For now, I don't 
+				know why. I will try to figure it out...*/
+				noteContent.style.height = '250px';
+				noteTitle.style.opacity = '1';
+				noteTitle.style.top = '10px';
+				noteTitle.style.cursor = 'text';
+				noteTitle.style.zIndex = '1'; /*This is what solved the problem
+				When the user clicks in the textarea, the z-index goes to 1 and
+				the user can insert the title. When clicked outside, the z-index 
+				goes to -1, and the user can no loger click on it - before it was
+				possible to click on it even if it was not visible (if you knew it
+				you could set the animation going without clicking the textarea - and
+				it was not what I wanted). Now, apparently, it's all solved with this.*/
+	
+				return; //I have to return nothing here. If not, it will not work!
+					
+			}
+			targetElement = targetElement.parentNode;
 		}
-		targetElement = targetElement.parentNode;
-	}
-	while(targetElement);
-
-	if(noteContent.value != ''){
-		
-	}
-	else{
-		noteContent.style.height = '30px';
-		noteTitle.style.opacity = '0';	
-		noteTitle.style.cursor = 'default';
-		noteTitle.style.zIndex = '-1';
-	}
-
+		while(targetElement);
 	
+		if(noteContent.value != ''){
+			
+		}
+		else{
+			noteContent.style.height = '30px';
+			noteTitle.style.opacity = '0';	
+			noteTitle.style.cursor = 'default';
+			noteTitle.style.zIndex = '-1';
+		}
 	
 		
-});
+		
+			
+	});
+	
+}
 
 //add animation in the search input (color animation)
 //later
@@ -275,9 +363,9 @@ $('#addNote-form').submit(function(){//Every time the user adds a new note,
 });
 
 //
-noteDiv = document.getElementsByClassName('div-note');
-deleteIcon = document.getElementsByClassName('delete-icon');
-deleteButton = document.querySelector('.delete-button');
+var noteDiv = document.getElementsByClassName('div-note');
+var deleteIcon = document.getElementsByClassName('delete-icon');
+var deleteButton = document.querySelector('.delete-button');
 //Two very useful event handlers that I'll use later on.
 noteDiv.onmouseover = function(){
 		deleteIcon.style.opacity = '1';
@@ -289,12 +377,17 @@ noteDiv.onmouseout = function(){
 	
 }
 
+
 //ALGORITHM THAT DISPLAYS MORE NOTES WHEN USER REACHES THE BOTTOM OF THE PAGE(jQuery)!
 $(document).ready(function(){
 	var loader = document.querySelector('.loading');
+	var nControl = 0;
+	
+	
 	$(window).scroll(function(){
 		var scrollHeight = $(document).height();
 		var scrollPosition = $(window).height() + $(document).scrollTop();
+		var countNumNotes = parseInt($('#countNotes').html());
 
 		if(scrollPosition == scrollHeight){
 			$.post('action/countNumNotes.php', function(data){
@@ -302,20 +395,29 @@ $(document).ready(function(){
 			gets updated as well (just as when he/she adds and when the page loads-the
 			code is up there)*/
 			});
-			loader.setAttribute('class', 'loader');
+			
+			if(limit<countNumNotes){ //the class loader will be added if there's still notes to show in the db.
+				loader.setAttribute('class', 'loader');
+			}
+			
+						
 			function setNotes(){
-				limit+= 10; /*Number of aditional notes displayed when user
-				reaches the bottom of the page*/
+				limit+=10; /*Number of aditional notes displayed when user
+				reaches the bottom of the page. Apparently, it will only change the global variable if I use it like this.*/
+				
+				
 				$.post('action/showMoreNotes.php', {limit: limit}, function(data){
 					if(limit > countNumNotes){ /*This here will happen when the number
 						of notes to be displayed is greater then the number of notes
 						that are actually there in the DB (ex: there's 17 notes in the
 						database, but 20 notes will be displayed). Then, in those cases, 
 						the page needs to reaload only one more time.*/
-						if(numberControl == 0){ /*if the number controll is zero*/
+						if(nControl == 0){ /*if the number controll is zero*/
 							$('#notes').html(data); //it gets the data from the DB
-							numberControl+=1;/*it adds one to the control number, 
+							nControl=1;/*it adds one to the control number, 
 							making sure the loading will no longer occur.*/
+							
+							
 						}	
 						else{
 							loader.classList.remove('loader');
@@ -324,32 +426,40 @@ $(document).ready(function(){
 					else{
 						$('#notes').html(data);
 					}
+					
+					divLimit = limit;
+					
+					
+					
 				});	
 			}
 
-			var countNumNotes = parseInt($('#countNotes').html());
+			
 			if(countNumNotes <= 10){
 				/*If the number of notes is less or equal to 10 nothing happens!
 				Also, the animation will not be showed, so I have to remove
 				its class!*/
 				loader.classList.remove('loader');
-				numberControl = 0; /*If the number of notes from the DB goes bellow
-				10, the numberControl variable must go back to zero.*/ 
-				
+				nControl = 0; /*If the number of notes from the DB goes bellow
+				10, the nControl variable must go back to zero.*/ 
+				limit = 10;
 
 			}
 			else{
-				setTimeout(setNotes, 1000);/*This is a function that runs another function
-			but waits a certain amount of time. The first parameter is the function
-			it's going to execute and the second is the time it will take to do it (in
-			miliseconds) - in this case, it will wait 1 seconds to execute the
-			function setNotes!*/
-
-			/*The loading animation and the AJAX feature will only occur if the 
-			count variable (which is the number of notes the user has) is less or equal
-			to 10, which is the limit I choose. If it is larger, then it will load
-			more notes from the database!*/
-			}
+				if(limit<countNumNotes){
+					window.setTimeout(setNotes, 1500);/*This is a function that runs another function
+					but waits a certain amount of time. The first parameter is the function
+					it's going to execute and the second is the time it will take to do it (in
+					miliseconds) - in this case, it will wait 1 seconds to execute the
+					function setNotes!*/
+		
+					/*The loading animation and the AJAX feature will only occur if the 
+					count variable (which is the number of notes the user has) is less or equal
+					to 10, which is the limit I choose. If it is larger, then it will load
+					more notes from the database!*/
+					}
+				}
+				
 			
 		}
 		else{
@@ -413,3 +523,4 @@ window.onscroll = function(){
 		nav.style.boxShadow = '5px 0px 15px #111';
 	}
 }
+

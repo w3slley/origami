@@ -145,7 +145,7 @@
 			
 				<div class="edit_note" id="edit_note">
 				
-					<form id="edit-form-modal" method="POST" action="action/editNote.php">
+					<form id="edit-form-modal" class="edit-form-modal" method="POST" action="action/editNote.php">
 						<!--<img src="images/signup-wallpaper.jpg" style="width: 95%"> -->
 						<?php echo '<input id="edit-title-modal" class="title_edit" placeholder="Write here the title..." type="text" name="edit_note_title" value="'.$data->note_title.'">' ?><br>
 
@@ -154,13 +154,13 @@
 						<?php echo '<input class="id" style="display: none" name="note_id" value="'.$this->note_id.'">' //The note's id, hidden in this input that is not displayed, will be sended via POST to the file editNote.php?>
 						
 						
-							<button class="delete" onclick="deleteNote(<?php echo $_POST['id']; ?>)">Delete</button>
+							<button class="delete">Delete</button>
 							<p id="last-edited">Last edited: <?php echo $data->date_added; ?></p>
-							<button class="save">Save changes</button>
+							
 						
 						
 					</form>
-					<!--javascript code to save data when typed -->
+					
 					<script>
 						
 					</script>

@@ -98,7 +98,12 @@ Well, these are the features done yesterday and today:
 24/01/2019 22:05
 	1)Implemented the fade-in animation of the notes (have to fix the fade-out animation)
 	2) Removed the fact that the scrollbar would be hidden when the note was clicked.
-	
+
+26/01/2019 18:47
+	1) Added the feature that allow users to download the backup of all their notes.
+	2)Implemented the sync saving feature where users don't need to click in the save button to save the note in the database. Now, the user only needs to write the note up and it is saved in the DB. (I need to fix the problem with the page not reloading the notes in when the user searches for a note - already fixed!!)
+	3)Fixed some error messages that appeared in the console.
+	There's a problem I need to fix: when the user updates a note that is way down in the feed, e.g needed the user to scroll down and load another set of notes, the main page only loads the first 10 notes and not all of the notes the user already loaded. Have to fix this later.
 Things I still have to implement:
 
 1)add label system to the notes.(DONE)
@@ -108,7 +113,7 @@ Things I still have to implement:
 5) add error handlers in the sign up and login.(DONE)
 6) add error handlers in the add note section. (working on it)
 7) Add images to the notes.
-8) Make sure that when the user clicks out of the note, the note is automatically saved.
+8) Make sure that when the user clicks out of the note, the note is automatically saved.(DONE)
 9) ADD a navbar with the search feature using AJAX. (Done not using Ajax)
 10) When the first note is added, it is not displayed in the browser without reloading. Have to fix this...(DONE-I think... :D)
 11) Display a fix amount of notes in the home page and, when scroll down to the last position, display more notes.(DONE)

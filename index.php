@@ -25,6 +25,11 @@
 		?>
 	<!-- Code for the nav bar. I will still add the javascript effects to change collors and stuff. -->
 	<nav class="nav-bar">
+		<div class="logo-nav">
+			<img src="favicon.ico" class="nav-img">
+			<p id="welcome-header">Notes</p>
+		</div>
+		
 		<ul>
 			<li><a class="item-nav" href="#">Home</a></li>
 			<li><a class="item-nav" href="#first-text">About</a></li>
@@ -45,8 +50,7 @@
 	</div>
 
 	<div class="welcome">
-		<img id="logo" src="favicon.ico">
-		<h1 id="welcome-header">Notes</h1>
+	 <br><br><br>
 		<p id="welcome-text">Your new personal notebook! Write what you think and store important moments of your life. </p>
 	</div>
 

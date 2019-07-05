@@ -117,17 +117,17 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 
 			}); //saves data into the database
 
-			if(s!=''){
+			if(s!=''){//If there's something in the search atribute, that means we are in the search page
 				var search = s.split('=');
 				var searchTerm = search[1].replace(/\+/g, ' ');
-				//updates the search page
+				//updates the search page after editing on it
 				$.post('action/showSearchedNotes.php',{search: searchTerm}, function(data){
 					document.querySelector('.searched-notes').innerHTML = data;
 					
 				});
 			}
 			else{
-				//updates the main page
+				//updates the main page after editing on it
 				$.post('action/showMoreNotes.php',{limit: divLimit}, function(data){
 					document.querySelector('#notes').innerHTML = data;
 	
@@ -187,7 +187,6 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 document.onkeyup = function(event){
 	if(event.keyCode == 27){
 		modal.style.display = 'none';
-		
 		modal.style.animationName = 'animation-out';
 		modal.style.animationDuration = '1s'
 		//document.body.style.overflow = 'auto';

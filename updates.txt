@@ -104,6 +104,10 @@ Well, these are the features done yesterday and today:
 	2)Implemented the sync saving feature where users don't need to click in the save button to save the note in the database. Now, the user only needs to write the note up and it is saved in the DB. (I need to fix the problem with the page not reloading the notes in when the user searches for a note - already fixed!!)
 	3)Fixed some error messages that appeared in the console.
 	There's a problem I need to fix: when the user updates a note that is way down in the feed, e.g needed the user to scroll down and load another set of notes, the main page only loads the first 10 notes and not all of the notes the user already loaded. Have to fix this later.
+
+02/07/2019
+1)Changed some pictures in the index page and updated some texts. Now I think it looks more professional.
+2)Created effect that enhances the video background in the index page. I just created another div with min-height:100% e min-width:100% with rgba(black, 0.4) so that the opacity could decrease and improve the readibility of the header in front of the video.
 Things I still have to implement:
 
 1)add label system to the notes.(DONE)

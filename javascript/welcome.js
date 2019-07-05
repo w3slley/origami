@@ -5,19 +5,22 @@ window.onscroll = function(){
 	const logo = document.querySelector('#welcome-header');
 	
 		if(scroll != 0){
-		nav.style.backgroundColor = '#679436';
+		nav.style.backgroundColor = '#9BC1BC';
+		
+
+		for(let i=0;i<navItems.length; i++){
+			navItems[i].style.color = 'black';
+		}
+		logo.style.color = 'black';
+
+
+	}
+	else{
+		nav.style.backgroundColor = 'transparent';
 
 		for(let i=0;i<navItems.length; i++){
 			navItems[i].style.color = 'white';
 		}
 		logo.style.color = 'white';
-
-	}
-	else{
-		nav.style.backgroundColor = 'transparent'
-		for(let i=0;i<navItems.length; i++){
-			navItems[i].style.color = 'black';
-		}
-		logo.style.color = 'black';
 	}
 }

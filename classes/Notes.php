@@ -136,9 +136,10 @@
 			$stmt->execute([$this->user_id, $this->note_id]);
 			$data = $stmt->fetchAll(PDO::FETCH_OBJ);
 			
-			if(empty($data)){
-				echo '<p style="text-align:center;">Sua nota não pode ser encontrada. Pedimos descuplas pelo inconveniente.</p>';
-				echo '<img src="icons/error.png" style="margin: 0 auto; display: block;" width="100px">';
+			if(empty($data)){ ?>
+				<p style="text-align:center;">Sua nota não pode ser encontrada. Pedimos descuplas pelo inconveniente.</p>
+				<img src="icons/error.png" style="margin: 0 auto; display: block;" width="100px">
+			<?php
 			}
 			else{
 				foreach($data as $data){?>
@@ -147,7 +148,7 @@
 				
 					<form id="edit-form-modal" class="edit-form-modal" method="POST" action="action/editNote.php">
 						<!--<img src="images/signup-wallpaper.jpg" style="width: 95%"> -->
-						<?php echo '<input id="edit-title-modal" class="title_edit" placeholder="Write here the title..." type="text" name="edit_note_title" value="'.$data->note_title.'">' ?><br>
+						<?php echo '<input spellcheck="false" id="edit-title-modal" class="title_edit" placeholder="Write here the title..." type="text" name="edit_note_title" value="'.$data->note_title.'">' ?><br>
 
 						<?php echo '<textarea id="edit-content-modal" spellcheck = "false" cols="60" rows="10" class="edit_note_content" name = "edit_note_content" placeholder="Write here your note..." >'.str_replace('<br />', '&#13;', $data->note_content).'</textarea>' //This '&#13' turns the break line tag into a enter in the text! ?><br>
 

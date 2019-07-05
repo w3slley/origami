@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Notes|Validation</title>
+	<title>Origami|Validation</title>
 	<script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- To use @media you have to insert this in the html file-->
@@ -13,7 +13,7 @@
 		/*Loading Animation*/
 		.loader {
 		    border: 10px solid #f3f3f3; /* Light grey */
-		    border-top: 10px solid #70A288; /* Blue */
+		    border-top: 10px solid #9BC1BC; /* Blue */
 		    border-radius: 50%;
 		    width: 80px;
 		    height: 80px;
@@ -29,7 +29,7 @@
 		@media only screen and (max-width: 600px){
 			.loader {
 			    border: 10px solid #f3f3f3; /* Light grey */
-			    border-top: 10px solid #70A288; /* Blue */
+			    border-top: 10px solid #9BC1BC; /* Blue */
 			    border-radius: 50%;
 			    width: 160px;
 			    height: 160px;

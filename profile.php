@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- To use @media you have to insert this in the html file-->
-	<title>Notes | Profile</title>
+	<title>Origami | Profile</title>
 	<script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 	</script>
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Nanum+Myeongjo|Kaushan+Script|Rajdhani" rel="stylesheet">
@@ -24,8 +24,8 @@
 	<nav>
 		<img class="side-icon" src="images/side.png">
 			<a href="initial_page.php">
-				<h1 class="logo-text">Notes</h1>
-				<img class="logo" src="favicon.ico">
+				<h1 class="logo-text">Origami</h1>
+				<img class="logo" src="icons/logo.svg">
 			</a>
 		</div>
 

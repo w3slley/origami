@@ -1,6 +1,6 @@
 Major change in the web application, July 09, 2019
 
-I just changed the name and the colors of the site. I thought that 'notes' was really generic (every note project people create is called "Notes"... kkk). I found the origami logo on flaticon and it sounded good. There's a lot of things to implement (as usual). Later on I need to implement some kind of cryptography on the notes in the server.
+I just changed the name and the colors of the site. I thought that 'notes' was a really generic name (every note project people create is called "Notes"... kkk). I found the origami logo on flaticon and it sounded good. There's a lot of things to implement (as usual). Later on I need to implement some kind of cryptography on the notes in the server.
 
  ########## 
 

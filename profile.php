@@ -22,7 +22,7 @@
 <body>
 
 	<nav>
-		<img class="side-icon" src="images/side.png">
+		<img class="side-icon" src="icons/sidebar.png">
 			<a href="initial_page.php">
 				<h1 class="logo-text">Origami</h1>
 				<img class="logo" src="icons/logo.svg">

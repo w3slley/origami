@@ -7,12 +7,12 @@ if(!isset($_POST['backup'])){
 else{
     $server = 'localhost';
     $username = 'wvict';
-    $password = '#secureInformation.$';
+    $password = '31415';
     $db = 'notes';
     
     $conn = mysqli_connect($server, $username, $password, $db);
     $id = $_SESSION['id'];
-    $file_name = '../backupNotes/backup-notes'.$_SESSION['id'].'.txt';
+    $file_name = '../backupNotes/'.date('d-m-y').'.txt';
     
     $sql = 'SELECT * FROM notes WHERE user_id = '.$id.' ORDER BY id DESC';
     $result = mysqli_query($conn, $sql);
@@ -30,7 +30,8 @@ else{
     
         //header('Location: ../backupNotes/backup-notes'.$_SESSION['id'].'.txt');
         //With these lines of code I managed to create an downloable link so that when users click the button to backup their notes, they already can download it.
-        $path = '../backupNotes/backup-notes'.$_SESSION['id'].'.txt';
+        
+        $path = '../backupNotes/'.date('d-m-y').'.txt';
     
         header("Content-Type: application/octet-stream");    //
     

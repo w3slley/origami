@@ -40,7 +40,7 @@
 					</li>
 				</ul>
 			</div>
-			<img class="side-icon" src="images/side.png">
+			<img class="side-icon" src="icons/sidebar.png">
 				<a href="initial_page.php">
 					<h1 class="logo-text">Origami</h1>
 					<img class="logo" src="icons/logo.svg">
@@ -75,18 +75,18 @@
 		</nav>
 
 		<?php if(isset($_GET['search'])){?>
-
+			
 			<div class="side-bar">
 				<ul>
 					<a href="initial_page.php">
 						<li>
 							<img class="notes-icon" src="images/notes.png">
-							<p class="sidebar-text" style="position: relative">Your notes</p>
+							<p class="sidebar-text side-bar-notes" style="position: relative">Your notes</p>
 						</li>
 					</a>
 					<li>
 						<img class="notes-icon" src="images/config.png">
-						<p class="sidebar-text" style="position: relative">Settings</p>
+						<p class="sidebar-text side-bar-settings" style="position: relative">Settings</p>
 					</li>
 					<li>
 						<img class="notes-icon" src="images/logout.png">
@@ -111,7 +111,10 @@
 				<div id="myModal" class="modal"> <!-- The modal -->
 					<div class="modal-content"> <!-- Modal's content-->
 						<span class="close">&times;</span> <!-- close button -->
-						<p id="data"></div></p>
+						<div id="data">
+							<div class="loader-edit" id='loader-edit'>
+						</div>
+					</div> 
 					</div> 
 				</div>
 					 
@@ -119,7 +122,7 @@
 			
 
 
-
+			<script src="javascript/search.js"></script>
 		<?php }
 		else { ?>	
 
@@ -184,10 +187,10 @@
 			<div class="loading"></div>
 			<div style='display:none' class="limit">10</div>
 		</div>
-
+		<script src="javascript/main.js"></script>
 	<?php }
 	} ?>
-	<script src="javascript/main.js"></script>
+	
 		
 </body>
 </html>

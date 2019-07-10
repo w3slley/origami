@@ -38,7 +38,6 @@ $("#addNote-form").submit(function(event){//When the form is submited (button is
 
 
 
-
 //Modal Variables
 var modal = document.getElementById('myModal');//getting the element of the modal
 var close = document.getElementsByClassName("close")[0];//getting the close button element
@@ -91,6 +90,8 @@ var divLimit = document.querySelector('.limit').innerHTML;//keeps track of the l
 
 function editNote(note_id){ //When the note is clicked, the modal is shown.
 	var loaderEdit = document.querySelector('#loader-edit');
+	var modal = document.getElementById('myModal');//getting the element of the modal
+
 	modal.style.display = 'block';
 	modal.style.animationName = 'animation';
 	modal.style.animationDuration = '.7s'
@@ -150,6 +151,7 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 				
 				$.post('action/showSearchedNotes.php',{search: searchTerm}, function(data){
 					document.querySelector('.searched-notes').innerHTML = data;
+
 					
 				});
 			}
@@ -278,22 +280,6 @@ if(x==''){ //only if the user is in the main page is that the animation in the t
 	});
 	
 }
-
-//add animation in the search input (color animation)
-//later
-/*var searchButton = document.querySelector('#search-button');
-var searchInput = document.querySelector('#search-input');
-searchInput.onkeyup = function(){
-	if(searchInput.value != ''){
-		searchButton.style.opacity = '1';
-	}
-	else{
-		searchButton.style.opacity = '0';
-	}
-	
-}*/
-
-
 
 
 
@@ -446,8 +432,7 @@ $(document).ready(function(){
 			}
 			else{
 				if(limit<countNumNotes){
-					window.setTimeout(setNotes, 1500);/*This is a function that runs another function
-					but waits a certain amount of time. The first parameter is the function
+					window.setTimeout(setNotes, 500);/*This is a function that runs another function but waits a certain amount of time. The first parameter is the function
 					it's going to execute and the second is the time it will take to do it (in
 					miliseconds) - in this case, it will wait 1 seconds to execute the
 					function setNotes!*/

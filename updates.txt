@@ -108,6 +108,10 @@ Well, these are the features done yesterday and today:
 02/07/2019
 1)Changed some pictures in the index page and updated some texts. Now I think it looks more professional.
 2)Created effect that enhances the video background in the index page. I just created another div with min-height:100% e min-width:100% with rgba(black, 0.4) so that the opacity could decrease and improve the readibility of the header in front of the video.
+
+10/07/2019
+1)Fixed a problem I was having while searching notes -I couldn't close the modal. I had I fucking hard time trying to find the problem and it was on the position of the script tag in the html file =/. Pay attention to that next time.
+
 Things I still have to implement:
 
 1)add label system to the notes.(DONE)

@@ -220,6 +220,35 @@
 
 		}
 
+		public function backup_notes($user_id, $file_name){
+			$sql = 'SELECT * FROM notes WHERE user_id = ? ORDER BY id DESC';
+			$result = $this->connect()->prepare($sql);
+			$result->execute([$user_id]);
+			$notes = $result->fetchAll();
+
+			
+			$script = fopen($file_name, 'w') or die("Unable to open file!");
+			
+			foreach($notes as $note) {
+				$note_title = $note['note_title'].', '.$note['date_created'];
+				$note_content = $note['note_content'];
+				
+				
+				$x = $note_title."\r\n\r\n".$note_content."\r\n\r\n ########## \r\n\r\n";
+				$content = str_replace("<br />", "\r\n", $x);
+				fwrite($script, $content);
+			}
+			
+			fclose($script);
+		
+			//header('Location: ../backupNotes/backup-notes'.$_SESSION['id'].'.txt');
+			//With these lines of code I managed to create an downloable link so that when users click the button to backup their notes, they already can download it.
+			
+			
+		
+		
+		}
+
 
 	}
 ?>

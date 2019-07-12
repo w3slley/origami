@@ -7,7 +7,7 @@ This is a web application that allows users to create and edit personal notes. H
 Creator: Weslley Victor (wvict)
 
 # Install
-If you want to take a look into the web application, proceed as follow:
+If you want to take a look into the web application, proceed as follows:
 
 ##### Make sure you have LAMP (or WAMP) installed on your local machine.
 ##### Clone this repository inside /var/www/ (or /xampp/htdocs on windows).

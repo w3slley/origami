@@ -1,3 +1,6 @@
+
+<img src="https://image.flaticon.com/icons/svg/1902/1902455.svg" width="100px">
+
 # Welcome to Origami.
 This is a web application that allows users to create and edit personal notes. Hope you enjoy it!
 

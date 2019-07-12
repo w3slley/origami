@@ -112,6 +112,10 @@ Well, these are the features done yesterday and today:
 10/07/2019
 1)Fixed a problem I was having while searching notes -I couldn't close the modal. I had I fucking hard time trying to find the problem and it was on the position of the script tag in the html file =/. Pay attention to that next time.
 
+12/07/2019
+1) Improved front end in the index page. I changed the header and some of the icons in the page. I think now is way more awesome than before. I need to improve the front end of the plataform though. That's something for another day.
+2) Created sidebar for mobile.
+
 Things I still have to implement:
 
 1)add label system to the notes.(DONE)

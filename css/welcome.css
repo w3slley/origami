@@ -7,18 +7,14 @@ nav{
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 10;
-	transition: background-color .7s;
-
-
+	z-index: 2;
+	transition: background-color .4s;
 }
-
 
 .logo-nav{
 	position: relative;
 	top: 0px;
 	left: 10px;
-	background-color: red;
 	
 }
 .nav-img{
@@ -28,11 +24,17 @@ nav{
 	width: 50px;
 	
 }
+.sidebar-icon{
+	display: none;
+}
+.sidebar{
+	display: none;
+}
 #welcome-header {
 	position: absolute;
-	top 0;
+	top: 0;
 	left: 60px;
-	color: white;
+	color: black;
 	font-family: Kaushan Script;
 	font-size: 50px;
 	display: inline-block;
@@ -56,97 +58,118 @@ nav ul li{
 	padding: 0 30px 0 30px;	
 
 }
-nav ul li a:hover{
-	text-decoration: red;
-}
+
 
 .item-nav{
-	color: white;
+	color: black;
 	text-decoration: none;
 	font-size: 30px;
-	font-family: Ubuntu;
+	font-family: Rajdhani;
 	transition: color .7s;
 
 }
 .item-nav:hover{
-	color: white;
-	text-decoration: underline white;
+	color: black;
+	text-decoration: underline black;
 }
+
+#logo {
+	width: 90px;
+}
+
+
+.blur{ /*This is how you make a video header looks even cooler!*/
+	position: relative;
+	right:0;
+	bottom: 0;
+	width: 100%;
+	height: 750px;
+	z-index:1;
+	background-image: url('../images/93591.jpg');
+	background-size: cover;
+	background-position:top;
+	display: grid;
+	grid-template-columns: 50% auto;
+	
+
+}
+.header-left{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	
+}
+.header-right{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.welcome {
+	width: 90%;
+	height: 50%;
+}
+
+#welcome-text{
+	font-family: Ubuntu;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	color: black;
+}
+
+
 #signin-form{
 	text-align: center;
-	background-color: rgba(1,1,1,0.2);
 	border-radius: 10px;
-	margin: 12% 8% auto;
-	width: 30%;
-	margin-bottom: 300px;
-	padding: 10px 0 30px 0;
-	color: white;
+	margin: 0 auto;
+	width: 70%;
+	height: 50%;
+	padding: 60px 0 0 0;
+	background-color: rgba(15, 15, 15, 0.9);
 }
 #signin-form input{
+	width: 90%;
 	margin-bottom: 10px;
 	font-size: 20px;
 	border:none;
 	border-radius: 5px;
 	padding: 10px;
-
+	
 }
 #signin-form button {
 	border:none;
 	background-color: white;
 	color: black;
+	width: 40%;
 	padding: 10px;
 	border-radius: 10px;
-	margin-top: 10px;
+	margin: 10px;
+	font-size: 30px;
 
 }
 #text-signup{
 	text-align: center;
-	margin-bottom: 0;
+	margin: 20px;
+	color: white;
 }
 #text-signup a {
-	color: black;
-}
-.welcome {
-	position: absolute;
-	top: 20%;
-	margin: 0% 50% auto;
-	width: 40%;
 	color: white;
-	text-align: center;
-	animation-name: animation;
-	animation-duration: 1.5s;
-
+	text-decoration: underline white;
 }
 
-@keyframes animation{
-	from{
-		position: absolute;
-		top: -200px;
-		}
-	to{
-		position: absolute;
-		top: 20%;
-	}
-	
-}
-#logo {
-	width: 90px;
-
-}
-
-#welcome-text{
-	font-family: Cardo;
-	font-size: 30px;
-	text-align: center;
-}
 .container{
 	margin: 0 auto;
+	width: 100%;
 
 }
 
 .main{
 	margin: 0 auto;
-	width: 90%;
+	width: 100%;
 
 }
 .container .row{
@@ -156,7 +179,7 @@ nav ul li a:hover{
 	margin: 200px 0 200px 0;
 }
 .main .row img{
-	width: 80%;
+	width: 100%;
 }
 .main h1{
 	margin-bottom: 80px;
@@ -227,50 +250,107 @@ footer .trademark{
 }
 
 #background-video { /*This is how you set the video to take all the screen! Use this in the future*/
-	position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    z-index: -2;
+	display: none;
+	/*position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    
+    z-index: -2;*/
 }
 
-.blur{ /*This is how you make a video header looks even cooler!*/
-	position: absolute;
-	right:0;
-	bottom: 0;
-	min-width: 100%;
-	min-height: 100%;
-	z-index:-1;
-	background-color: rgba(1,1,1,0.4);
-}
-@media only screen and (min-width: 601px){
-	#signin-form input {
-		width: 70%;
-	}
 
-}
-
-@media only screen and (max-width: 600px) {
+@media  (max-width: 700px) {
 	body {
 		margin: 0;
-		background-color: #393E41;
+	}
+	
+	nav {
+		background-color: white;
+		border-bottom: solid 1px gray;
+	}
+	.sidebar-icon{
+		display: block;
+		width: 40px;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	.sidebar{
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: 3;
+		background-color: rgb(31, 30, 30);
+		align-items: center;
 
-
+	}
+	.sidebar ul{
+		width: 100%;
+		list-style: none;
+		text-align: center;
+		padding: 0;
+		
+	}
+	.sidebar ul li{
+		position: relative;
+		width: 100%;
+		padding: 10px;
+		background-color: white;
+		border: solid 1px black;
+	}
+	.sidebar ul li a{
+		font-size: 50px;
+		
+	}
+	.close{
+		position: absolute;
+		top: 0;
+		right: 10px;
+		font-size: 70px;
+		color: white;
+	}
+	nav ul{
+		display: none;
+	}
+	
+	#welcome-header{
+		color: black;
+	}
+	#welcome-text{
+		font-size: 30px;
+		color: black;
+		margin: 70px 0;
 	}
 	#background-video {
 		display: none;
 	}
-	#signin-form{
-		position: absolute;
-		top: 550px;
-		width: 100%;
-		background-color: rgba(1,1,1,0.2);
-		margin-bottom: 100px;
-		margin: 0;
-		border-radius: 0;
+	.blur{
+		display: block;
+		padding: 70px 0 0 0;
+	}
+	
+	.welcome {
+		width: 100%;	
+	
+	}
+	
 
-		
+	#signin-form{
+		position: relative;
+		margin: 20px auto;
+		width: 90%;
+		border-radius: 5px;
+		background-color: rgba(1,1,1,0.7);
+
+	}
+	#signin-form a{
+		color: white;
+		text-decoration: underline white;
 	}
 	#signin-form h1 {
 		margin: 0 0 20px 0;
@@ -280,8 +360,8 @@ footer .trademark{
 		border:none;
 		border-radius: 5px;
 		padding: 10px;
+		width: 95%;
 		
-
 	}
 	#signin-form button {
 		border:none;
@@ -293,25 +373,12 @@ footer .trademark{
 
 	}
 
-	.welcome {
-	position: absolute;
-	top: 0px;
-	margin: 0 auto;
-	width: 100%;
-	text-align: center;
-	animation-name: none;
-	color: white;
-	margin-top: 20px;
-
-
-}
-
-
 	#signup-form{
 		width: 100%;
 		background-color: rgba(1,1,1,0.2);
 		border-radius: 10px;
 	}
+	
 	#signup-form h1 {
 		margin: 0 0 20px 0;
 	}
@@ -334,5 +401,19 @@ footer .trademark{
 	#text-signup {
 		text-align: center;
 		margin-right: 0;
+	}
+	.main h1{
+		margin: 40px 0 40px 0;
+	}
+	.col-md-6{
+		text-align: center;
+	}
+	.col-md-6 p{
+		text-align: left;
+	}
+	.container2 {
+		width: 95%;
+		background-color: rgba(1,1,1,0.7);
+		color: white;
 	}
 }

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
 	</script>
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Quicksand|Anton|Ubuntu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Quicksand|Anton|Ubuntu|Rajdhani" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/welcome.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> <!-- This is how you display the favicon icon in the website! Fucking awesome!! -->
 	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Poor+Story|Ubuntu|Amatic+SC|Righteous|Kaushan+Script|Cardo|Poiret+One" rel="stylesheet">
@@ -24,45 +24,57 @@
 	<?php if(!isset($_SESSION['id'])){ 
 		?>
 	<!-- Code for the nav bar. I will still add the javascript effects to change collors and stuff. -->
+	
 	<nav class="nav-bar">
 		<div class="logo-nav">
 			<img src="icons/logo.svg" class="nav-img">
 			<p id="welcome-header">Origami</p>
 		</div>
+
+		<img class="sidebar-icon" src="images/side.png">
 		
 		<ul>
-			<li><a class="item-nav" href="#">Home</a></li>
-			<li><a class="item-nav" href="#first-text">About</a></li>
-			<li><a class="item-nav" href="#second-text">Contact</a></li>
+			<li><a class="item-nav" href="#">About</a></li>
+			<li><a class="item-nav" href="#">Contact</a></li>
+			<li><a class="item-nav" href="signup.php">Sign up</a></li>
 		</ul>
 	</nav>
-	
-	<div id="signin-form">
-		<h1>Login</h1>
-		<form method="POST" action="action/login.php">
-			<input id="signin-email" type="text" name="email_username" placeholder="E-mail or username"><br>
-			<input id="signin-password" type="password" name="password" placeholder="Password"><br>
-			<button id="signin-submit" type="submit" name="submit">Login</button><br>
-		</form>
 
-		<p id="text-signup">Don't have an account yet? <a href="signup.php">Click here</a> to sign up!</p>
-	</div>
-
-	<div class="welcome">
-	 <br><br><br>
-		<p id="welcome-text">Your new personal notebook! Write what you think and store important moments of your life. </p>
-	</div>
 	<div class="blur">
 		
+		<div class="header-left">
+			<div class="welcome">
+				<p id="welcome-text">Welcome to Origami, your new personal notebook! </p>
+			</div>
+		</div>
+
+		<div class="header-right">
+		<div id="signin-form">
+				
+				<form method="POST" action="action/login.php">
+					<input autofocus id="signin-email" type="text" name="email_username" placeholder="E-mail or username"><br>
+					<input id="signin-password" type="password" name="password" placeholder="Password"><br>
+					<button id="signin-submit" type="submit" name="submit">Login</button><br>
+				</form>
+
+				<p id="text-signup">Don't have an account yet? <a href="signup.php">Click here</a> to sign up!</p>
+			</div>
+		</div>
 	</div>
-	<video id="background-video" loop autoplay >
-		<source src="videos/background-video.mov" type="video/mp4">
-	</video>
+	<div class="sidebar">
+		<ul>
+			<li><a class="item-nav" href="#">About</a></li>
+			<li><a class="item-nav" href="#">Contact</a></li>
+			<li><a class="item-nav" href="#">Sign up</a></li>
+			<li><a class="item-nav" href="#">Log in</a></li>
+		</ul>
+		<span class="close">&times;</span>
+	</div>
 
 	<div class="container main">
 		<div class="row" id="first-text" >
 			<div class="col-md-6 col-ms-6">
-				<img src="icons/note.svg">
+				<img src="icons/starbucks.png">
 			</div>
 			<div class="col-md-6 col-ms-6">
 				<h1>Write what you want, whenever you want!</h1>
@@ -72,7 +84,7 @@
 		</div>
 		<div class="row"  id="second-text">
 			<div class="col-md-6 col-ms-6">
-				<img src="icons/files.svg">
+				<img src="icons/typewriter_shot.png">
 			</div>
 			<div class="col-md-6 col-ms-6">
 				<h1>No complications!</h1>
@@ -101,6 +113,7 @@
     		<li><a href="#">Contact</a></li>
     	</ul>
     	<p class="trademark">Created by Weslley. 2018-2019. All rights reserved. </p>
+		<p class="trademark">Illustrations by Alex Kunchevsky.</p>
     </footer>
 	<?php 
 		}

@@ -30,7 +30,7 @@
 	<div class="message">
 		
 	</div>
-	
+	<p style="color:white">Already has an account? <a style="color: white"; href="index.php">Sign in</a>.</p>
 </body>
 </html>
 

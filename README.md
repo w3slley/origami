@@ -7,6 +7,9 @@ This is a web application that allows users to create and edit personal notes. H
 
 Creator: Weslley Victor (wvict)
 
+# Demo
+
+Youtube video showing some of Origami's features: https://www.youtube.com/watch?v=lQZI8rRViKM
 # Install
 If you want to take a look into the web application, proceed as follows:
 

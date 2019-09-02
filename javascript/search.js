@@ -2,7 +2,7 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 	//Modal Variables
 	let modal = document.getElementById('myModal');//getting the element of the modal
 	let modalContent = document.getElementsByClassName('modal-content')[0];
-	
+
 	let loaderEdit = document.querySelector('#loader-edit');
 	modal.style.display = 'block';
 	modal.style.animationName = 'animation';
@@ -10,22 +10,22 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 	$.post('action/editNote-modal.php', {noteId: note_id}, function (data){
 		document.getElementById('data').innerHTML = data;
 		//document.body.style.overflow = 'hidden';
-		
+
 		/*loaderEdit.classList.remove('loader-edit');/*This
 		makes a loader icon appear when the note is being retrieve from the database*/
 		let noteModalContent = document.querySelector('#edit-content-modal');
 		let noteModalTitle = document.querySelector('#edit-title-modal');
 		let noteId = document.querySelector('.id');
 		let deleteButton = document.querySelector('.delete');
-		
-		
-		
+
+
+
 		//ASYNC FEATURE!
 		var s = window.location.search;
 
 		//For the note title
 		noteModalTitle.onkeyup = function(){
-		
+
 			$.post('action/editNote.php', {noteId: noteId.value, noteContent: noteModalContent.value, noteTitle: noteModalTitle.value}, function(){
 
 			}); //saves data into the database
@@ -35,46 +35,46 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 				var searchTerm = search[1].replace(/\+/g, ' ');
 				//updates the search page after editing on it
 				$.post('action/showSearchedNotes.php',{search: searchTerm}, function(data){
-					document.querySelector('.searched-notes').innerHTML = data;
-					
+					('.searched-notes').html(data)
+
 				});
 			}
 			else{
 				//updates the main page after editing on it
 				$.post('action/showMoreNotes.php',{limit: divLimit}, function(data){
-					document.querySelector('#notes').innerHTML = data;
-	
+					$('#notes').html(data)
+
 				});
-	
+
 			}
-			
+
 		}
 		//For the note content
 		noteModalContent.onkeyup = function(){
 			$.post('action/editNote.php', {noteId: noteId.value, noteContent: noteModalContent.value, noteTitle: noteModalTitle.value}, function(){
 
 			});
-			
+
 			//fixing problem with loading notes in the search mode with async (not solved yet) - FIXED
-			
+
 			if(s!=''){
 				var search = s.split('=');
 				var searchTerm = search[1].replace(/\+/g, ' ');
-				
-				$.post('action/showSearchedNotes.php',{search: searchTerm}, function(data){
-					document.querySelector('.searched-notes').innerHTML = data;
 
-					
+				$.post('action/showSearchedNotes.php',{search: searchTerm}, function(data){
+					$('.searched-notes').html(data)
+
+
 				});
 			}
 			else{
 				$.post('action/showMoreNotes.php',{limit: divLimit}, function(data){
-					document.querySelector('#notes').innerHTML = data;
-					
-					
+					$('#notes').html(data)
+
+
 				});
 			}
-			
+
 		}
 
 		//When the delete button is pressed!
@@ -88,12 +88,12 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 					document.getElementById('data').innerHTML = "";
 				});
 			}
-			
+
 		}
 
 
 	});
-}	
+}
 
 
 //WHEN PRESSED "ESC" - This is how you can use the keyboard to do something in the website! You can make even a game with this... I assume every key in the keyboard has a unique number.
@@ -133,13 +133,13 @@ close.onclick = function(){
 
 
 
-//SIDEBAR ANIMATION. 
+//SIDEBAR ANIMATION.
 let sideBarIcon = document.querySelector('.side-icon');
-var count = 0; 
+var count = 0;
 sideBarIcon.onclick = function(){//This is what happens when the side icon is clicked:
 	let sideBar = document.querySelector('.side-bar');
 	let body = document.querySelector('.body');
-	if(count%2 == 0){/*when clicked for the first time, the modulo of 0/2 is zero, therefore, 
+	if(count%2 == 0){/*when clicked for the first time, the modulo of 0/2 is zero, therefore,
 		the side bar will appear with the animation.*/
 		sideBar.style.animationName = 'animation-sidebar';
 		sideBar.style.animationDuration = '.3s';
@@ -155,7 +155,7 @@ sideBarIcon.onclick = function(){//This is what happens when the side icon is cl
 		body.style.width = '100%';
 		count++;
 	}
-	
+
 }
 
 

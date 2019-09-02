@@ -2,7 +2,12 @@
 	include "classes/User.php";
 	session_start();
 	$id = $_SESSION['id'];
-	if(isset($_SESSION['id'])){
+	$user = new User();
+	$user->setUserLogged($id);
+
+	if(!isset($id)){
+		header("Location: index.php");
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,10 +19,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Nanum+Myeongjo|Kaushan+Script|Rajdhani" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-
-
-
-
 </head>
 <body>
 	<nav>
@@ -27,7 +28,6 @@
 				<img class="logo" src="icons/logo.svg">
 			</a>
 		</div>
-
 		<div class="side-bar">
 			<ul>
         <li>
@@ -44,15 +44,13 @@
 				</li>
 			</ul>
 		</div>
-
-		<form class="search-form" method="GET">
+		<form action="action/searchNote.php" class="search-form" method="POST">
 			<input id="search-input" type="search" name="search" placeholder="Search notes...">
 
 		</form>
 		<img id="search-img" src="images/search.png">
 		<?php 	//DISPLAYING PROFILE IMAGE IN THE NAVBAR
-				$img = new User;
-				$imgFormat = $img->getImgFormat($id);
+				$imgFormat = $user->getImgFormat();
 				if($imgFormat == ''){ //if there's no format in the database: (that means that the user didn't uploaded a image yet) ?>
 				<img class="profile-img-nav" src="profile_images/blank.png">
 			<?php }
@@ -92,19 +90,14 @@
 			<div class="image-container">
 
 				<?php  //DISPLAYING PROFILE IMAGE IN THE PROFILE PAGE.
-					$img = new User;
-					$imgFormat = $img->getImgFormat($id);
-
 					if($imgFormat == ''){ ?>
-
 					<img class="profile-img" src="profile_images/blank.png">
-
 				<?php }
-					else{ ?>
-
+					else{
+				?>
 						<img class="profile-img" src="profile_images/user<?php echo $id; ?>.<?php echo $imgFormat; ?>">
-
-				<?php }
+				<?php
+					}
 				?>
 
 				<form class="upload-img-form" method="POST" action="action/uploadImage.php" enctype="multipart/form-data">
@@ -140,15 +133,7 @@
 				echo '<script>alert("Your personal informations have been updated!");</script>';
 			 }
 		}
-		if(isset($_GET['search'])){
-			header("Location: initial_page.php?search=".$_GET['search']);
-		}
 	?>
 	<script src="javascript/profile.js"></script>
 </body>
 </html>
-<?php }
-
-else{
-	header("Location: index.php");
-}

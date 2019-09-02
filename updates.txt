@@ -116,6 +116,11 @@ Well, these are the features done yesterday and today:
 1) Improved front end in the index page. I changed the header and some of the icons in the page. I think now is way more awesome than before. I need to improve the front end of the plataform though. That's something for another day.
 2) Created sidebar for mobile.
 
+
+02/09/2019
+1)Fixed problem in the profile page. Now users can edit their information separate from updating passwords. Before everytime they wanted update the info, they were obliged to create a new password.
+2)Created a search.php file where all the searchs are now displayed. I also solved a security issue: now users cannot inject scripts using the search field. I still need to fix this for the notes though.
+
 Things I still have to implement:
 
 1)add label system to the notes.(DONE)
@@ -135,8 +140,8 @@ Things I still have to implement:
 13) Make sure that when the user clicks outside the textarea, the title input fades away and the textarea shrinks in padding bottom. Right now it only does that if the div notes is clicked.(DONE)
 14) Implement the profile page with user information and image.(DONE)
 15) Create box that shows up when the user clicks the profile image in the navbar.
-16) Insert the buttons in the side bar. (probably setting buttons and so on) (Partially done)
-17) IDEA->Create a version of the app that encrypts the notes (a more secure alternative)
+16) Insert the buttons in the side bar. (probably setting buttons and so on) (DONE)
+17) Create a version of the web app that uses criptography and stores all the notes encrypted on server (a more secure alternative)
 18) Create in the setting part a feature that allows the user to change the main color of the app among other things!
 19) Make sure that when the user types something this is stores directly into the database without clicking the save changes button! This is important.
 20) Create animation on the note that was added!

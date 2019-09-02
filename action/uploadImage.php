@@ -1,7 +1,9 @@
 <?php
 	session_start();
 	include "../classes/User.php";
-
+	$user = new User;
+	$user->setUserLogged($_SESSION['id']);
+	
 	$file = $_FILES['file'];
 	$fileName = $_FILES['file']['name'];
 	$fileTmpName = $_FILES['file']['tmp_name'];
@@ -16,21 +18,21 @@
 	if($fileError == 0){
 		if($fileSize < 2000000){
 			if(in_array($imgFormat, $formatAllowed)){
-				
-				$image = new User;
-				$image->setImgFormat($_SESSION['id'], $imgFormat);
+
+
+				$user->setImgFormat($imgFormat);
 
 				move_uploaded_file($fileTmpName, $image_path);
 
 				header("Location: ../profile.php?upload=success");
 			}
 			else {
-				header("Location: ../profile.php?upload=formatError");	
+				header("Location: ../profile.php?upload=formatError");
 			}
-		}	
+		}
 		else{
 			header("Location: ../profile.php?upload=sizeError");
-		}	
+		}
 
 	}
 	elseif($fileError == 4){
@@ -42,4 +44,3 @@
 
 
 	//How the query will look like - use this in the user class!
-	

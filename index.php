@@ -34,9 +34,10 @@
 		<img class="sidebar-icon" src="images/side.png">
 		
 		<ul>
+			<li><a class="item-nav home" href="#">Home</a></li>
 			<li><a class="item-nav" href="#">About</a></li>
 			<li><a class="item-nav" href="#">Contact</a></li>
-			<li><a class="item-nav" href="signup.php">Sign up</a></li>
+			<li><a class="item-nav signup" href="signup.php">Sign up</a></li>
 		</ul>
 	</nav>
 

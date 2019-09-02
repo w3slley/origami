@@ -17,7 +17,7 @@
 		    border-radius: 50%;
 		    width: 80px;
 		    height: 80px;
-		    animation: spin 1s linear infinite;
+		    animation: spin .5s linear infinite;
 		    margin: 0 auto;
 		    display: block;
 		   	margin-top: 250px;
@@ -33,7 +33,7 @@
 			    border-radius: 50%;
 			    width: 160px;
 			    height: 160px;
-			    animation: spin 1s linear infinite;
+			    animation: spin .5s linear infinite;
 			    margin: 0 auto;
 			    display: block;
 			   	margin-top: 140px;

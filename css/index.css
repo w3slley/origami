@@ -1,7 +1,7 @@
 body {
 	background-color: #E8EDDF;
 	margin: 0;
-	
+
 }
 
 nav {
@@ -14,7 +14,7 @@ nav {
 	box-shadow: none;
 	transition: box-shadow .5s;
 
-	
+
 }
 .side-icon {
 	position: absolute;
@@ -40,7 +40,7 @@ nav {
 	position: absolute;
 	top: -32px;
 	left: 110px;
-	
+
 
 }
 
@@ -84,11 +84,11 @@ nav {
 	outline: none;
 	opacity: 0;
 	transition: opacity .5s;
-	
+
 }
 #search-img{
 	display: none;
-	
+
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -96,7 +96,7 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
-}/*This is how you remove the 'x' from the search input. I'll look into a 
+}/*This is how you remove the 'x' from the search input. I'll look into a
 smaller way to do that*/
 
 .searched-notes{
@@ -121,7 +121,7 @@ smaller way to do that*/
 	top: 10px;
 	border-radius: 100%;
 	cursor: pointer;
-	
+
 
 
 }
@@ -141,7 +141,7 @@ smaller way to do that*/
 .dropdown-settings ul{
 	list-style-type: none;
 	font-size: 20px;
-	
+
 
 }
 .dropdown-settings ul li{
@@ -149,8 +149,8 @@ smaller way to do that*/
 	background-color: gray;
 	width: 100%;
 	left: 0;
-	
-	
+
+
 
 }
 .dropdown-settings ul li a{
@@ -160,7 +160,7 @@ smaller way to do that*/
 	font-family: Ubuntu;
 
 
-	
+
 }
 
 
@@ -171,7 +171,7 @@ smaller way to do that*/
 	background: none;
 	cursor: pointer;
 	padding: 0;
-	
+
 
 
 }
@@ -192,7 +192,7 @@ smaller way to do that*/
 	border-bottom-right-radius: 5px;
 	overflow: auto;
 	z-index: 9;
-	
+
 }
 
 @keyframes animation-sidebar{
@@ -207,7 +207,7 @@ smaller way to do that*/
 @keyframes animation-out-sidebar{
 	from{
 		left:0;
-		width: 20%;		
+		width: 20%;
 		}
 	to{
 		left: -800px;
@@ -229,7 +229,7 @@ smaller way to do that*/
 	width: 100%;
 	left: 0;
 	top: 0;
-	-webkit-padding-start: 0px; /*This was causing a padding-left of 40px. I don't know why.. 
+	-webkit-padding-start: 0px; /*This was causing a padding-left of 40px. I don't know why..
 	But now it's fixed.*/
 }
 
@@ -238,12 +238,12 @@ smaller way to do that*/
 	color: black;
 	cursor: pointer;
 	padding-left: 10px;
-	
+
 }
 
 .side-bar ul li:hover{
 	background-color: rgba(255, 255, 255, 0.8);
-	
+
 }
 
 
@@ -260,7 +260,7 @@ smaller way to do that*/
 
 .write {
 	text-align: center;
-	
+
 
 }
 .write button {
@@ -271,7 +271,7 @@ smaller way to do that*/
 }
 .write input, textarea {
 	margin: 0 auto;
-	width: 58%;	
+	width: 58%;
 	border: none;
 	border-radius: 10px;
 	font-size: 20px;
@@ -292,7 +292,7 @@ smaller way to do that*/
 	cursor: default;
 	z-index: -1;
 	transition: opacity .5s;
-	
+
 }
 #addNote-content{
 	margin-top: 5px;
@@ -326,10 +326,10 @@ smaller way to do that*/
 	background-color: #9BC1BC;
 	margin: 20px auto;
 	width: 70%;
-	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/	
+	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/
 	transition: box-shadow .2s;
 	border: solid 1px black;
-	
+
 }
 
 @keyframes animation-note{
@@ -348,11 +348,11 @@ smaller way to do that*/
 	margin: 0 auto;
 	width: 70%;
 	text-align: justify;
-	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/	
+	cursor: default; /*when the mouse is on top of the note, then it won't display the text cursor!*/
 	animation-name: note-animation-in;
 	animation-duration: 5s;
 
-	
+
 }
 
 @keyframes note-animation-in{
@@ -375,11 +375,11 @@ smaller way to do that*/
 /*Note's animation*/
 .div-note:hover {
 	box-shadow: 2px 2px 9px #111;
-	
+
 }
 .div-note:hover #delete-icon {
 	opacity: 1;
-	
+
 }
 
 
@@ -406,7 +406,7 @@ smaller way to do that*/
 	text-align: center;
 	margin:0;
 	padding: 0;
-	
+
 }
 
 .edit_note_content {
@@ -420,8 +420,8 @@ smaller way to do that*/
 	border: none;
 	resize: none;
 	height: 380px;
-	
-	
+
+
 }
 .edit_note_content::selection{
 	background: white;
@@ -440,7 +440,7 @@ smaller way to do that*/
 	margin: 0 auto;
 	width: 94%;
 
-	
+
 }
 
 .title_edit::selection{
@@ -490,12 +490,12 @@ smaller way to do that*/
 	padding-top: 5px;
 	width: 100%;
 	background-color:#A5C882;
-	
-	 
-	
-	
 
-	
+
+
+
+
+
 }
 
 
@@ -541,8 +541,8 @@ smaller way to do that*/
     /* overflow: auto; Enable scroll if needed */
     background-color: rgba(1,1,1,0.8); /* Black w/ opacity */
 	z-index: 200;
-	
-	
+
+
 
 }
 .modal-content {
@@ -556,7 +556,7 @@ smaller way to do that*/
     animation-duration: 1.5s;*/
     border-radius: 5px;
 	background-color: #9BC1BC;
-	
+
 
 }
 
@@ -603,7 +603,7 @@ smaller way to do that*/
 .image-container{
 	position: absolute;
 	width: 30%;
-	
+
 	height: 100%;
 }
 .information-container{
@@ -613,7 +613,7 @@ smaller way to do that*/
 	width: 65%;
 	height: 100%;
 	font-size: 20px;
-	
+
 }
 .profile-img {
 	margin: 10% auto;
@@ -630,7 +630,7 @@ smaller way to do that*/
 	display: block;
 	width: 80%;
 	font-family: Ubuntu;
-	
+
 }
 #upload-img-button{
 	margin: 20px auto;
@@ -696,10 +696,10 @@ smaller way to do that*/
 }
 
 #info-button{
-	margin: 8px auto;
+	margin: 20px 0;
 	display: block;
-	position: absolute;
-	right: 0;
+	position: relative;
+	left: 0;
 	font-size: 30px;
 	font-family: Ubuntu;
 	border-radius: 5px;
@@ -735,15 +735,13 @@ smaller way to do that*/
 @media only screen and (max-width: 600px) {
 	body {
 		margin: 0;
-
-
 	}
 	#signin-form{
 		width: 100%;
 		background-color: rgba(1,1,1,0.2);
 		border-radius: 10px;
 		margin-bottom: 100px;
-		
+
 	}
 	#signin-form h1 {
 		margin: 0 0 20px 0;
@@ -753,7 +751,7 @@ smaller way to do that*/
 		border:none;
 		border-radius: 5px;
 		padding: 10px;
-		
+
 
 	}
 	#signin-form button {
@@ -806,11 +804,11 @@ smaller way to do that*/
 		position: absolute;
 		top: -49px;
 		left: 90px;
-		
+
 	}
 	.side-bar{
-		
-	
+
+
 	}
 	.sidebar-text {
 		font-size: 20px;
@@ -844,9 +842,9 @@ smaller way to do that*/
 		position: relative;
 		padding: 0 5px 30px 5px;
 		border-radius: 5px;
-		background-color: rgba(67, 114, 36, 0.7);
-		margin: 0 auto;
-		width: 90%;
+		background-color: #9BC1BC;
+		margin: 20px auto;
+		width: 85%;
 		text-align: justify;
 		font-size: 10px;
 
@@ -863,7 +861,7 @@ smaller way to do that*/
 		left: 0;
 		margin: 0;
 		padding-top: 15px;
-		background-color: #A5C882; 
+		background-color: #A5C882;
 		height: 85px;
 	}
 
@@ -880,17 +878,17 @@ smaller way to do that*/
 		font-family: Ubuntu;
 		cursor: pointer;
 		outline: none;
-	
+
 	}
-	
+
 	#last-edited {
 		text-align: center;
 		font-size: 15px;
 		font-family: Ubuntu;
 	}
-	
+
 	.delete {
-		position: absolute;
+		position: relative;
 		left: 5px;
 		bottom: 10px;
 		font-size: 20px;
@@ -902,7 +900,7 @@ smaller way to do that*/
 		cursor: pointer;
 		outline: none;
 	}
-	
+
 	.edit_note_content {
 		resize: none;
 		font-size: 20px;
@@ -912,9 +910,9 @@ smaller way to do that*/
 		width: 90%;
 		height: 400px;
 
-		
 
-		
+
+
 	}
 	.title_edit {
 		font-weight: bold;
@@ -928,7 +926,7 @@ smaller way to do that*/
 		top:0;
 		left: 0;
 		height:93%;
-	    background-color: #A5C882;
+	    background-color: #9BC1BC;
 	    margin: 0% auto; /* 15% from the top and centered */
 	    padding: 0px 0px 40px 0px;
 	    border: 1px solid #888;
@@ -943,10 +941,10 @@ smaller way to do that*/
 		right: 10px;
 		font-size: 28px;
 		font-weight: bold;
-	}	
+	}
 
-	
-	
+
+
 
 	/*PROFILE SECTION - RESPONSIVE*/
 
@@ -970,7 +968,7 @@ smaller way to do that*/
 		position: relative;
 		width: 100%;
 		margin-bottom: 50px;
-		
+
 	}
 	.information-container{
 		position: absolute;
@@ -979,7 +977,7 @@ smaller way to do that*/
 		width: 100%;
 		height: 100%;
 		font-size: 20px;
-		
+
 	}
 	.profile-img {
 		margin: 10% auto;
@@ -996,7 +994,7 @@ smaller way to do that*/
 		display: block;
 		width: 80%;
 		font-family: Ubuntu;
-		
+
 	}
 	#upload-img-button{
 		margin: 20px auto;
@@ -1068,7 +1066,7 @@ smaller way to do that*/
 		background-color: white;
 		color: #332C23;
 		border: 1px solid #82816D;
-		
+
 
 	}
 
@@ -1080,4 +1078,3 @@ smaller way to do that*/
 
 
 }
-

@@ -73,6 +73,21 @@ nav ul li{
 	text-decoration: underline black;
 }
 
+.home{
+	text-decoration: underline #9BC1BC;
+	
+}
+.signup{
+	padding: 10px;
+	background-color: #9BC1BC;
+	border-radius: 5px;
+	color: white;
+}
+.signup:hover{
+	color: white;
+	text-decoration: none;
+	
+}
 #logo {
 	width: 90px;
 }
@@ -188,7 +203,7 @@ nav ul li{
 	font-size: 25px;
 }
 .container2{
-	background-color: #E8EDDF;
+	background-color: rgba(155, 193, 188, 0.74);
 	margin-bottom: 20px;
 	padding: 20px;
 	text-align: center;

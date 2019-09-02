@@ -12,10 +12,7 @@ if(!x.matches){
 			nav.style.borderBottom = 'solid 1px black';
 			
 	
-			for(let i=0;i<navItems.length; i++){
-				navItems[i].style.color = 'black';
-			}
-			logo.style.color = 'black';
+			
 	
 	
 		}
@@ -23,10 +20,7 @@ if(!x.matches){
 			nav.style.backgroundColor = 'transparent';
 			nav.style.borderBottom = 'none';
 	
-			for(let i=0;i<navItems.length; i++){
-				navItems[i].style.color = 'black';
-			}
-			logo.style.color = 'black';
+			
 		}
 	}
 }

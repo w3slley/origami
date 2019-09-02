@@ -364,6 +364,7 @@ noteDiv.onmouseout = function(){
 
 
 //ALGORITHM THAT DISPLAYS MORE NOTES WHEN USER REACHES THE BOTTOM OF THE PAGE(jQuery)!
+
 $(document).ready(function(){
 	var loader = document.querySelector('.loading');
 	var nControl = 0;
@@ -372,6 +373,8 @@ $(document).ready(function(){
 	$(window).scroll(function(){
 		var scrollHeight = $(document).height();
 		var scrollPosition = $(window).height() + $(document).scrollTop();
+		console.log(scrollPosition);
+		console.log(scrollHeight);
 		var countNumNotes = parseInt($('#countNotes').html());
 
 		if(scrollPosition == scrollHeight){
@@ -470,7 +473,10 @@ get the notes from the DB in the correct way and without reloading the page.*/
 set the value of the numberControl to zero everytime the number of notes in the
 database went bellow 10, which is the amount of notes displayed in the initial
 page. It's still not perfect, and I'll keep an eye on the bugs that certainly
-will appear...*/
+will appear...
+
+13/07/2019
+I think I'll need to delete all of this and start from scratch.*/
 
 
 

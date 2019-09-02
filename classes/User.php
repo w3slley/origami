@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include "Database.php";
 
 	class User extends Database {
@@ -24,7 +24,7 @@
 			$sql = "INSERT INTO users (first_name, last_name, user_name, email, password) VALUES (?, ?, ?, ?, ?)";
 			$stmt = $this->connect()->prepare($sql);
 			$stmt->execute([$this->first_name, $this->last_name, $this->user_name, $this->email, $this->password]);
-	
+
 		}
 
 		public function checkUser($email, $password){ //This method checks if the information inserted is correct - if there's a user with that e-mail/username and password. If there is, it will return the user's information. If there isn't, it will return a boolean value false!
@@ -53,21 +53,29 @@
 
 		}
 
-		public function updateInfo($first_name, $last_name, $user_name, $email, $password, $user_id){
-			
+		public function updateInfo($first_name, $last_name, $user_name, $email, $user_id){
+
 			$this->first_name = $first_name;
 			$this->last_name = $last_name;
 			$this->user_name = $user_name;
 			$this->email = $email;
-			$this->password = $password;
 			$this->user_id = $user_id;
 
-			$sql = "UPDATE users SET first_name = ?, last_name = ?, user_name = ?, email = ?, password = ? WHERE id = ?";
+			$sql = "UPDATE users SET first_name = ?, last_name = ?, user_name = ?, email = ?WHERE id = ?";
 			$stmt = $this->connect()->prepare($sql);
-			$stmt->execute([$this->first_name, $this->last_name, $this->user_name, $this->email, $this->password, $this->user_id]);
-				
+			$stmt->execute([$this->first_name, $this->last_name, $this->user_name, $this->email, $this->user_id]);
 
-			
+
+		}
+
+		public function updatePassword($password, $user_id){
+			$this->user_id = $user_id;
+			$this->password = $password;
+
+			$sql = "UPDATE users SET password=? WHERE id = ?";
+			$stmt = $this->connect()->prepare($sql);
+			$stmt->execute([$this->password, $this->user_id]);
+
 		}
 
 		public function setImgFormat($user_id, $img_format){
@@ -99,7 +107,7 @@
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);
 			if(!empty($result['user_name'])){
 				return true;
-			
+
 			}
 			else{
 				return false;
@@ -116,7 +124,7 @@
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);
 			if(!empty($result['email'])){
 				return true;
-			
+
 			}
 			else{
 				return false;

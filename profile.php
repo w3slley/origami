@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include "classes/User.php";
 	session_start();
 	$id = $_SESSION['id'];
@@ -15,12 +15,11 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-	
+
 
 
 </head>
 <body>
-
 	<nav>
 		<img class="side-icon" src="icons/sidebar.png">
 			<a href="initial_page.php">
@@ -30,21 +29,20 @@
 		</div>
 
 		<div class="side-bar">
-			<ul>	
-                    <li>
-                        <img class="notes-icon" src="images/notes.png">
-                        <p class="sidebar-text side-bar-notes" style="position: relative">Your notes</p>
-                    </li>
-				
-					<li>
-						<img class="notes-icon" src="images/config.png">
-						<p class="sidebar-text side-bar-settings" style="position: relative">Settings</p>
-					</li>
-					<li>
-						<img class="notes-icon" src="images/logout.png">
-						<p class="sidebar-text logout-button">Logout</p>	
-					</li>
-				</ul>		
+			<ul>
+        <li>
+          <img class="notes-icon" src="images/notes.png">
+          <p class="sidebar-text side-bar-notes" style="position: relative">Your notes</p>
+        </li>
+				<li>
+					<img class="notes-icon" src="images/config.png">
+					<p class="sidebar-text side-bar-settings" style="position: relative">Settings</p>
+				</li>
+				<li>
+					<img class="notes-icon" src="images/logout.png">
+					<p class="sidebar-text logout-button">Logout</p>
+				</li>
+			</ul>
 		</div>
 
 		<form class="search-form" method="GET">
@@ -55,20 +53,13 @@
 		<?php 	//DISPLAYING PROFILE IMAGE IN THE NAVBAR
 				$img = new User;
 				$imgFormat = $img->getImgFormat($id);
-
 				if($imgFormat == ''){ //if there's no format in the database: (that means that the user didn't uploaded a image yet) ?>
-
 				<img class="profile-img-nav" src="profile_images/blank.png">
-
 			<?php }
 				else{ //if there is: (that means the user already uploaded one image!) ?>
-
 					<img class="profile-img-nav" src="profile_images/user<?php echo $id; ?>.<?php echo $imgFormat; ?>">
-
 			<?php }
 			?>
-		
-
 	</nav>
 
 	<div class="dropdown-settings">
@@ -81,7 +72,6 @@
 			</li>
 		</ul>
 	</div>
-
 	<div class="side-bar">
 		<ul>
 			<a href="initial_page.php">
@@ -94,13 +84,13 @@
 				<img class="notes-icon" src="images/config.png">
 				<p class="sidebar-text" style="position: relative">Settings</p>
 			</li>
-		</ul>		
+		</ul>
 	</div>
-	
+
 	<div class="profile">
 		<div class="profile-body">
 			<div class="image-container">
-				
+
 				<?php  //DISPLAYING PROFILE IMAGE IN THE PROFILE PAGE.
 					$img = new User;
 					$imgFormat = $img->getImgFormat($id);
@@ -116,32 +106,37 @@
 
 				<?php }
 				?>
-				
+
 				<form class="upload-img-form" method="POST" action="action/uploadImage.php" enctype="multipart/form-data">
 					<input id="upload-img-input" type="file" name="file">
 					<button id="upload-img-button" name="submit" type="submit">Upload picture</button>
 				</form>
-				
+
 			</div>
 			<div class="information-container">
 				<p id="information-text">Personal Information</p>
 				<hr>
-				<form class="form-profile" method="POST" action="action/update.php">
+				<p style="font-weight: bold">Update personal information:</p>
+				<form class="form-profile" method="POST" action="action/updateInfo.php">
 					<p>Name: </p> <input id="input-name" type="text" name="name" value="<?php echo $_SESSION['first_name']." ".$_SESSION['last_name']; ?>">
 					<p>Username: </p> <input id="input-username" type="text" name="user_name" value="<?php echo $_SESSION['user_name']; ?>">
 					<p>E-mail: </p> <input id="input-email" type="email" name="email" value="<?php echo $_SESSION['email']; ?>"> <br>
+					<button type="submit" id="info-button">Save Changes</button>
+				</form>
+				<p style="font-weight: bold">Update password:</p>
+				<form class="form-password form-profile" method="POST" action="action/updatePassword.php">
 					<p>Password: </p> <input id="input-password" type="password" name="password_actual" placeholder="Your current password...">
 					<p>New password: </p> <input id="input-password" type="password" name="password_new" placeholder="Your new password...">
 					<p>Repeat password: </p> <input id="input-password" type="password" name="password_new2" placeholder="Your new password...">
-					<button type="submit" id="info-button">Save Changes</button>
+					<button type="submit" id="info-button">Update password</button>
 				</form>
 			</div>
-		</div>	
+		</div>
 	</div>
 
-	<?php 
+	<?php
 		if(isset($_GET['update'])){
-			if($_GET['update'] == 'success'){ 
+			if($_GET['update'] == 'success'){
 				echo '<script>alert("Your personal informations have been updated!");</script>';
 			 }
 		}

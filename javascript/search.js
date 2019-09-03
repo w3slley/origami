@@ -35,7 +35,7 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 				var searchTerm = search[1].replace(/\+/g, ' ');
 				//updates the search page after editing on it
 				$.post('action/showSearchedNotes.php',{search: searchTerm}, function(data){
-					('.searched-notes').html(data)
+					$('.searched-notes').html(data)
 
 				});
 			}

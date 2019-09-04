@@ -9,7 +9,7 @@ Creator: Weslley Victor (wvict)
 
 # Demo
 
-Youtube video showing some of Origami's features: https://www.youtube.com/watch?v=lQZI8rRViKM
+Youtube video showing some of Origami's features: https://www.youtube.com/watch?v=JcVaf2xXok0
 # Install
 If you want to take a look into the web application, proceed as follows:
 
@@ -17,7 +17,7 @@ If you want to take a look into the web application, proceed as follows:
 ##### Clone this repository inside /var/www/ (or /xampp/htdocs on windows).
 ##### Create a username and a password on Mysql (if you don't have one).
 
-You can do so with: 
+You can do so with:
 `CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';`
 
 
@@ -60,15 +60,13 @@ The file should contain the following code:
 			try { //This will create a connection using PDO and, if it fails, an error message will be displayed. It is done using this try/catch method.
 				$dsn = 'mysql:host='.$this->serverName.';dbname='.$this->dbName;
 				$pdo = new PDO($dsn, $this->userName, $this->password);
-				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//This will create an exception - a message if anything goes wrong with the connection with the database. It is used later on in the catch part. 
+				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//This will create an exception - a message if anything goes wrong with the connection with the database. It is used later on in the catch part.
 				return $pdo;
-				
+
 			} catch (PDOException $e) {
 				echo "Connection failed: ". $e->getMessage();//This will print out the exact problem with the connection failure.
 			}
 		}
-	}` 
-  
+	}`
+
 Now go to http://localhost/origami and enjoy the web application!
-
-

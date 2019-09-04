@@ -22,7 +22,7 @@
 		$_SESSION['user_name'] = $username;
 		$_SESSION['email'] = $email;
 
-		header('Location: ../profile.php');
+		header('Location: ../profile.php?update=success');
 
 	}
 	else{

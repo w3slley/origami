@@ -374,7 +374,7 @@ smaller way to do that*/
 }
 /*Note's animation*/
 .div-note:hover {
-	box-shadow: 2px 2px 9px #111;
+	box-shadow: 0px 7px 25px 2px rgba(0,0,0,.4);
 
 }
 .div-note:hover #delete-icon {
@@ -643,12 +643,12 @@ smaller way to do that*/
 	color: #332C23;
 	border: 1px solid #82816D;
 	cursor: pointer;
-	transition: color .5s, background-color .5s, border .5s;
+	transition: color .2s, background-color .2s;
 
 }
 
 #upload-img-button:hover{
-	border: none;
+
 	background-color: #679436;
 	color: white;
 }
@@ -707,17 +707,11 @@ smaller way to do that*/
 	color: #332C23;
 	border: 1px solid #82816D;
 	cursor: pointer;
-	transition: color .5s, background-color .5s, border .5s;
-
+	transition: background-color .1s;
 }
-
 #info-button:hover{
-	border: none;
-	background-color: #679436;
-	color: white;
+	background-color: rgba(0,0,0,.05);
 }
-
-
 
 /* SETTINGS PAGE STYLE*/
 .setting-body{
@@ -1008,7 +1002,6 @@ smaller way to do that*/
 		border: 1px solid #82816D;
 		cursor: pointer;
 		transition: color .5s, background-color .5s, border .5s;
-
 	}
 
 	.form-profile{

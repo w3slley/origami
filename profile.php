@@ -116,7 +116,7 @@
 					<p>E-mail: </p> <input id="input-email" type="email" name="email" value="<?php echo $_SESSION['email']; ?>"> <br>
 					<button type="submit" id="info-button">Save Changes</button>
 				</form>
-				<p style="font-weight: bold">Update password:</p>
+				<p style="font-weight: bold">Change your password:</p>
 				<form class="form-password form-profile" method="POST" action="action/updatePassword.php">
 					<p>Password: </p> <input id="input-password" type="password" name="password_actual" placeholder="Your current password...">
 					<p>New password: </p> <input id="input-password" type="password" name="password_new" placeholder="Your new password...">
@@ -130,7 +130,7 @@
 	<?php
 		if(isset($_GET['update'])){
 			if($_GET['update'] == 'success'){
-				echo '<script>alert("Your personal informations have been updated!");</script>';
+				echo '<script>alert("Your personal information have been updated!");</script>';
 			 }
 		}
 	?>

@@ -9,8 +9,7 @@ function editNote(note_id){ //When the note is clicked, the modal is shown.
 	modal.style.animationDuration = '.7s'
 	$.post('action/editNote-modal.php', {noteId: note_id}, function (data){
 		document.getElementById('data').innerHTML = data;
-		//document.body.style.overflow = 'hidden';
-
+		
 		/*loaderEdit.classList.remove('loader-edit');/*This
 		makes a loader icon appear when the note is being retrieve from the database*/
 		let noteModalContent = document.querySelector('#edit-content-modal');

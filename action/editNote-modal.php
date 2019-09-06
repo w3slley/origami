@@ -31,16 +31,6 @@
 
 			</form>
 
-			<script>
-
-			</script>
-			<!--
-			<form action="action/addImageNote.php" method="POST" enctype="multipart/form-data">
-				<input type="file" name="image">
-				<button type="submit" name="submit">Add image</button>
-			</form>
-			-->
-
 		</div>
 	<?php
 		}

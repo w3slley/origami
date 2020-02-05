@@ -45,8 +45,8 @@ That should import the database structures into MySQL.
 
 ##### Create a file called Database.php on origami/classes.
 The file should contain the following code:
-
-` <php?
+```
+ <php?
 
 	class Database {
 
@@ -67,6 +67,7 @@ The file should contain the following code:
 				echo "Connection failed: ". $e->getMessage();//This will print out the exact problem with the connection failure.
 			}
 		}
-	}`
+	}
+```
 
 Now go to http://localhost/origami and enjoy the web application!

@@ -125,6 +125,12 @@ Well, these are the features done yesterday and today:
 1)Fixed OOP methodology in the backend. Now there are no useless $this-> in the classes' functions. They are used when needed.
 2)Fixed problem of not refreshing the page after change made in the title on the search page.
 
+11/09/2019
+Started to mess around a little with PHPUnit on Origami. I didn't do much, only the intallation and the implementation of a basic test. I need to learn more about TDD and unit testing both using PHPUnit and Mocha. 
+
+02/02/2020
+Deployed origami on Heroku. It's important to point out this folder is the one I'll use for development and the one inside heroku-apps will be the one used in production. I still have to find a way to do this effectively.
+
 Things I still have to implement:
 
 1)Add label system to the notes.(DONE)
@@ -153,5 +159,6 @@ Things I still have to implement:
 22)I still need to solve the problem of the bottoms going on top of the text when the keyboard is used in mobile devices.
 23)And I still need to fix the problem with the scrollbar visibily: sometimes when the user deletes a note the scrollbar dissapears and won't appear again - I know code this, but still have to fix what is causing the issue.
 24)Fix problem with profile page. To do anything you need to type you password and if you don't, it assumes you password is '' and it sends it to the database. Your secure password is now empty! kkkk. Fix that...(DONE)
+25)Add ways to insert lists and a basic feature to insert images on notes.
 
 

@@ -113,7 +113,7 @@
     		<li><a href="#">About</a></li>
     		<li><a href="#">Contact</a></li>
     	</ul>
-    	<p class="trademark">Created by Weslley. 2018-2019. All rights reserved. </p>
+    	<p class="trademark">Created by <a target="_blank" href="https://wvict.github.io">Weslley</a>. 2018-2019. All rights reserved. </p>
 		<p class="trademark">Illustrations by Alex Kunchevsky.</p>
     </footer>
 	<?php 

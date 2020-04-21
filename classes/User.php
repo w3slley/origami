@@ -8,7 +8,7 @@
 		private $user_name;
 		private $email;
 		private $password;
-
+		
 		public function setUserSignUp($first_name, $last_name, $user_name, $email, $password){//while in the signup process, this function has to be initiated first
 			$this->first_name = $first_name;
 			$this->last_name = $last_name;

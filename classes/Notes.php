@@ -99,12 +99,12 @@
 			$script = fopen($file_name, 'w') or die("Unable to open file!");
 
 			foreach($notes as $note) {
-				$note_title = $note['note_title'].', '.$note['date_created'];
+				$note_title = "# ".$note['note_title'].' - '.$note['date_created'];
 				$note_content = $note['note_content'];
 
 
-				$x = $note_title."\r\n\r\n".$note_content."\r\n\r\n ########## \r\n\r\n";
-				$content = str_replace("<br />", "\r\n", $x);
+				$x = $note_title."\r\n\r\n".$note_content."\r\n\r\n ---------------------------------------------------------- \r\n\r\n";
+				$content = str_replace("<br />", " ", $x);
 				fwrite($script, $content);
 			}
 

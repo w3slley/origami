@@ -2,7 +2,6 @@
 	include "User.php";
 
 	class Notes extends User{
-
 		public function addNote($user_id, $note_title, $note_content, $date_created){
 			$sql="INSERT INTO notes (user_id, note_title, note_content, date_created) VALUES (?, ?, ?, ?)";
 			$stmt = $this->connect()->prepare($sql);

@@ -20,8 +20,11 @@
 </head>
 <body>
 
-	<?php if(!isset($_SESSION['id'])){ 
-		?>
+	<?php 
+		if(isset($_SESSION['id'])){ 
+			header("Location: initial_page.php");
+		}
+	?>
 	<!-- Code for the nav bar. I will still add the javascript effects to change collors and stuff. -->
 	
 	<nav class="nav-bar">
@@ -115,12 +118,6 @@
     	<p class="trademark">Created by <a target="_blank" href="https://wvict.github.io">Weslley</a>. 2018-2019. All rights reserved. </p>
 		<p class="trademark">Illustrations by Alex Kunchevsky.</p>
     </footer>
-	<?php 
-		}
-		else {
-			header("Location: initial_page.php");
-		}
-	?>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
